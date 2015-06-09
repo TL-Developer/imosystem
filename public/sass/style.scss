@@ -1,3 +1,59 @@
-div{
-	border: 1px solid red;
+$azulEscuro: #172e4a;
+$cinza: #f3f3f3;
+$prontoMorar: #4e6f96;
+
+// div,ul, li{
+// 	border: 1px solid red;
+// }
+
+.thumbImoveis{
+
+	.imagem{
+		width: 100%;
+	}
+	
+	.situacaoImovel{
+		background: $prontoMorar;
+		
+		h5{
+			text-align: center;
+			color: #fff;
+			font-weight: bold;
+		}
+	}
+
+	.infoImovel{
+		width: 100%;
+		background: $azulEscuro;
+		float: left;
+		margin-bottom: 5%;
+
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 2% 0;
+			float: left;
+			width: 100%;
+
+			li{
+				float: left;
+				width: 30%;
+				margin-left: 2%;
+
+				img{
+					width: 40%;
+				}
+
+				span{
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.descricao{
+		text-align: center;
+		padding: 0 5% !important;
+		background: $cinza;
+	}
 }
