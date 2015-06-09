@@ -1,8 +1,15 @@
 var imoveis = [
 	{
 		_id: 1,
-		nome: 'São Miguel',
-		descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus nisi, aliquam repellat, fugiat totam nulla ipsam, consectetur blanditiis neque molestias cum nemo, incidunt inventore laboriosam porro vero cumque in rem.'
+		imagem: 'img/residencial.png',
+		tipo: 'Residencial Vertical',
+		nome: 'JARDIM DAS OLIMPIAS',
+		valor: '489,000,000',
+		endereco: 'av. berrini, 350 - vila olimpia São Paulo - SP',
+		status: 'PRONTO PARA MORAR',
+		qtdDormitorio: 2,
+		qtdBanheiro: 3,
+		qtdGaragem: 1
 	},
 	{
 		_id: 2,

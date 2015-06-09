@@ -4,101 +4,39 @@
 </div>
 
 <button type="button" class="btn btn-primary">Cadastrar Imóvel</button>
+<input type="search" placeholder="Buscar empreendimento" ng-model="filtro">
 
 <div class="row">
-	<div class="col-sm-6 col-md-4">
+	<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro">
 		<div class="thumbnail thumbImoveis">
-			<div class="situacaoImovel"><h5>PRONTO PARA MORAR</h5></div>
-			<img src="img/residencial.png" class="img-responsive imagem" alt="">
+			<div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
+			<img src="{{imovel.imagem}}" class="img-responsive imagem" alt="">
 			<div class="infoImovel">
 				<ul>
 					<li>
 						<img src="img/dormitorio.png" class="dormitorio" alt="">
-						<span>2</span>
+						<span>{{imovel.qtdDormitorio}}</span>
 					</li>
 					<li>
 						<img src="img/banheiro.png" class="dormitorio" alt="">
-						<span>3</span>
+						<span>{{imovel.qtdBanheiro}}</span>
 					</li>
 					<li>
 						<img src="img/garagem.png" class="dormitorio" alt="">
-						<span>1</span>
+						<span>{{imovel.qtdGaragem}}</span>
 					</li>
 				</ul>
 			</div>
 			<div class="caption descricao">
-				<h5>Residencial Vertical</h5>
-				<h4>JARDIM DAS OLIMPIAS</h4>
-				<h2>R$489,000,000</h2>
-				<p>
-					av. berrini, 350 - vila olimpia 
-					São Paulo - SP
-				</p>
+				<h5>{{imovel.tipo}}</h5>
+				<h4>{{imovel.nome}}</h4>
+				<h2>{{imovel.valor}}</h2>
+				<p>{{imovel.endereco}}</p>
 			</div>
-		</div>
-	</div>
-
-	<div class="col-sm-6 col-md-4">
-		<div class="thumbnail thumbImoveis">
-			<div class="situacaoImovel"><h5>PRONTO PARA MORAR</h5></div>
-			<img src="img/residencial.png" class="img-responsive imagem" alt="">
-			<div class="infoImovel">
-				<ul>
-					<li>
-						<img src="img/dormitorio.png" class="dormitorio" alt="">
-						<span>2</span>
-					</li>
-					<li>
-						<img src="img/banheiro.png" class="dormitorio" alt="">
-						<span>3</span>
-					</li>
-					<li>
-						<img src="img/garagem.png" class="dormitorio" alt="">
-						<span>1</span>
-					</li>
-				</ul>
-			</div>
-			<div class="caption descricao">
-				<h5>Residencial Vertical</h5>
-				<h4>JARDIM DAS OLIMPIAS</h4>
-				<h2>R$489,000,000</h2>
-				<p>
-					av. berrini, 350 - vila olimpia 
-					São Paulo - SP
-				</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-sm-6 col-md-4">
-		<div class="thumbnail thumbImoveis">
-			<div class="situacaoImovel"><h5>PRONTO PARA MORAR</h5></div>
-			<img src="img/residencial.png" class="img-responsive imagem" alt="">
-			<div class="infoImovel">
-				<ul>
-					<li>
-						<img src="img/dormitorio.png" class="dormitorio" alt="">
-						<span>2</span>
-					</li>
-					<li>
-						<img src="img/banheiro.png" class="dormitorio" alt="">
-						<span>3</span>
-					</li>
-					<li>
-						<img src="img/garagem.png" class="dormitorio" alt="">
-						<span>1</span>
-					</li>
-				</ul>
-			</div>
-			<div class="caption descricao">
-				<h5>Residencial Vertical</h5>
-				<h4>JARDIM DAS OLIMPIAS</h4>
-				<h2>R$489,000,000</h2>
-				<p>
-					av. berrini, 350 - vila olimpia 
-					São Paulo - SP
-				</p>
-			</div>
+			<p class="text-center">
+				<a href="" class="btn btn-warning" role="button">Remover</a> 
+				<a href="" class="btn btn-default" role="button">Alterar</a>
+			</p>
 		</div>
 	</div>
 </div>
