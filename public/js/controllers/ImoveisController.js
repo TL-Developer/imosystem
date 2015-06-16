@@ -1,19 +1,21 @@
-angular.module('imobiliaria').controller('ImoveisController', function($scope){
-	
+angular.module('imobiliaria').controller('ImoveisController', function($scope, Imovel, $timeout){
+
+	$scope.imoveis = [];
+
 	$scope.filtro = '';
-	
-	$scope.imoveis = [
-		{
-			_id: 1,
-			imagem: 'img/residencial.png',
-			tipo: 'Residencial Vertical',
-			nome: 'JARDIM DAS OLIMPIAS',
-			valor: '489,000,000',
-			endereco: 'av. berrini, 350 - vila olimpia São Paulo - SP',
-			status: 'PRONTO PARA MORAR',
-			qtdDormitorio: 2,
-			qtdBanheiro: 3,
-			qtdGaragem: 1
-		}
-	];
+
+	$scope.mensagem = {texto: ''};
+
+	function buscaImoveis(){
+		Imovel.query(function(imoveis){
+			$scope.imoveis = imoveis;
+		},
+		function(erro){
+			$scope.mensagem = {
+				texto: 'Não foi possível obter a lista de imoveis'
+			};
+			console.log(erro);
+		});
+	};
+	buscaImoveis();
 });

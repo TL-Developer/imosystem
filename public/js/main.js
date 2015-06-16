@@ -1,10 +1,18 @@
-angular.module('imobiliaria', ['ngRoute']).config(function($routeProvider){
+angular.module('imobiliaria', ['ngRoute','ngResource']).config(function($routeProvider){
 
 	$routeProvider.when('/imoveis', {
 		templateUrl: 'partials/imoveis.html',
 		controller: 'ImoveisController'
 	})
 	.when('/imovel/:imovelId', {
+		templateUrl: 'partials/imovel.html',
+		controller: 'ImovelController'
+	})
+	.when('/infoImovel/:imovelId', {
+		templateUrl: 'partials/infoImovel.html',
+		controller: 'InfoImovelController'
+	})
+	.when('/imovel', {
 		templateUrl: 'partials/imovel.html',
 		controller: 'ImovelController'
 	})

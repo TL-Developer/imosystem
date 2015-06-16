@@ -1,1 +1,54 @@
-<h1>Imóvel</h1>
+<h1 class="text-center">Imóvel</h1>
+
+<p ng-show="mensagem.texto" class="alert alert-success">
+	{{mensagem.texto}}
+</p>
+
+<form class="cadastrarImovel" ng-submit="salva()">
+	<div class="form-group">
+		<label for="Nome">Nome do Imóvel</label>
+		<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.nome" placeholder="Ex: JARDIM DAS OLIMPIAS">
+
+		<div class="form-group">
+			<label for="exampleInputFile">Inserir Imagem</label>
+			<input type="file" custom-on-change="uploadFile"/>
+			<input type="text" ng-model="imovel.imagem" class="theFile">
+		</div>
+
+		<label for="Nome">Tipo do Imóvel</label>
+		<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical">
+
+		<label for="Nome">Status</label>
+		<select class="form-control" ng-model="imovel.status">
+			<option ng-model="imovel.status"></option>
+			<option>PRONTO PARA MORAR</option>
+			<option>EM CONSTRUÇÃO</option>
+			<option>PARA ALUGAR</option>
+			<option>LANÇAMENTO</option>
+		</select>
+		
+		<label for="Nome">Valor do Imóvel</label>
+		<label class="sr-only" for="exampleInputAmount"></label>
+		<div class="input-group">
+			<div class="input-group-addon">$</div>
+				<input type="text" class="form-control" id="exampleInputAmount" ng-model="imovel.valor" placeholder="Ex: 489,000,000">
+			<div class="input-group-addon">.00</div>
+		</div>
+
+		<label for="Nome">Endereço</label>
+		<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.endereco" placeholder="Ex: av. berrini, 350 - vila olimpia São Paulo - SP">
+
+		<label for="Nome">Quantidade de Dormitórios</label>
+		<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdDormitorio" placeholder="Ex: 2">
+
+		<label for="Nome">Quantidade de Banheiros</label>
+		<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdBanheiro" placeholder="Ex: 1">
+
+		<label for="Nome">Quantidade de garagem</label>
+		<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdGaragem" placeholder="Ex:1">
+	</div>	
+
+	<button type="submit" class="btn btn-success btn-lg">Salvar</button>
+	<button type="button" class="btn btn-warning btn-lg">Limpar</button>
+	<a href="#/" class="btn btn-danger btn-lg">Cancelar</a>	
+</form>

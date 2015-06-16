@@ -1,43 +1,75 @@
-var imoveis = [
-	{
-		_id: 1,
-		imagem: 'img/residencial.png',
-		tipo: 'Residencial Vertical',
-		nome: 'JARDIM DAS OLIMPIAS',
-		valor: '489,000,000',
-		endereco: 'av. berrini, 350 - vila olimpia São Paulo - SP',
-		status: 'PRONTO PARA MORAR',
-		qtdDormitorio: 2,
-		qtdBanheiro: 3,
-		qtdGaragem: 1
-	},
-	{
-		_id: 2,
-		nome: 'Jardim Helena',
-		descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus nisi, aliquam repellat, fugiat totam nulla ipsam, consectetur blanditiis neque molestias cum nemo, incidunt inventore laboriosam porro vero cumque in rem.'
-	},
-	{
-		_id: 3,
-		nome: 'Itaim Paulista',
-		descricao: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus nisi, aliquam repellat, fugiat totam nulla ipsam, consectetur blanditiis neque molestias cum nemo, incidunt inventore laboriosam porro vero cumque in rem.'
-	}
-];
+/*{
+	imagem: 'residencial.png',
+	tipo: 'Residencial Vertical',
+	nome: 'JARDIM DAS OLIMPIAS',
+	valor: '489,000,000',
+	endereco: 'av. berrini, 350 - vila olimpia São Paulo - SP',
+	status: 'PRONTO PARA MORAR',
+	qtdDormitorio: 2,
+	qtdBanheiro: 3,
+	qtdGaragem: 1
+}*/
 
-module.exports = function(){
+module.exports = function(app){
+	
+	var Imovel = app.models.imovel;
+
 	var controller = {};
 
 	controller.listaImoveis = function(req, res){
-		res.json(imoveis);
+		Imovel.find().exec().then(function(imoveis){
+			res.json(imoveis);
+		},
+		function(erro){
+			console.error(erro);
+			res.status(500).json(erro);
+		});
 	};
 
 	controller.obtemImovel = function(req, res){
-		var idImovel = req.params.id;
-		var	imovel = imoveis.filter(function(imovel){
-				return imovel._id == idImovel;
-			})[0];
-			imovel ?
-			res.json(imovel) : 
-		res.status(404).send('Imovel não encontrado');
+		var _id = req.params.id;
+
+		Imovel.findById(_id).exec().then(function(imovel){
+			if (!imovel) throw new Error("Imovel não encontrado");
+			res.json(imovel);
+		}, 
+		function(erro) {
+			console.log(erro);
+			res.status(404).json(erro)
+		}
+		);    
+	};
+
+	controller.removeImovel = function(req, res){
+		var _id = req.params.id;
+		Imovel.remove({"_id": _id}).exec().then(function(){
+			res.end();
+		},
+		function(erro){
+			return console.error(erro);
+		});
+	};
+
+	controller.salvaImovel = function(req, res){
+		var _id = req.body._id;
+
+		if(_id){
+			Imovel.findByIdAndUpdate(_id, req.body).exec().then(function(imovel){
+				res.json(imovel);
+			},
+			function(erro){
+				console.error(erro);
+				res.status(500).json(erro);
+			});
+		}else{
+			Imovel.create(req.body).then(function(imovel){
+				res.status(201).json(imovel);
+			},
+			function(erro){
+				console.log(erro);
+				res.status(500).json(erro);
+			});
+		}
 	};
 
 	return controller;
