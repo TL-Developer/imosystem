@@ -1,15 +1,57 @@
-$azulEscuro: #172e4a;
+@font-face {
+    font-family: 'OfficinaSansStdBold';
+    src: url('fonts/OfficinaSansStdBold.eot');
+    src: url('fonts/OfficinaSansStdBold.eot') format('embedded-opentype'),
+         url('fonts/OfficinaSansStdBold.woff2') format('woff2'),
+         url('fonts/OfficinaSansStdBold.woff') format('woff'),
+         url('fonts/OfficinaSansStdBold.ttf') format('truetype'),
+         url('fonts/OfficinaSansStdBold.svg#OfficinaSansStdBold') format('svg');
+}
+@font-face {
+    font-family: 'AvenirLTStdLight';
+    src: url('fonts/AvenirLTStdLight.eot');
+    src: url('fonts/AvenirLTStdLight.eot') format('embedded-opentype'),
+         url('fonts/AvenirLTStdLight.woff2') format('woff2'),
+         url('fonts/AvenirLTStdLight.woff') format('woff'),
+         url('fonts/AvenirLTStdLight.ttf') format('truetype'),
+         url('fonts/AvenirLTStdLight.svg#AvenirLTStdLight') format('svg');
+}
+@font-face {
+    font-family: 'ClearfaceGothicLHLight';
+    src: url('fonts/ClearfaceGothicLHLight.eot');
+    src: url('fonts/ClearfaceGothicLHLight.eot') format('embedded-opentype'),
+         url('fonts/ClearfaceGothicLHLight.woff2') format('woff2'),
+         url('fonts/ClearfaceGothicLHLight.woff') format('woff'),
+         url('fonts/ClearfaceGothicLHLight.ttf') format('truetype'),
+         url('fonts/ClearfaceGothicLHLight.svg#ClearfaceGothicLHLight') format('svg');
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
+$azulEscuro: #12171e;
 $cinza: #f3f3f3;
-$prontoMorar: #4e6f96;
+$prontoMorar: #e11d1d;
+$cinzaEscuro: #bacfdc;
+
+$avenirLight: 'AvenirLTStdLight';
 
 // div,ul, li{
 // 	border: 1px solid red;
 // }
 
+body{
+	font-family: arial;
+}
+
 .cadastrarImovel{
 	margin-bottom: 2%;
 }
+
 .thumbImoveis{
+	position: relative;
+	overflow: hidden;
 
 	.imagem{
 		width: 100%;
@@ -17,11 +59,17 @@ $prontoMorar: #4e6f96;
 	
 	.situacaoImovel{
 		background: $prontoMorar;
+		position: absolute;
+		top: 18px;
+		transform: skewX(-25deg) rotate(-38deg);
+		left: -32px;
+		width: 250px;
 		
 		h5{
 			text-align: center;
 			color: #fff;
 			font-weight: bold;
+			padding: 10px;
 		}
 	}
 
@@ -68,4 +116,162 @@ form.cadastrarImovel{
 			margin-top: 2%;
 		}
 	}
+}
+
+.header{
+	background: $azulEscuro;
+
+	.topo{
+
+		h5{
+			color: $cinzaEscuro;
+		}
+
+		.social{
+			float: right;
+
+			ul{
+				float: right;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				li{
+					float: left;
+					color: $cinzaEscuro;
+					padding: 5px;
+				}
+			}
+		}	
+	}
+
+	.menu{
+
+		.logo{
+			margin: 0 auto;
+		}
+
+		.navegacao{
+
+			ul{
+				float: right;
+				margin: 0;
+				padding: 2.3% 0;
+				list-style: none;
+
+				li{
+					float: left;
+					padding: 5px 10px;
+					
+					a{
+						color: $cinzaEscuro;
+						font-size: 16px;
+						text-transform: capitalize;
+						font-weight: normal;
+						font-family: $avenirLight;
+					}
+				}
+			}
+		}
+	}
+}
+
+.banner{
+	padding: 0 !important;
+
+	.imagemFull{
+		width: 100%;
+	}
+
+	.busca{
+		position: absolute;
+		top: 33%;
+		left: 25%;
+		width: 50%;
+		background: rgba(255,255,255,0.7);
+		padding: 40px 0;
+
+		input{
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin-left: 15px;
+  			width: 93.5%;
+		}
+	}
+}
+
+
+.rodape{
+	background: $azulEscuro;
+	padding: 10px 0 50px;
+
+	h3{
+		color: $cinzaEscuro;
+		font-family: $avenirLight;
+	}
+	p{
+		color: $cinzaEscuro;
+		font-family: $avenirLight;
+		font-size: 14px;
+		margin: 0;
+		padding: 0;
+	}
+	hr{
+		border-top: 1px solid #434950;
+	}
+	ul.sobreEmpresa{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li{
+			margin: 0;
+			padding: 5px 0;
+
+			a{
+				color: $cinzaEscuro;
+				font-family: $avenirLight;
+				font-size: 14px;
+			}
+		}
+	}
+
+	input{
+		border: 0;
+		padding: 10px;
+		width: 100%;
+		background: #5A6A83;
+		color: #fff;
+	}
+
+	iframe{
+		background: #fff;
+	}
+
+	ul.footerRegiao{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: left;
+
+		li{
+			margin: 0;
+			padding: 2px 0;
+
+			a{
+				color: $cinzaEscuro;
+				font-family: $avenirLight;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.allRight{
+	background: #242d38;
+	color: #7f8b9d;
+	font-family: $avenirLight;
+	font-size: 12px;
+	padding: 20px 0;
+	text-align: center;
 }
