@@ -1,12 +1,16 @@
-<h1 class="text-center">{{imovel.nome}}</h1>
+<div ng-include src="'partials/header.html'"></div>
 
-<p ng-show="mensagem.texto" class="alert alert-success">
-	{{mensagem.texto}}
-</p>
+<div class="container">
+	<h1 class="text-center">{{imovel.nome}}</h1>
 
+	<p ng-show="mensagem.texto" class="alert alert-success">
+		{{mensagem.texto}}
+	</p>
 
+	<p class="text-center">
+		<a href="" class="btn btn-warning" role="button" ng-click="remove(imovel)">Remover</a> 
+		<a ng-href="#/imovel/{{imovel._id}}" class="btn btn-default" role="button">Alterar</a>
+	</p>
+</div>
 
-<p class="text-center">
-	<a href="" class="btn btn-warning" role="button" ng-click="remove(imovel)">Remover</a> 
-	<a ng-href="#/imovel/{{imovel._id}}" class="btn btn-default" role="button">Alterar</a>
-</p>
+<div ng-include src="'partials/rodape.html'"></div>

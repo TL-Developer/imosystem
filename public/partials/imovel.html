@@ -1,6 +1,8 @@
+<div ng-include src="'partials/header.html'"></div>
+
 <div class="container">
 
-	<h1 class="text-center">Imóvel</h1>
+	<h1 class="text-center">{{imovel.nome}}</h1>
 
 	<p ng-show="mensagem.texto" class="alert alert-success">
 		{{mensagem.texto}}
@@ -55,3 +57,5 @@
 		<a href="#/" class="btn btn-danger btn-lg">Voltar</a>	
 	</form>
 </div>
+
+<div ng-include src="'partials/rodape.html'"></div>
