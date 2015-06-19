@@ -34,7 +34,8 @@ $azulEscuro: #12171e;
 $cinza: #f3f3f3;
 $prontoMorar: #e11d1d;
 $cinzaEscuro: #bacfdc;
-
+$cinzaText: #9f9f9f;
+$azulBebe: #43becc;
 $avenirLight: 'AvenirLTStdLight';
 
 // div,ul, li{
@@ -204,6 +205,7 @@ form.cadastrarImovel{
 .rodape{
 	background: $azulEscuro;
 	padding: 10px 0 50px;
+	margin-top: 100px;
 
 	h3{
 		color: $cinzaEscuro;
@@ -274,4 +276,150 @@ form.cadastrarImovel{
 	font-size: 12px;
 	padding: 20px 0;
 	text-align: center;
+}
+
+.infoImovel{
+
+	h1.nome{
+		color: $azulEscuro;
+		font-family: $avenirLight;
+		font-weight: normal;
+		font-size: 36px;
+	}
+
+	p.endereco{
+		color: $cinzaText;
+		font-family: $avenirLight;
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	h1.valor{
+		font-weight: bold;
+		text-align: right;
+	}
+
+	button.btnAdquirirHoje{
+		float: right;
+		background: $azulBebe;
+		padding: 10px 22px;
+	}
+
+	ul.infoQtdeComodos{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: left;
+
+		li{
+			float: left;
+			padding: 10px;
+			color: $cinzaText;
+			font-weight: bold;
+			font-size: 14px;
+		}
+	}
+}
+
+.galeriaImovel{
+	background: $azulBebe;
+}
+
+.infoText{
+
+	h1{
+		color: $azulEscuro;	
+	}
+
+	p{
+		color: $cinzaText;
+	}
+
+	hr{
+		border-top: 1px solid #d9dfe8;
+	}
+
+	ul.caracteristicas{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: left;
+
+		li{
+			float: left;
+			padding: 10px;
+			color: $cinzaText;
+			font-size: 14px;
+			font-family: $avenirLight;
+			width: 25%;
+
+			span{
+				color: $azulBebe;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	ul.plantas{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: left;
+
+		li{
+			float: left;
+			padding: 5px;
+			color: $cinzaText;
+			font-size: 12px;
+			font-family: $avenirLight;
+			width: 25%;
+			cursor: pointer;
+			border: 1px solid $cinza;
+
+			p{
+				margin-top: 5px;
+			}
+
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	iframe.mapaLocalizacao{
+		width: 100%;
+	}
+	
+	form{
+		
+		div{
+			float: left;
+			width: 35%;
+			margin-right: 2%;
+
+			input{
+				width: 100% !important;
+				margin-bottom: 5%;
+				padding: 20px 10px;
+				background: #f8f8f8;
+				border: 0;
+				border-radius: 0;
+			}
+		}
+		textarea{
+			float: left;
+			width: 60% !important;
+			background: #f8f8f8;
+			border: 0;
+			border-radius: 0;
+		}
+		button{
+			background: $azulBebe;
+			border: 0;
+			border-radius: 0;
+		}
+	}
+}
+.localizacao{
+	padding: 0 !important;
 }

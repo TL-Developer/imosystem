@@ -41,4 +41,6 @@ angular.module('imobiliaria').controller('InfoImovelController', function($scope
 		$scope.imoveis = imoveis;
 	});
 
+
+
 });
