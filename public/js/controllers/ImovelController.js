@@ -6,7 +6,7 @@ angular.module('imobiliaria').directive('customOnChange', function() {
       element.bind('change', onChangeFunc);
     }
   };
-}).controller('ImovelController', function($scope, Imovel, $routeParams){
+}).controller('ImovelController', function($scope, Imovel, $routeParams, $timeout){
 
 	$scope.mensagem = {texto: ''};
 
@@ -31,7 +31,14 @@ angular.module('imobiliaria').directive('customOnChange', function() {
 			$scope.mensagem = {
 				texto: 'Salvo com sucesso'
 			};
-			
+
+			$timeout(function(){ 
+				$scope.mensagem = {
+					texto: ''
+				};
+				window.location.href = '#/'
+			}, 2000);
+
 			$scope.imovel = new Imovel();
 		}).catch(function(erro){
 			$scope.mensagem = {
@@ -45,13 +52,4 @@ angular.module('imobiliaria').directive('customOnChange', function() {
 		$scope.imoveis = imoveis;
 	});
 
-	$scope.theFile = "";
-
-    $scope.uploadFile = function(){
-        var filename = event.target.files[0].name;
-        $scope.$apply(function() {
-	        $scope.theFile = filename;
-	        document.querySelector('.theFile').value = filename;
-	    });
-    };
 });

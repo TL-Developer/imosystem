@@ -13,12 +13,12 @@
 
 	<div class="col-md-12 infoImovel">
 		<div class="col-md-8">
-			<h1 class="nome">Sought-after Corner Unit - Federal City Apartments</h1>
-			<p class="endereco">207 FEDERAL STREET, AUCKLAND CENTRAL</p>
+			<h1 class="nome">{{imovel.nome}}</h1>
+			<p class="endereco">{{imovel.endereco}}</p>
 		</div>
 
 		<div class="col-md-4">
-			<h1 class="valor">R$350,00</h1>
+			<h1 class="valor">R${{imovel.valor}}</h1>
 			<button class="btn btn-primary btnAdquirirHoje" type="button">ADQUIRIR HOJE</button>
 		</div>
 
@@ -84,14 +84,15 @@
 	<div class="col-md-12">
 		<h1>Descrição</h1>
 		<hr />
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore accusantium quibusdam, recusandae, nostrum doloribus molestiae id, voluptas necessitatibus praesentium incidunt impedit dignissimos mollitia. Beatae accusamus aut, distinctio praesentium deleniti corporis.</p>
+		<p>{{imovel.descricao}}</p>
 	</div>
 
 	<div class="col-md-12">
 		<h1>Características</h1>
 		<hr />
 		<ul class="caracteristicas">
-			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Ar Condicionado</li>
+			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{imovel.caracteristicas}}</li>
+			<!-- <li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Ar Condicionado</li>
 			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Academia</li>
 			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Fliperama</li>
 			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Balcão</li>
@@ -102,7 +103,7 @@
 			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Ar Condicionado</li>
 			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Academia</li>
 			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Fliperama</li>
-			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Balcão</li>			
+			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>Balcão</li>		 -->	
 		</ul>
 	</div>
 

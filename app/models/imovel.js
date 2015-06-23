@@ -36,6 +36,12 @@ module.exports = function(){
 	    qtdGaragem: {
 	      type: Number, 
 	      required: true, 
+	    },
+	    descricao: {
+	    	type: String
+	    },
+	    caracteristicas: {
+	    	type: String
 	    }
 	});
 

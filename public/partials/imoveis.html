@@ -11,35 +11,34 @@
 
 	<div class="row">
 		<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro">
-			<div class="thumbnail thumbImoveis">
-				<div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
-				<img ng-src="img/{{imovel.imagem}}" class="img-responsive imagem" alt="">
-				<div class="infoImovel">
-					<ul>
-						<li>
-							<img src="img/dormitorio.png" class="dormitorio" alt="">
-							<span>{{imovel.qtdDormitorio}}</span>
-						</li>
-						<li>
-							<img src="img/banheiro.png" class="dormitorio" alt="">
-							<span>{{imovel.qtdBanheiro}}</span>
-						</li>
-						<li>
-							<img src="img/garagem.png" class="dormitorio" alt="">
-							<span>{{imovel.qtdGaragem}}</span>
-						</li>
-					</ul>
+			<a ng-href="#/infoImovel/{{imovel._id}}">
+				<div class="thumbnail thumbImoveis">
+					<div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
+					<img ng-src="img/{{imovel.imagem}}" class="img-responsive imagem" alt="">
+					<div class="infoImovel">
+						<ul>
+							<li>
+								<img src="img/dormitorio.png" class="dormitorio" alt="">
+								<span>{{imovel.qtdDormitorio}}</span>
+							</li>
+							<li>
+								<img src="img/banheiro.png" class="dormitorio" alt="">
+								<span>{{imovel.qtdBanheiro}}</span>
+							</li>
+							<li>
+								<img src="img/garagem.png" class="dormitorio" alt="">
+								<span>{{imovel.qtdGaragem}}</span>
+							</li>
+						</ul>
+					</div>
+					<div class="caption descricao">
+						<h5>{{imovel.tipo}}</h5>
+						<h4>{{imovel.nome}}</h4>
+						<h2>{{imovel.valor}}</h2>
+						<p>{{imovel.endereco}}</p>
+					</div>
 				</div>
-				<div class="caption descricao">
-					<h5>{{imovel.tipo}}</h5>
-					<h4>{{imovel.nome}}</h4>
-					<h2>{{imovel.valor}}</h2>
-					<p>{{imovel.endereco}}</p>
-				</div>
-				<p class="text-center">
-					<a ng-href="#/infoImovel/{{imovel._id}}" class="btn btn-default" role="button">Alterar</a>
-				</p>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>

@@ -19,6 +19,15 @@
 				<input type="text" ng-model="imovel.imagem" class="theFile">
 			</div>
 
+			<label for="Nome">Descrição</label>
+			<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.descricao" placeholder="Ex: Este imovel é amplo...">
+			
+			<div class="form-group">
+				<label for="Nome">Características</label>
+				<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia, Playground, Ar condicionado, Fliperama">
+			</div>
+			
+
 			<label for="Nome">Tipo do Imóvel</label>
 			<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical">
 
@@ -53,7 +62,6 @@
 		</div>	
 
 		<button type="submit" class="btn btn-success btn-lg">Salvar</button>
-		<button type="button" class="btn btn-warning btn-lg">Limpar</button>
 		<a href="#/" class="btn btn-danger btn-lg">Voltar</a>	
 	</form>
 </div>
