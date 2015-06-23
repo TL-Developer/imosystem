@@ -52,4 +52,14 @@ angular.module('imobiliaria').directive('customOnChange', function() {
 		$scope.imoveis = imoveis;
 	});
 
+	$scope.listaCaracteristicas = [];
+
+	$scope.inserirCaracteristicas = function(car){
+		var inputCar = $('.caracteristicasInput');
+
+		$scope.listaCaracteristicas.push(inputCar.val());
+
+		inputCar.val('');
+	}
+
 });

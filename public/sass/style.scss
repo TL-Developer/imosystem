@@ -323,6 +323,16 @@ form.cadastrarImovel{
 
 .galeriaImovel{
 	background: $azulBebe;
+
+	.carousel-inner{
+
+		.item{
+			
+			img{
+				width: 100%;
+			}
+		}
+	}
 }
 
 .infoText{
@@ -344,6 +354,7 @@ form.cadastrarImovel{
 		margin: 0;
 		padding: 0;
 		float: left;
+		width: 100%;
 
 		li{
 			float: left;
@@ -351,7 +362,7 @@ form.cadastrarImovel{
 			color: $cinzaText;
 			font-size: 14px;
 			font-family: $avenirLight;
-			width: 25%;
+
 
 			span{
 				color: $azulBebe;
