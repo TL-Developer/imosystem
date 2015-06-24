@@ -24,7 +24,15 @@
 			
 			<div class="form-group">
 				<label for="Nome">Características</label><br />
-				<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia, Playground, Ar condicionado, Fliperama">
+				<input type="text" class="form-control" id="nomeImovel" ng-model="caracteristicas" placeholder="Ex: Academia, Playground, Ar condicionado, Fliperama">
+				
+				<button type="button" ng-click="inserirCaracteristicas()">Inserir</button>
+				
+				<div class="container theme-showcase">
+					<ul class="list-group">
+						<li ng-repeat="caracteristicas in listaCaracteristicas">{{caracteristicas.nome}}</li>
+					</ul>
+				</div>
 			</div>
 			
 

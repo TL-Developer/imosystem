@@ -52,14 +52,15 @@ angular.module('imobiliaria').directive('customOnChange', function() {
 		$scope.imoveis = imoveis;
 	});
 
-	$scope.listaCaracteristicas = [];
+	$scope.listaCaracteristicas = [
+		{
+			nome: 'Academia'
+		}
+	];
 
-	$scope.inserirCaracteristicas = function(car){
-		var inputCar = $('.caracteristicasInput');
-
-		$scope.listaCaracteristicas.push(inputCar.val());
-
-		inputCar.val('');
+	$scope.inserirCaracteristicas = function(){
+		$scope.listaCaracteristicas.push({nome: $scope.caracteristicas});
+		$scope.caracteristicas = '';
 	}
 
 });
