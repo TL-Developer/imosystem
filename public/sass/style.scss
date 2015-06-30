@@ -34,6 +34,7 @@ $azulEscuro: #12171e;
 $cinza: #f3f3f3;
 $prontoMorar: #e11d1d;
 $cinzaEscuro: #bacfdc;
+$azulClaro: #172e4a;
 $cinzaText: #9f9f9f;
 $azulBebe: #43becc;
 $avenirLight: 'AvenirLTStdLight';
@@ -201,6 +202,56 @@ form.cadastrarImovel{
 	}
 }
 
+.quemSomos{
+
+	.banner{
+		padding: 0 !important;
+
+		.imagemFull{
+			width: 100%;
+		}
+	}
+
+	h1.titulo{
+		color: $azulEscuro;
+		font-family: $avenirLight;
+		font-weight: normal;
+		font-size: 24px;
+	}
+
+	p.texto{
+		color: $cinzaText;
+		font-family: $avenirLight;
+		font-weight: normal;
+		font-size: 18px;
+	}
+
+	.diretor{
+		background: $cinza;
+
+		.cargo{
+			background: $azulClaro;
+			color: #fff;
+			font-size: 18px;
+			text-align: center;
+		}
+
+		.texto{
+
+		}
+		
+		.titulo{
+			
+			.contentImagem{
+				padding: 0;
+
+				img.imagem{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
 
 .rodape{
 	background: $azulEscuro;
