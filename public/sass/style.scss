@@ -229,15 +229,27 @@ form.cadastrarImovel{
 	.diretor{
 		background: $cinza;
 
-		.cargo{
-			background: $azulClaro;
-			color: #fff;
+		h1.titulo{
+			color: $azulEscuro;
+			font-family: $avenirLight;
+			font-weight: normal;
+			font-size: 48px;
+		}
+		h3.cargo{
+			color: $azulEscuro;
+			font-family: $avenirLight;
+			font-weight: normal;
 			font-size: 18px;
-			text-align: center;
+			font-weight: bold;
 		}
 
-		.texto{
-
+		p.texto{
+			color: $cinzaText;
+			font-family: $avenirLight;
+			font-weight: normal;
+			font-size: 18px;
+			margin-top: 30px;
+			line-height: 30px;
 		}
 		
 		.titulo{
