@@ -1,9 +1,9 @@
-angular.module('imobiliaria').controller('QuemSomosController', function($scope, Imovel, $routeParams, $timeout){
+angular.module('imobiliaria').controller('QuemSomosController', function($scope, Quemsomo, $routeParams, $timeout){
 
 	$scope.mensagem = {texto: ''};
 
-	if($routeParams.imovelId){
-		Imovel.get({id: $routeParams.imovelId}, 
+	if($routeParams.quemsomoId){
+		Quemsomo.get({id: $routeParams.quemsomoId}, 
 		function(imovel){
 			$scope.imovel = imovel;
 			console.log(imovel);
@@ -16,8 +16,8 @@ angular.module('imobiliaria').controller('QuemSomosController', function($scope,
 		});
 	}
 
-	Imovel.query(function(imoveis){
-		$scope.imoveis = imoveis;
+	Quemsomo.query(function(quemsomos){
+		$scope.quemsomos = quemsomos;
 	});
 
 });

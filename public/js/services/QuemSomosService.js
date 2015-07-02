@@ -1,4 +1,4 @@
-angular.module('imobiliaria').factory('Imovel', function($resource){
+angular.module('imobiliaria').factory('Quemsomo', function($resource){
 
-	return $resource('/imoveis/:id');
+	return $resource('/quemsomos/:id');
 });

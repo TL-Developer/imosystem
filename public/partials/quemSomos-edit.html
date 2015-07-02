@@ -1,0 +1,19 @@
+<div ng-include src="'partials/header.html'"></div>
+
+<div class="container">
+	<p ng-show="mensagem.texto" class="alert alert-success">
+		{{mensagem.texto}}
+	</p>
+
+	<form class="cadastrarImovel" ng-submit="salva()">
+		<div class="form-group">
+			<label for="Nome">Título</label>
+			<input type="text" class="form-control" id="nomeImovel" ng-model="quemsomo.titulo" placeholder="Ex: JARDIM DAS OLIMPIAS">
+		</div>	
+
+		<button type="submit" class="btn btn-success btn-lg">Salvar</button>
+		<a href="#/" class="btn btn-danger btn-lg">Voltar</a>	
+	</form>
+</div>
+
+<div ng-include src="'partials/rodape.html'"></div>
