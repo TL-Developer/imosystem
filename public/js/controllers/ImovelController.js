@@ -1,12 +1,4 @@
-angular.module('imobiliaria').directive('customOnChange', function() {
-  return {
-    restrict: 'A',
-    link: function (scope, element, attrs) {
-      var onChangeFunc = scope.$eval(attrs.customOnChange);
-      element.bind('change', onChangeFunc);
-    }
-  };
-}).controller('ImovelController', function($scope, Imovel, $routeParams, $timeout){
+angular.module('imobiliaria').controller('ImovelController', function($scope, Imovel, $routeParams, $timeout){
 
 	$scope.mensagem = {texto: ''};
 
@@ -51,16 +43,4 @@ angular.module('imobiliaria').directive('customOnChange', function() {
 	Imovel.query(function(imoveis){
 		$scope.imoveis = imoveis;
 	});
-
-	$scope.listaCaracteristicas = [
-		{
-			nome: 'Academia'
-		}
-	];
-
-	$scope.inserirCaracteristicas = function(){
-		$scope.listaCaracteristicas.push({nome: $scope.caracteristicas});
-		$scope.caracteristicas = '';
-	}
-
 });
