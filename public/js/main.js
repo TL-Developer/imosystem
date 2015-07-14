@@ -1,4 +1,4 @@
-angular.module('imobiliaria', ['ngRoute','ngResource']).config(function($routeProvider){
+angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config(function($routeProvider){
 
 	$routeProvider.when('/imoveis', {
 		templateUrl: 'partials/imoveis.html',
