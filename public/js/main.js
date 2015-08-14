@@ -17,8 +17,7 @@ angular.module('imobiliaria', ['ngRoute','ngResource']).config(function($routePr
 		controller: 'InfoImovelController'
 	})
 	.when('/quemSomos', {
-		templateUrl: 'partials/quemSomos.html',
-		controller: 'QuemSomosController'
+		templateUrl: 'partials/quemSomos.html'
 	})
 	
 	.otherwise({redirectTo: '/imoveis'});
