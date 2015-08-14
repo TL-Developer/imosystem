@@ -1,4 +1,4 @@
-angular.module('imobiliaria', ['ngRoute','ngResource']).config(function($routeProvider){
+angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config(function($routeProvider){
 
 	$routeProvider.when('/imoveis', {
 		templateUrl: 'partials/imoveis.html',
@@ -17,7 +17,8 @@ angular.module('imobiliaria', ['ngRoute','ngResource']).config(function($routePr
 		controller: 'InfoImovelController'
 	})
 	.when('/quemSomos', {
-		templateUrl: 'partials/quemSomos.html'
+		templateUrl: 'partials/quemSomos.html',
+		controller: 'QuemSomosController'
 	})
 	
 	.otherwise({redirectTo: '/imoveis'});
