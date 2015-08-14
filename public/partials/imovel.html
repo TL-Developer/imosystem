@@ -1,0 +1,171 @@
+<div ng-include src="'partials/header.html'"></div>
+
+<div class="container">
+	
+	<br />
+	<p ng-show="mensagem.texto" class="alert alert-success">
+		{{mensagem.texto}}
+	</p>
+
+	<h1 class="text-center">{{imovel.nome}}<hr /></h1>
+	
+
+	<form class="cadastrarImovel form-inline" ng-submit="salva()">
+		
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Nome Imóvel</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.nome" placeholder="Ex: JARDIM DAS OLIMPIAS">
+			
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+			
+					<label for="exampleInputFile">Nome Imagem</label><br />	
+					<input type="text" class="form-control" ng-model="imovel.imagem">
+					
+					<!--<input id="input-1" type="file" class="filestyle" ng-model="imovel.imagem">-->
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+				
+					<label for="Nome">Descrição</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.descricao" placeholder="Ex: Este imovel é amplo...">
+				
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Características</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+				
+					<label for="Nome">Tipo do Imóvel</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical">
+				
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Status</label><br />
+					<select class="form-control" ng-model="imovel.status">
+						<option ng-model="imovel.status"></option>
+						<option>PRONTO PARA MORAR</option>
+						<option>EM CONSTRUÇÃO</option>
+						<option>PARA ALUGAR</option>
+						<option>LANÇAMENTO</option>
+					</select>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+			
+					<label for="Nome">Valor do Imóvel</label><br />
+					<label class="sr-only" for="exampleInputAmount"></label>
+				
+
+					<div class="input-group">
+						<div class="input-group-addon">$</div>
+							<input type="text" class="form-control" id="exampleInputAmount" ng-model="imovel.valor" placeholder="Ex: 489,000,000">
+						<div class="input-group-addon">.00</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Endereço</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.endereco" placeholder="Ex: av. berrini, 350 - vila olimpia São Paulo - SP">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Quant. Dormitórios</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdDormitorio" placeholder="Ex: 2">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Quant. Banheiros</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdBanheiro" placeholder="Ex: 1">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+					
+					<label for="Nome">Quant. garagens</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdGaragem" placeholder="Ex:1">
+				
+				</div>
+			</div>
+		</div>	
+		
+		<br /><br />
+		<div class="row">
+			<div class="col-xs-12 btn-group btn-group-justified">
+				<div class="btn-group" role="group">
+					<button type="submit" class="btn btn-success btn-lg">Salvar</button>
+				</div>
+
+				<div class="btn-group" role="group">
+					<button type="reset" class="btn btn-warning btn-lg">Limpar</button>
+				</div>
+
+				<div class="btn-group" role="group">
+					<a href="#/" class="btn btn-danger btn-lg">Voltar</a>
+				</div>
+			</div>
+		</div>	
+	</form>
+
+</div>
+
+<div ng-include src="'partials/rodape.html'"></div>

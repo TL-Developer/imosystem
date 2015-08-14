@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'AvenirLTStdLight';
+    src: url('fonts/AvenirLTStdLight.eot');
+    src: url('fonts/AvenirLTStdLight.eot') format('embedded-opentype'),
+         url('fonts/AvenirLTStdLight.woff2') format('woff2'),
+         url('fonts/AvenirLTStdLight.woff') format('woff'),
+         url('fonts/AvenirLTStdLight.ttf') format('truetype'),
+         url('fonts/AvenirLTStdLight.svg#AvenirLTStdLight') format('svg');
+}

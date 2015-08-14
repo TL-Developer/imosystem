@@ -1,0 +1,22 @@
+{
+  "name": "imobiliaria",
+  "version": "0.0.0",
+  "authors": [
+    "Tiago Lima <tiago.jlima@yahoo.com.br>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3",
+    "angular-route": "1.3",
+    "bootstrap": "~3.3.4",
+    "angular-resource": "1.3"
+  }
+}

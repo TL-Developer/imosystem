@@ -1,0 +1,190 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   'body-parser@1.6',
+1 verbose cli   'method-ovoverride@2.1',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.38
+4 verbose node symlink /usr/bin/node
+5 warn package.json Imobiliaria@1.0.0 No repository field.
+6 warn package.json Imobiliaria@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'body-parser@1.6', null ]
+9 verbose cache add name=undefined spec="body-parser@1.6" args=["body-parser@1.6",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'body-parser@1.6',
+10 verbose parsed url   path: 'body-parser@1.6',
+10 verbose parsed url   href: 'body-parser@1.6' }
+11 verbose cache add [ 'method-ovoverride@2.1', null ]
+12 verbose cache add name=undefined spec="method-ovoverride@2.1" args=["method-ovoverride@2.1",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'method-ovoverride@2.1',
+13 verbose parsed url   path: 'method-ovoverride@2.1',
+13 verbose parsed url   href: 'method-ovoverride@2.1' }
+14 verbose cache add name="body-parser" spec="1.6" args=["body-parser","1.6"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: '1.6',
+15 verbose parsed url   path: '1.6',
+15 verbose parsed url   href: '1.6' }
+16 verbose addNamed [ 'body-parser', '1.6' ]
+17 verbose addNamed [ null, '>=1.6.0-0 <1.7.0-0' ]
+18 verbose cache add name="method-ovoverride" spec="2.1" args=["method-ovoverride","2.1"]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: '2.1',
+19 verbose parsed url   path: '2.1',
+19 verbose parsed url   href: '2.1' }
+20 verbose addNamed [ 'method-ovoverride', '2.1' ]
+21 verbose addNamed [ null, '>=2.1.0-0 <2.2.0-0' ]
+22 silly lockFile aa1c4b9f-body-parser-1-6 body-parser@1.6
+23 verbose lock body-parser@1.6 /home/tiago/.npm/aa1c4b9f-body-parser-1-6.lock
+24 silly lockFile 536e1c38-method-ovoverride-2-1 method-ovoverride@2.1
+25 verbose lock method-ovoverride@2.1 /home/tiago/.npm/536e1c38-method-ovoverride-2-1.lock
+26 silly addNameRange { name: 'body-parser',
+26 silly addNameRange   range: '>=1.6.0-0 <1.7.0-0',
+26 silly addNameRange   hasData: false }
+27 silly addNameRange { name: 'method-ovoverride',
+27 silly addNameRange   range: '>=2.1.0-0 <2.2.0-0',
+27 silly addNameRange   hasData: false }
+28 verbose request where is /method-ovoverride
+29 verbose request registry https://registry.npmjs.org/
+30 verbose request id b3b14377c1783d3c
+31 verbose url raw /method-ovoverride
+32 verbose url resolving [ 'https://registry.npmjs.org/', './method-ovoverride' ]
+33 verbose url resolved https://registry.npmjs.org/method-ovoverride
+34 verbose request where is https://registry.npmjs.org/method-ovoverride
+35 info trying registry request attempt 1 at 14:31:18
+36 http GET https://registry.npmjs.org/method-ovoverride
+37 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+38 verbose request where is /body-parser
+39 verbose request registry https://registry.npmjs.org/
+40 verbose url raw /body-parser
+41 verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+42 verbose url resolved https://registry.npmjs.org/body-parser
+43 verbose request where is https://registry.npmjs.org/body-parser
+44 info trying registry request attempt 1 at 14:31:18
+45 verbose etag "BGH0J107V8P5JUBW3EEZRT7DL"
+46 http GET https://registry.npmjs.org/body-parser
+47 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+48 info trying registry request attempt 2 at 14:31:28
+49 http GET https://registry.npmjs.org/method-ovoverride
+50 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+51 info trying registry request attempt 2 at 14:31:28
+52 verbose etag "BGH0J107V8P5JUBW3EEZRT7DL"
+53 http GET https://registry.npmjs.org/body-parser
+54 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+55 info trying registry request attempt 3 at 14:32:28
+56 http GET https://registry.npmjs.org/method-ovoverride
+57 silly lockFile 536e1c38-method-ovoverride-2-1 method-ovoverride@2.1
+58 silly lockFile 536e1c38-method-ovoverride-2-1 method-ovoverride@2.1
+59 info trying registry request attempt 3 at 14:32:28
+60 verbose etag "BGH0J107V8P5JUBW3EEZRT7DL"
+61 http GET https://registry.npmjs.org/body-parser
+62 silly registry.get cb [ 304, undefined ]
+63 verbose etag https://registry.npmjs.org/body-parser from cache
+64 silly addNameRange number 2 { name: 'body-parser',
+64 silly addNameRange   range: '>=1.6.0-0 <1.7.0-0',
+64 silly addNameRange   hasData: true }
+65 silly addNameRange versions [ 'body-parser',
+65 silly addNameRange   [ '1.0.0',
+65 silly addNameRange     '1.0.1',
+65 silly addNameRange     '1.0.2',
+65 silly addNameRange     '1.1.0',
+65 silly addNameRange     '1.1.1',
+65 silly addNameRange     '1.1.2',
+65 silly addNameRange     '1.2.0',
+65 silly addNameRange     '1.2.1',
+65 silly addNameRange     '1.2.2',
+65 silly addNameRange     '1.3.0',
+65 silly addNameRange     '1.3.1',
+65 silly addNameRange     '1.4.0',
+65 silly addNameRange     '1.4.1',
+65 silly addNameRange     '1.4.2',
+65 silly addNameRange     '1.4.3',
+65 silly addNameRange     '1.5.0',
+65 silly addNameRange     '1.5.1',
+65 silly addNameRange     '1.5.2',
+65 silly addNameRange     '1.6.0',
+65 silly addNameRange     '1.6.1',
+65 silly addNameRange     '1.6.2',
+65 silly addNameRange     '1.6.3',
+65 silly addNameRange     '1.6.4',
+65 silly addNameRange     '1.6.5',
+65 silly addNameRange     '1.6.6',
+65 silly addNameRange     '1.6.7',
+65 silly addNameRange     '1.7.0',
+65 silly addNameRange     '1.8.0',
+65 silly addNameRange     '1.8.1',
+65 silly addNameRange     '1.8.2',
+65 silly addNameRange     '1.8.3',
+65 silly addNameRange     '1.8.4',
+65 silly addNameRange     '1.9.0',
+65 silly addNameRange     '1.9.1',
+65 silly addNameRange     '1.9.2',
+65 silly addNameRange     '1.9.3',
+65 silly addNameRange     '1.10.0',
+65 silly addNameRange     '1.10.1',
+65 silly addNameRange     '1.10.2',
+65 silly addNameRange     '1.11.0',
+65 silly addNameRange     '1.12.0',
+65 silly addNameRange     '1.12.1',
+65 silly addNameRange     '1.12.2',
+65 silly addNameRange     '1.12.3',
+65 silly addNameRange     '1.12.4' ] ]
+66 verbose addNamed [ 'body-parser', '1.6.7' ]
+67 verbose addNamed [ '1.6.7', '1.6.7' ]
+68 silly lockFile d5963813-body-parser-1-6-7 body-parser@1.6.7
+69 verbose lock body-parser@1.6.7 /home/tiago/.npm/d5963813-body-parser-1-6-7.lock
+70 silly lockFile d5963813-body-parser-1-6-7 body-parser@1.6.7
+71 silly lockFile d5963813-body-parser-1-6-7 body-parser@1.6.7
+72 silly lockFile aa1c4b9f-body-parser-1-6 body-parser@1.6
+73 silly lockFile aa1c4b9f-body-parser-1-6 body-parser@1.6
+74 error network getaddrinfo ENOTFOUND
+74 error network This is most likely not a problem with npm itself
+74 error network and is related to network connectivity.
+74 error network In most cases you are behind a proxy or have bad network settings.
+74 error network
+74 error network If you are behind a proxy, please make sure that the
+74 error network 'proxy' config is set properly.  See: 'npm help config'
+75 error System Linux 3.16.0-36-generic
+76 error command "/usr/bin/node" "/usr/bin/npm" "i" "body-parser@1.6" "method-ovoverride@2.1" "--save"
+77 error cwd /home/tiago/Área de Trabalho/imobiliaria
+78 error node -v v0.10.38
+79 error npm -v 1.4.28
+80 error syscall getaddrinfo
+81 error code ENOTFOUND
+82 error errno ENOTFOUND
+83 verbose exit [ 1, true ]
