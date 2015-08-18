@@ -16,10 +16,14 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config
 		templateUrl: 'partials/infoImovel.html',
 		controller: 'InfoImovelController'
 	})
-	.when('/quemSomos', {
+	.when('/quem-somos', {
 		templateUrl: 'partials/quemSomos.html',
 		controller: 'QuemSomosController'
 	})
-	
+	.when('/images/upload', {
+		templateUrl: 'partials/upload-images.html',
+		controller: 'UploadImages'
+	})
+
 	.otherwise({redirectTo: '/imoveis'});
 });	

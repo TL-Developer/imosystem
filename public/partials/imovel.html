@@ -8,7 +8,6 @@
 	</p>
 
 	<h1 class="text-center">{{imovel.nome}}<hr /></h1>
-	
 
 	<form class="cadastrarImovel form-inline" ng-submit="salva()">
 		
@@ -29,8 +28,8 @@
 			
 					<label for="exampleInputFile">Nome Imagem</label><br />	
 					<input type="text" class="form-control" ng-model="imovel.imagem">
-					
-					<!--<input id="input-1" type="file" class="filestyle" ng-model="imovel.imagem">-->
+					<button type="button" class="btn btn-primary" onclick="window.open('/#/images/upload','mywindow','width=500,height=300,left=400,top=300,screenX=400,screenY=300')">Enviar Imagem</button>					
+
 				</div>
 			</div>
 		</div>

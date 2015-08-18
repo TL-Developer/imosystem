@@ -8,4 +8,8 @@ module.exports = function(app){
 	app.route('/imoveis/:id')
 		.get(controller.obtemImovel)
 		.delete(controller.removeImovel);
+
+	app.route('/images/upload')
+		.get(controller.pegaImagem)
+		.post(controller.enviaImagem);
 };
