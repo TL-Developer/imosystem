@@ -98,7 +98,7 @@ module.exports = function(app){
 
 				fs.writeFile(path, data, function(error){
 					if(error){ 
-						console.log(erro);
+						console.log(error);
 					}else{
 						res.sendfile('./public/partials/upload-images-success.html');
 					}

@@ -1,7 +1,22 @@
 <div ng-include src="'partials/header.html'"></div>
 
+
+
+
 <div class="container">
 	
+	<br />
+	<div class="alert alert-info" role="alert">
+		<h1 class="text-center">INSERIR IMAGEM!</h1>
+	</div>
+	<br />
+	<form method="post" action="/images/upload" enctype="multipart/form-data">
+		<input type="text" class="form-control" ng-model="imovel.imagem" disabled>
+		<input type="file" class="filestyle" name="images">
+		<br /><br />
+		<input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar">
+	</form>
+
 	<br />
 	<p ng-show="mensagem.texto" class="alert alert-success">
 		{{mensagem.texto}}
@@ -22,17 +37,19 @@
 			</div>
 		</div>
 
+		<!--
 		<div class="form-group">
 			<div class="row">
             	<div class="col-xs-12">
 			
 					<label for="exampleInputFile">Nome Imagem</label><br />	
 					<input type="text" class="form-control" ng-model="imovel.imagem">
+					
 					<button type="button" class="btn btn-primary" onclick="window.open('/#/images/upload','mywindow','width=500,height=300,left=400,top=300,screenX=400,screenY=300')">Enviar Imagem</button>					
 
 				</div>
 			</div>
-		</div>
+		</div>-->
 
 		<div class="form-group">
 			<div class="row">

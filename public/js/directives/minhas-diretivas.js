@@ -14,4 +14,18 @@ angular.module('minhasDiretivas', [])
  	ddo.templateUrl = 'js/directives/meu-painel.html';
 		
 	return ddo;
+})
+.directive('inputFile', function(){
+
+	var ddo = {};
+
+	ddo.restrict = "A";
+	
+	ddo.link = function(scope, element){
+		scope.$on('fotoCadastrada', function(){
+			alert(0);
+		});
+	}
+
+	return ddo;
 });
