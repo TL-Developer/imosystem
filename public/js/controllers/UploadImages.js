@@ -1,3 +1,4 @@
-angular.module('imobiliaria').controller('UploadImages', function($scope, $resource){
+angular.module('imobiliaria').controller('UploadImages', function($scope, $http){
 
+	
 });

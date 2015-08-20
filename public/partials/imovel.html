@@ -1,8 +1,5 @@
 <div ng-include src="'partials/header.html'"></div>
 
-
-
-
 <div class="container">
 	
 	<br />
@@ -10,9 +7,12 @@
 		<h1 class="text-center">INSERIR IMAGEM!</h1>
 	</div>
 	<br />
-	<form method="post" action="/images/upload" enctype="multipart/form-data">
+	<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data">
 		<input type="text" class="form-control" ng-model="imovel.imagem" disabled>
-		<input type="file" class="filestyle" name="images">
+		<input type="file" class="filestyle" name="images" onchange="angular.element(this).scope().pegaImagem(this.value)">
+		<p ng-show="teste" class="alert alert-success">
+			{{teste}}
+		</p>
 		<br /><br />
 		<input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar">
 	</form>

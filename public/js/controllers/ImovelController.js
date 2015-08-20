@@ -43,4 +43,10 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 	Imovel.query(function(imoveis){
 		$scope.imoveis = imoveis;
 	});
+
+
+	$scope.teste;
+	$scope.pegaImagem = function(file){
+		$scope.teste = file;
+	};
 });
