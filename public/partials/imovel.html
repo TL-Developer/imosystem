@@ -3,26 +3,9 @@
 <div class="container">
 	
 	<br />
-	<div class="alert alert-info" role="alert">
-		<h1 class="text-center">INSERIR IMAGEM!</h1>
-	</div>
-	<br />
-	<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data">
-		<input type="text" class="form-control" ng-model="imovel.imagem" disabled>
-		<input type="file" class="filestyle" name="images" onchange="angular.element(this).scope().pegaImagem(this.value)">
-		<p ng-show="teste" class="alert alert-success">
-			{{teste}}
-		</p>
-		<br /><br />
-		<input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar">
-	</form>
-
-	<br />
 	<p ng-show="mensagem.texto" class="alert alert-success">
 		{{mensagem.texto}}
 	</p>
-
-	<h1 class="text-center">{{imovel.nome}}<hr /></h1>
 
 	<form class="cadastrarImovel form-inline" ng-submit="salva()">
 		
@@ -36,20 +19,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!--
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
-			
-					<label for="exampleInputFile">Nome Imagem</label><br />	
-					<input type="text" class="form-control" ng-model="imovel.imagem">
-					
-					<button type="button" class="btn btn-primary" onclick="window.open('/#/images/upload','mywindow','width=500,height=300,left=400,top=300,screenX=400,screenY=300')">Enviar Imagem</button>					
-
-				</div>
-			</div>
-		</div>-->
 
 		<div class="form-group">
 			<div class="row">
@@ -181,6 +150,39 @@
 			</div>
 		</div>	
 	</form>
+
+	<br />
+
+	<hr />
+
+
+	<div class="alert alert-info" role="alert">
+		<h5 class="text-center">Inserir imagem do imovel!</h5>
+	</div>
+	
+	<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data">
+		
+		<div class="row">
+			<div class="col-md-5">
+				<input type="text" class="form-control" ng-model="imovel.imagem" value="{{imovel.imagem}}">
+			<input type="file" class="filestyle" name="images" fileread="imovel.imagem">
+			<input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar Imagem">
+			</div>
+			
+			<div class="col-md-7">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">{{imovel.nome}}</h3>
+					</div>
+					<div class="panel-body">
+						<img src="img/imoveis/{{imovel.imagem}}" alt="" class="img-responsive imagem-imovel-previa center-block">
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
 
 </div>
 

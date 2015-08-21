@@ -77,10 +77,10 @@ module.exports = function(app){
 	};
 
 
-	var contador = 0;
+	//var contador = 0;
 	controller.enviaImagem = function(req, res){
 
-		contador++;
+		//contador++;
 		var multiparty = require('multiparty');
 		var form = new multiparty.Form();
 
@@ -91,8 +91,9 @@ module.exports = function(app){
 
 			fs.readFile(img.path, function(err, data){
 
-				var extensaoImg = img.originalFilename.substr(img.originalFilename.length - 4);
-				var path = './public/img/imoveis/'+img.originalFilename.replace(extensaoImg, '_'+contador+extensaoImg);
+				//var extensaoImg = img.originalFilename.substr(img.originalFilename.length - 4);
+				//var path = './public/img/imoveis/'+img.originalFilename.replace(extensaoImg, '_'+contador+extensaoImg);
+				var path = './public/img/imoveis/'+img.originalFilename;
 				
 				console.log(path.substr(path.length - 4));
 
