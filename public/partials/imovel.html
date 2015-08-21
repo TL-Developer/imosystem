@@ -34,6 +34,17 @@
 		<div class="form-group">
 			<div class="row">
             	<div class="col-xs-12">
+				
+					<label for="Nome">Nome da Imagem</label><br />
+					<input type="text" class="form-control" ng-model="imovel.imagem" value="{{imovel.imagem}}" disabled>
+				
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
 
 					<label for="Nome">Características</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama">
@@ -164,8 +175,7 @@
 		
 		<div class="row">
 			<div class="col-md-5">
-				<input type="text" class="form-control" ng-model="imovel.imagem" value="{{imovel.imagem}}">
-			<input type="file" class="filestyle" name="images" fileread="imovel.imagem">
+			<input type="file" class="filestyle" name="images" fileread="imovel.imagem" multiple>
 			<input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar Imagem">
 			</div>
 			
