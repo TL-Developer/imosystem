@@ -20,9 +20,15 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config
 		templateUrl: 'partials/quemSomos.html',
 		controller: 'QuemSomosController'
 	})
-	.when('/images/upload', {
-		templateUrl: 'partials/upload-images.html',
-		controller: 'UploadImages'
+	// .when('/images/upload', {
+	// 	templateUrl: 'partials/upload-images.html',
+	// 	controller: 'UploadImages'
+	// })
+	.when('/login', {
+		templateUrl: 'partials/login.html'
+	})
+	.when('/signup', {
+		templateUrl: 'partials/signup.html'
 	})
 
 	.otherwise({redirectTo: '/imoveis'});
