@@ -1,11 +1,14 @@
 var passport = require('passport');
 var LocalStrategy   = require('passport-local').Strategy;
-var User = require('../app/models/user');
 var bCrypt = require('bcrypt-nodejs');
 
-module.exports = function(){
+module.exports = function(app){
 
-    passport.use('login', new LocalStrategy({
+    var User = app.models.user;
+
+    console.log(User.findOne());
+
+	passport.use('login', new LocalStrategy({
             passReqToCallback : true
         },
         function(req, username, password, done) { 
@@ -36,5 +39,5 @@ module.exports = function(){
     var isValidPassword = function(user, password){
         return bCrypt.compareSync(password, user.password);
     }
-
-}
+	
+};

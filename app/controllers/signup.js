@@ -1,11 +1,12 @@
 var passport = require('passport');
 var LocalStrategy   = require('passport-local').Strategy;
-var User = require('../app/models/user');
 var bCrypt = require('bcrypt-nodejs');
 
-module.exports = function(){
+module.exports = function(app){
 
-    passport.use('signup', new LocalStrategy({
+    var User = app.models.user;
+	
+	passport.use('signup', new LocalStrategy({
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
         function(req, username, password, done) {
@@ -56,5 +57,5 @@ module.exports = function(){
     var createHash = function(password){
         return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
     }
-
-}
+	
+};

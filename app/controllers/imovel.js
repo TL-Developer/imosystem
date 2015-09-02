@@ -72,9 +72,9 @@ module.exports = function(app){
 		}
 	};
 
-	controller.pegaImagem = function(req, res){
-		res.sendfile('./public/partials/upload-images.html');
-	};
+	// controller.pegaImagem = function(req, res){
+	// 	res.sendfile('./public/partials/upload-images.html');
+	// };
 
 
 	//var contador = 0;

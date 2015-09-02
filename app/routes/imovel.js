@@ -10,6 +10,6 @@ module.exports = function(app){
 		.delete(controller.removeImovel);
 
 	app.route('/images/upload')
-		.get(controller.pegaImagem)
+		// .get(controller.pegaImagem)
 		.post(controller.enviaImagem);
 };

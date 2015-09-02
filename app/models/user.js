@@ -6,9 +6,9 @@ module.exports = function(){
 		username: String,
 		password: String,
 		email: String,
-		gender: String,
-		address: String
+		firstName: String,
+		lastName: String
 	});
 
-	return mongoose.model('User', UserSchema);
+	return mongoose.model('Users', UserSchema);
 };
