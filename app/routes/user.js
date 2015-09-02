@@ -20,7 +20,7 @@ module.exports = function(app){
 	/* Handle Login POST */
 	app.post('/login', passport.authenticate('login', {
 		successRedirect: '/#/admin',
-		failureRedirect: '/',
+		failureRedirect: '/#/login',
 		failureFlash : true  
 	}));
 
@@ -32,14 +32,15 @@ module.exports = function(app){
 
 	/* Handle Registration POST */
 	app.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/#/admin',
+		successRedirect: '/admin',
 		failureRedirect: '/signup',
 		failureFlash : true  
 	}));
 
 	/* GET Home Page */
 	app.get('/admin', isAuthenticated, function(req, res){
-		res.render('admin', { user: req.user });
+		// res.render('admin', { user: req.user });
+		res.json(req.user);
 	});
 
 	/* Handle Logout */
