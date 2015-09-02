@@ -6,8 +6,6 @@ module.exports = function(app){
 
     var User = app.models.user;
 
-    console.log(User.findOne());
-
 	passport.use('login', new LocalStrategy({
             passReqToCallback : true
         },

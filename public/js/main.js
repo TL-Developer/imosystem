@@ -30,6 +30,10 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config
 	.when('/signup', {
 		templateUrl: 'partials/signup.html'
 	})
+	.when('/admin', {
+		templateUrl: 'partials/admin/index.html'
+	})
+
 
 	.otherwise({redirectTo: '/imoveis'});
 });	
