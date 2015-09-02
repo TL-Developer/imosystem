@@ -19,3 +19,13 @@ _____________________________________________________________
 
 Google Maps:
 http://mondeca.com/index.php/en/any-place-en
+
+
+_____________________________________________________________
+
+
+Referencias Template Admin
+
+http://themes.startbootstrap.com/flex-admin-v1.2/
+https://www.almsaeedstudio.com/
+http://demo.kimlabs.com/gentelella/production/index.html
