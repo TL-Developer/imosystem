@@ -19,7 +19,7 @@ module.exports = function(app){
 
 	/* Handle Login POST */
 	app.post('/login', passport.authenticate('login', {
-		successRedirect: '/admin',
+		successRedirect: '/#/admin',
 		failureRedirect: '/',
 		failureFlash : true  
 	}));
