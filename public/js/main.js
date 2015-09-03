@@ -31,7 +31,7 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config
 		templateUrl: 'partials/signup.html'
 	})
 	.when('/admin', {
-		templateUrl: 'partials/admin/index.html',
+		templateUrl: 'admin.html',
 		controller: 'AdminController'
 	})
 

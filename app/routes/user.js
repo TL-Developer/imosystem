@@ -4,9 +4,11 @@
 var passport = require('passport');
 
 var isAuthenticated = function (req, res, next) {
-  if (req.isAuthenticated())
-    return next();
-  res.redirect('/');
+  if(req.isAuthenticated()){
+    	return next();
+  }else{
+  	res.redirect('/');
+  }
 }
 
 module.exports = function(app){
@@ -32,14 +34,13 @@ module.exports = function(app){
 
 	/* Handle Registration POST */
 	app.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/admin',
+		successRedirect: '/#/admin',
 		failureRedirect: '/signup',
 		failureFlash : true  
 	}));
 
 	/* GET Home Page */
 	app.get('/admin', isAuthenticated, function(req, res){
-		// res.render('admin', { user: req.user });
 		res.json(req.user);
 	});
 
