@@ -138,6 +138,7 @@ $.AdminLTE.options = {
  * options above.
  */
 $(function () {
+  
   "use strict";
 
   //Fix for IE page transitions
@@ -744,3 +745,4 @@ function _init() {
     });
   };
 }(jQuery));
+
