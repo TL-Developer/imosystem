@@ -1,4 +1,4 @@
-angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config(function($routeProvider){
+angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnimate']).config(function($routeProvider){
 
 	$routeProvider.when('/imoveis', {
 		templateUrl: 'partials/imoveis.html',
@@ -31,7 +31,7 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas']).config
 		templateUrl: 'partials/signup.html'
 	})
 	.when('/admin', {
-		templateUrl: 'partials/admin/admin.html',
+		templateUrl: 'partials/admin/principal.html',
 		controller: 'AdminController'
 	})
 

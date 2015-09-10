@@ -1,52 +1,31 @@
-// Assim como qualquer middleware, é quintessencial chamarmos next()
-// Se o usuário estiver autenticado
-
 var passport = require('passport');
-
-var isAuthenticated = function (req, res, next) {
-  if(req.isAuthenticated()){
-    	return next();
-  }else{
-  	res.redirect('/');
-  }
-}
 
 module.exports = function(app){
 
-	/* GET Login Page */
-	app.get('/login', function(req, res){
-		// res.render('register',{message: req.flash('message')});
-		res.sendfile('./public/partials/login.html');
-	});
+	var controller = app.controllers.user;
 
-	/* Handle Login POST */
-	app.post('/login', passport.authenticate('login', {
-		successRedirect: '/#/admin',
-		failureRedirect: '/#/login',
-		failureFlash : true  
-	}));
+	app.route('/login')
+		.get(controller.getLogin)
+		.post(controller.postLogin);
 
-	/* GET Registration Page */
-	app.get('/signup', function(req, res){
-		// res.render('register',{message: req.flash('message')});
-		res.sendfile('./public/partials/signup.html');
-	});
+	app.route('/signup')
+		.get(controller.getSignup)
+		.post(controller.postSignup);
 
-	/* Handle Registration POST */
-	app.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/#/admin',
-		failureRedirect: '/signup',
-		failureFlash : true  
-	}));
-
-	/* GET Home Page */
-	app.get('/admin', isAuthenticated, function(req, res){
-		res.json(req.user);
-	});
-
-	/* Handle Logout */
-	app.get('/signout', function(req, res) {
-		req.logout();
-		res.redirect('/');
-	});
+	app.route('/admin')
+		.get(controller.getAdmin);
+	
+	app.route('/signout')
+		.get(controller.signout);
 };
+
+	
+// app.get('/admin', isAuthenticated, function(req, res){
+// 	res.json(req.user);
+// });
+
+
+// app.get('/signout', function(req, res) {
+// 	req.logout();
+// 	res.redirect('/');
+// });

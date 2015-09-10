@@ -501,3 +501,27 @@ form.cadastrarImovel{
 .imagem-imovel-previa{
 	height: 200px;
 }
+
+.painel-animado {
+    -moz-transition:all 0.8s ease;
+    -webkit-transition:all 0.8s ease;
+    -ms-transition:all 0.8s ease;
+    -o-transition:all 0.8s ease;
+    transition:all 0.8s ease;
+}
+
+.painel-animado.ng-leave-active {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+
+.painel-animado.ng-enter {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}

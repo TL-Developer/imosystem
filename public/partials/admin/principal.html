@@ -1,4 +1,26 @@
-    <div class="wrapper hold-transition skin-blue sidebar-mini">
+ <!--
+  BODY TAG OPTIONS:
+  =================
+  Apply one or more of the following classes to get the
+  desired effect
+  |---------------------------------------------------------|
+  | SKINS         | skin-blue                               |
+  |               | skin-black                              |
+  |               | skin-purple                             |
+  |               | skin-yellow                             |
+  |               | skin-red                                |
+  |               | skin-green                              |
+  |---------------------------------------------------------|
+  |LAYOUT OPTIONS | fixed                                   |
+  |               | layout-boxed                            |
+  |               | layout-top-nav                          |
+  |               | sidebar-collapse                        |
+  |               | sidebar-mini                            |
+  |---------------------------------------------------------|
+  -->
+
+<div class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
 
       <!-- Main Header -->
       <header class="main-header">
@@ -210,14 +232,52 @@
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          <h1>
-            Page Header
-            <small>Optional description</small>
+          <h1>{{teste}}
+            Seus imóveis cadastrados
+            <small class="text-info">{{imoveis.length}}</small>
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-            <li class="active">Here</li>
-          </ol>
+          
+          <hr />
+        
+          <div class="col-md-12">
+            <input type="search" class="form-control" placeholder="Buscar..." ng-model="filtro" ng-model-options="{debounce: 500}">
+              <hr />
+          </div>
+          
+        
+
+          <div class="row">
+            <div class="col-sm-6 col-md-4 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
+              <a ng-href="#/infoImovel/{{imovel._id}}">
+                <div class="thumbnail thumbImoveis">
+                  <div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
+                  <img ng-src="img/imoveis/{{imovel.imagem}}" class="img-responsive imagem" alt="">
+                  <div class="infoImovel">
+                    <ul>
+                      <li>
+                        <img src="img/dormitorio.png" class="dormitorio" alt="">
+                        <span>{{imovel.qtdDormitorio}}</span>
+                      </li>
+                      <li>
+                        <img src="img/banheiro.png" class="dormitorio" alt="">
+                        <span>{{imovel.qtdBanheiro}}</span>
+                      </li>
+                      <li>
+                        <img src="img/garagem.png" class="dormitorio" alt="">
+                        <span>{{imovel.qtdGaragem}}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="caption descricao">
+                    <h5>{{imovel.tipo}}</h5>
+                    <h4>{{imovel.nome}}</h4>
+                    <h2>{{imovel.valor}}</h2>
+                    <p>{{imovel.endereco}}</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </section>
 
         <!-- Main content -->
@@ -232,10 +292,10 @@
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          Anything you want
+          <a href="/signout">Logout.</a>
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015 <a href="http://www.tldigitaldesigner.com.br">Tiago Lima</a>.</strong> All rights reserved.
       </footer>
 
       <!-- Control Sidebar -->
@@ -301,6 +361,4 @@
            immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
-
-
-  
+</div>
