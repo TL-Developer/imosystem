@@ -4,6 +4,9 @@ var mongoose = require('mongoose'),
 module.exports = function(){
 
 	var schema = new Schema({
+		username: {
+			type: String,
+		},
 		nome: { 
 	      type: String, 
 	    }, 

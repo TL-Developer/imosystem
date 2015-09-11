@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('ImovelController', function($scope, Imovel, $routeParams, $timeout){
+angular.module('imobiliaria').controller('ImovelController', function($scope, Imovel, $routeParams, $timeout, $http){
 
 	$scope.mensagem = {texto: ''};
 
@@ -42,6 +42,15 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 
 	Imovel.query(function(imoveis){
 		$scope.imoveis = imoveis;
+	});
+
+
+	// Buscando Username
+	$http.get('/admin')
+	.success(function(data){
+		$scope.imovel.username = data.user.username;
+	}).error(function(erro){
+		console.log(erro);
 	});
 
 });

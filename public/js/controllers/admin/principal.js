@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('AdminController', function($scope, $http){
+angular.module('imobiliaria').controller('AdminController', function($scope, $http,$filter){
 
 	$scope.usuario = '';
 	$scope.imoveis = [];
@@ -10,7 +10,8 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 				window.location.href = '/#/login';
 			}else{
 				$scope.usuario = 'Olá '+data.user.firstName;
-				$scope.imoveis = data.imoveis;
+				// $scope.imoveis = data.imoveis;
+				$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
 			}
 		}else{
 			window.location.href = '/#/login';

@@ -2,13 +2,8 @@
 <div ng-include src="'partials/banner.html'"></div>
 
 <div class="container">
-	<div class="row cadastrarImovel container">
-	<br />
-		<a ng-href="#/imovel" class="btn btn-primary">Cadastrar Novo Imóvel</a>
-	</div>
 	
-	<p class="text-info" ng-show="imoveis.length">Imoveis cadastrados: {{imoveis.length}}</p>
-	<p class="text-info" ng-hide="imoveis.length">Não há imoveis cadastrados</p>
+	
 
 	<div class="row">
 		<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro">
@@ -33,6 +28,7 @@
 						</ul>
 					</div>
 					<div class="caption descricao">
+						<h5>Proprietário: {{imovel.username}}</h5>
 						<h5>{{imovel.tipo}}</h5>
 						<h4>{{imovel.nome}}</h4>
 						<h2>{{imovel.valor}}</h2>

@@ -60,7 +60,7 @@ module.exports = function(app){
 
 	controller.signout = function(req, res){
 		req.logout();
-		res.redirect('/#/login');
+		res.redirect('/');
 	};
 
 	return controller;

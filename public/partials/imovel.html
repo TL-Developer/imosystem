@@ -1,4 +1,4 @@
-<div ng-include src="'partials/header.html'"></div>
+
 
 <div class="container">
 	
@@ -9,6 +9,17 @@
 
 	<form class="cadastrarImovel form-inline" ng-submit="salva()">
 		
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Username</label><br />
+					<input type="text" class="form-control" ng-model="imovel.username" value="{{username}}" disabled>
+			
+				</div>
+			</div>
+		</div>
+
 		<div class="form-group">
 			<div class="row">
             	<div class="col-xs-12">
@@ -156,7 +167,7 @@
 				</div>
 
 				<div class="btn-group" role="group">
-					<a href="#/" class="btn btn-danger btn-lg">Voltar</a>
+					<a href="#/admin" class="btn btn-danger btn-lg">Voltar</a>
 				</div>
 			</div>
 		</div>	
@@ -195,5 +206,3 @@
 
 
 </div>
-
-<div ng-include src="'partials/rodape.html'"></div>
