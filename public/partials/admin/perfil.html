@@ -1,0 +1,84 @@
+<div class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <div ng-include src="'partials/admin/header.html'"></div>
+      <div ng-include src="'partials/admin/left-panel.html'"></div>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          
+                          
+        </section>
+
+        <!-- Main content -->
+        <section class="content container">
+              
+            <div class="row box box-default">
+              <div class="box-header with-border">
+                <i class="fa fa-bank"></i>
+                <h3 class="box-title">
+                    Meu Perfil
+                </h3>
+              </div>
+            </div>
+
+            <div class="row box box-default">
+              <div class="col-md-12 paginaPerfil">
+
+                <div class="imagem">
+                  <img src="img/usuarios/{{usuario.imagem}}" alt="" class="img-responsive">
+                </div>
+              </div>
+            </div>
+            
+          <br />
+            <div class="row box box-default">
+              <div class="col-md-12">
+                <h1>Olá, meu nome é {{usuario.firstName}} {{usuario.lastName}}</h1>
+                <h5>Sou de {{usuario.cidade}}, Brasil · Membro desde Agosto de 2013</h5>
+
+                <hr />
+
+                <h1>Editar Perfil</h1>
+                <br />
+
+                <form action="/admin/perfil" method="post">
+      
+                  <div class="form-group has-feedback col-md-5">
+                    <label for="firstName">Primeiro nome:</label>
+                    <input type="text" name="firstName" ng-model="usuario.firstName" required="required" autofocus="autofocus" class="form-control"/>
+                  </div>
+
+                  <div class="form-group has-feedback col-md-5">
+                    <label for="firstName">Segundo nome:</label>
+                    <input type="text" name="lastName" ng-model="usuario.lastName" required="required" autofocus="autofocus" class="form-control"/>
+                  </div>
+
+                  <div class="form-group has-feedback col-md-5">
+                    <label for="firstName">Cidade:</label>
+                    <input type="text" name="email" ng-model="usuario.cidade" required="required" autofocus="autofocus" class="form-control"/>
+                  </div>
+
+                  <div class="form-group has-feedback col-md-5">
+                    <label for="firstName">Telefone:</label>
+                    <input type="text" name="telefone" ng-model="usuario.telefone" required="required" autofocus="autofocus" class="form-control"/>
+                  </div>
+                  
+                  <div class="form-group has-feedback col-md-10">
+                    <button type="submit" class="btn btn-success btn-lg">Salvar</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+  
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+      <!-- Main Footer -->
+      <div ng-include src="'partials/admin/footer.html'"></div>
+    </div><!-- ./wrapper -->
+</div>

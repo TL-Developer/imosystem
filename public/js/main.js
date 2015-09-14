@@ -34,6 +34,10 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/admin/principal.html',
 		controller: 'AdminController'
 	})
+	.when('/admin/perfil', {
+		templateUrl: 'partials/admin/perfil.html',
+		controller: 'PerfilController'
+	})
 
 
 	.otherwise({redirectTo: '/imoveis'});
