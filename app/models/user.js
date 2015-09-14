@@ -7,7 +7,10 @@ module.exports = function(){
 		password: String,
 		email: String,
 		firstName: String,
-		lastName: String
+		lastName: String,
+		telefone: String,
+		cidade: String,
+		imagem: String
 	});
 
 	return mongoose.model('Users', UserSchema);

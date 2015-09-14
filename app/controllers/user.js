@@ -63,5 +63,36 @@ module.exports = function(app){
 		res.redirect('/');
 	};
 
+
+	controller.enviaImagem = function(req, res){
+
+		var multiparty = require('multiparty');
+		var form = new multiparty.Form();
+
+		form.parse(req, function(err, fields, files){
+
+			var img = files.images[0];
+			var fs = require('fs');
+
+			fs.readFile(img.path, function(err, data){
+
+				var path = './public/img/usuarios/'+img.originalFilename;
+				
+				console.log(path.substr(path.length - 4));
+
+				fs.writeFile(path, data, function(error){
+					if(error){ 
+						console.log(error);
+					}else{
+						res.sendfile('./public/partials/upload-images-success.html');
+					}
+				});
+
+			});
+		});
+
+
+	};
+
 	return controller;
 };

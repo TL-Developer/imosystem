@@ -17,6 +17,9 @@ module.exports = function(app){
 	
 	app.route('/signout')
 		.get(controller.signout);
+
+	app.route('/images/upload-usuario')
+		.post(controller.enviaImagem);
 };
 
 	

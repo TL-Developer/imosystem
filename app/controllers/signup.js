@@ -34,6 +34,9 @@ module.exports = function(app){
                         newUser.email = req.param('email');
                         newUser.firstName = req.param('firstName');
                         newUser.lastName = req.param('lastName');
+                        newUser.cidade = req.param('cidade');
+                        newUser.telefone = req.param('telefone');
+                        newUser.imagem = req.param('imagem');
 
                         // save the user
                         newUser.save(function(err) {

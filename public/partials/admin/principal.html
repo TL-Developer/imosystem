@@ -58,7 +58,7 @@
                         <a href="#">
                           <div class="pull-left">
                             <!-- User Image -->
-                            <img src="lib/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="img/usuarios/{{imagem}}" class="img-circle" alt="User Image">
                           </div>
                           <!-- Message title and timestamp -->
                           <h4>
@@ -137,16 +137,16 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="lib/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="img/usuarios/{{usuario.imagem}}" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class="hidden-xs">{{usuario}}</span>
+                  <span class="hidden-xs">{{usuario.firstName}}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
                     <img src="lib/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      {{usuario}}
+                      {{usuario.firstName}}
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -190,10 +190,10 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="lib/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="img/usuarios/{{usuario.imagem}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>{{usuario}}</p>
+              <p>Olá, {{usuario.firstName}} {{usuario.lastName}}</p>
               <!-- Status -->
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -233,24 +233,26 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           
-          <div class="col-md-12">
-            <a ng-href="#/imovel" class="btn btn-primary">Cadastrar Novo Imóvel</a>
-             <hr />
-          </div>
-          <div class="col-md-12">
-            <input type="search" class="form-control" placeholder="Buscar..." ng-model="filtro" ng-model-options="{debounce: 500}">
-              <hr />
-          </div>
-          
-        
          
+                   
         </section>
 
         <!-- Main content -->
         <section class="content">
-
+              
             <div class="row">
-              <div class="box box-default col-md-12">
+             <div class="col-md-12">
+                <a ng-href="#/imovel" class="btn btn-primary">Cadastrar Novo Imóvel</a>
+                 <hr />
+              </div>
+              <div class="col-md-12">
+                <input type="search" class="form-control" placeholder="Buscar..." ng-model="filtro" ng-model-options="{debounce: 500}">
+                  <hr />
+              </div>
+            </div>
+
+            <div class="row box box-default">
+              <div class="col-md-12">
                 <div class="box-header with-border">
                   <i class="fa fa-bank"></i>
                   <h3 class="box-title">
