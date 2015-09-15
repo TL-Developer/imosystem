@@ -9,6 +9,7 @@ angular.module('imobiliaria').controller('ImoveisController', function($scope, I
 	function buscaImoveis(){
 		Imovel.query(function(imoveis){
 			$scope.imoveis = imoveis;
+			console.log(imoveis);
 		},
 		function(erro){
 			$scope.mensagem = {

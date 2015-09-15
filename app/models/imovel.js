@@ -7,6 +7,9 @@ module.exports = function(){
 		username: {
 			type: String,
 		},
+		usernameImagem: {
+			type: String,
+		},
 		nome: { 
 	      type: String, 
 	    }, 
@@ -17,7 +20,7 @@ module.exports = function(){
 	      type: String
 	    }, 
 	    valor: {
-	      type: Number, 
+	      type: String, 
 	    }, 
 	    endereco: {
 	      type: String, 

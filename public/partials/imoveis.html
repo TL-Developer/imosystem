@@ -3,9 +3,8 @@
 
 <div class="container">
 	
-	
-
 	<div class="row">
+		
 		<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro">
 			<a ng-href="#/infoImovel/{{imovel._id}}">
 				<div class="thumbnail thumbImoveis">
@@ -26,12 +25,13 @@
 								<span>{{imovel.qtdGaragem}}</span>
 							</li>
 						</ul>
+
+						<div class=""><img ng-src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive imagemPerfilClientSide img-circle"></div>
 					</div>
 					<div class="caption descricao">
-						<h5>Proprietário: {{imovel.username}}</h5>
 						<h5>{{imovel.tipo}}</h5>
 						<h4>{{imovel.nome}}</h4>
-						<h2>{{imovel.valor}}</h2>
+						<h2>R${{imovel.valor}}.00</h2>
 						<p>{{imovel.endereco}}</p>
 					</div>
 				</div>

@@ -49,6 +49,7 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 	$http.get('/admin')
 	.success(function(data){
 		$scope.imovel.username = data.user.username;
+		$scope.imovel.usernameImagem = data.user.imagem;
 	}).error(function(erro){
 		console.log(erro);
 	});
