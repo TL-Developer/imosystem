@@ -43,7 +43,7 @@
 
     <hr />
 
-    <form action="/signup" method="post">
+    <form action="/signup" method="post"  ng-show="user.imagem">
       
       <div class="form-group has-feedback" style="position: absolute; opacity: 0;">
         <input type="text" name="imagem" required="required" class="form-control nomargin" value="{{user.imagem}}"/>

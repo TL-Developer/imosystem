@@ -28,7 +28,7 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 				$scope.mensagem = {
 					texto: ''
 				};
-				window.location.href = '#/'
+				window.location.href = '/#/admin'
 			}, 2000);
 
 			$scope.imovel = new Imovel();
@@ -46,10 +46,18 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 
 
 	// Buscando Username
+	$scope.usuario = [];
+
 	$http.get('/admin')
 	.success(function(data){
-		$scope.imovel.username = data.user.username;
-		$scope.imovel.usernameImagem = data.user.imagem;
+		if(data.user == undefined){
+			window.location.href = '/#/login';
+		}else{
+			$scope.imovel.username = data.user.username;
+			$scope.imovel.usernameImagem = data.user.imagem;
+
+			$scope.usuario = data.user;
+		}
 	}).error(function(erro){
 		console.log(erro);
 	});

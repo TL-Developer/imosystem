@@ -1,25 +1,52 @@
+<div class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <div ng-include src="'partials/admin/header.html'"></div>
+      <div ng-include src="'partials/admin/left-panel.html'"></div>
 
 
-<div class="container">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  
+                  
+</section>
+
+<!-- Main content -->
+<section class="content container">
 	
+	<div class="row box box-default">
+      <div class="box-header with-border">
+        <i class="fa fa-bank"></i>
+        <h3 class="box-title">
+            Cadastrar Imóvel
+        </h3>
+      </div>
+    </div>
+
 	<br />
 	<p ng-show="mensagem.texto" class="alert alert-success">
 		{{mensagem.texto}}
 	</p>
 
-	<div class="alert alert-info" role="alert">
-		<h5 class="text-center">Inserir imagem do imovel!</h5>
-	</div>
+	
+	<div class="row box box-default">
+              <div class="col-md-12">
+
+	<h3 class="text-info">Imagem do imóvel</h3>
 	
 	<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data">
 		
 		<div class="row">
 			<div class="col-md-5">
 			<input type="file" class="filestyle" name="images" fileread="imovel.imagem" multiple>
-			<input type="submit" class="btn btn-primary btn-lg btn-block" value="Enviar Imagem">
+			<br />
+			<input type="submit" class="btn btn-primary" value="Enviar Imagem">
 			</div>
+			<br />
 			
-			<div class="col-md-7">
+			<div class="col-md-5">
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -32,6 +59,13 @@
 			</div>
 		</div>
 	</form>
+
+	</div>
+
+	</div>
+
+	<div class="row box box-default" ng-show="imovel.imagem">
+              <div class="col-md-11">
 
 	<form class="cadastrarImovel form-inline" ng-submit="salva()">
 		
@@ -199,23 +233,27 @@
 		<div class="row">
 			<div class="col-xs-12 btn-group btn-group-justified">
 				<div class="btn-group" role="group">
-					<button type="submit" class="btn btn-success btn-lg">Salvar</button>
+					<button type="submit" class="btn btn-success">Salvar</button>
 				</div>
 
 				<div class="btn-group" role="group">
-					<button type="reset" class="btn btn-warning btn-lg">Limpar</button>
+					<button type="reset" class="btn btn-warning">Limpar</button>
 				</div>
 
 				<div class="btn-group" role="group">
-					<a href="#/admin" class="btn btn-danger btn-lg">Voltar</a>
+					<a href="#/admin" class="btn btn-danger">Voltar</a>
 				</div>
 			</div>
 		</div>	
 	</form>
+	
+	</div>
+	</div>
 
-	<br />
+	</section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
 
-	<hr />
-
-
+      <!-- Main Footer -->
+      <div ng-include src="'partials/admin/footer.html'"></div>
+    </div><!-- ./wrapper -->
 </div>
