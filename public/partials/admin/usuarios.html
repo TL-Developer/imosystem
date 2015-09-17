@@ -1,0 +1,63 @@
+<div class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <div ng-include src="'partials/admin/header.html'"></div>
+      <div ng-include src="'partials/admin/left-panel.html'"></div>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          
+                          
+        </section>
+
+        <!-- Main content -->
+        <section class="content container">
+              
+            <div class="row box box-default">
+              <div class="box-header with-border">
+                <i class="fa fa-bank"></i>
+                <h3 class="box-title">
+                    Usuarios cadastrados
+                </h3>
+              </div>
+            </div>
+
+            <div class="row box box-default">
+              <div class="box-header with-border">
+               
+               <div class="col-md-10">
+                 <table class="table">
+                  <caption>Optional table caption.</caption>
+                  <thead>
+                    <tr>
+                      <th>Usuário</th>
+                      <th>Email</th>
+                      <th>Telefone</th>
+                      <th>Acão</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="users in usuarios">
+                      <td>{{users.username}}</td>
+                      <td>{{users.email}}</td>
+                      <td>{{users.telefone}}</td>
+                      <td>
+                        <a href="" class="btn btn-warning" role="button" ng-click="remove(users)">Remover</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </div>
+            
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+      <!-- Main Footer -->
+      <div ng-include src="'partials/admin/footer.html'"></div>
+    </div><!-- ./wrapper -->
+</div>

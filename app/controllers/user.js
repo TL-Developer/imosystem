@@ -13,6 +13,7 @@ var isAuthenticated = function (req, res, next) {
 module.exports = function(app){
 	
 	var Imovel = app.models.imovel;
+	var Usuarios = app.models.user;
 
 	var controller = {};
 
@@ -90,7 +91,27 @@ module.exports = function(app){
 
 			});
 		});
+	};
 
+	controller.listaUsuarios = function(req, res){
+		Usuarios.find().exec().then(function(usuarios){
+			res.json(usuarios);
+		},
+		function(erro){
+			console.error(erro);
+			res.status(500).json(erro);
+		});
+	};
+
+	controller.removeUsuario = function(req, res){
+		var _id = req.params.id;
+		
+		Usuarios.remove({"_id": _id}).exec().then(function(){
+			res.end();
+		},
+		function(erro){
+			return console.error(erro);
+		});
 	};
 
 	return controller;

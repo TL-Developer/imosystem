@@ -20,6 +20,12 @@ module.exports = function(app){
 
 	app.route('/images/upload-usuario')
 		.post(controller.enviaImagem);
+
+	app.route('/users')
+		.get(controller.listaUsuarios);
+
+	app.route('/users/:id')
+		.delete(controller.removeUsuario);
 };
 
 	

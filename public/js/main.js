@@ -38,6 +38,14 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/admin/perfil.html',
 		controller: 'PerfilController'
 	})
+	.when('/admin/usuarios', {
+		templateUrl: 'partials/admin/usuarios.html',
+		controller: 'UsuariosController'
+	})
+	.when('/admin/usuarios/:usuarioId', {
+		templateUrl: 'partials/admin/usuario.html',
+		controller: 'UsuarioController'
+	})
 
 
 	.otherwise({redirectTo: '/imoveis'});
