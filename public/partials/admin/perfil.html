@@ -37,14 +37,14 @@
             <div class="row box box-default">
               <div class="col-md-12">
                 <h1>Olá, meu nome é {{usuario.firstName}} {{usuario.lastName}}</h1>
-                <h5>Sou de {{usuario.cidade}}, Brasil · Membro desde Agosto de 2013</h5>
+                <h5>Sou de {{usuario.cidade}}, Brasil · Membro desde {{usuario.inclusao}}</h5>
 
                 <hr />
 
                 <h1>Editar Perfil</h1>
                 <br />
 
-                <form action="/admin/perfil" method="post">
+                <form ng-submit="salva()">
       
                   <div class="form-group has-feedback col-md-5">
                     <label for="firstName">Primeiro nome:</label>

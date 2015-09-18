@@ -39,11 +39,8 @@ module.exports = function(app){
 	});
 
 	controller.getAdmin = function(req, res){
-		// if(isAuthenticated){
-		// 	res.json(req.user);
-		// }
+		
 		if(req.isAuthenticated()){
-			console.log('aqui')
 			Imovel.find().exec().then(function(imoveis){
 				res.json({
 					user: req.user,
@@ -111,6 +108,18 @@ module.exports = function(app){
 		},
 		function(erro){
 			return console.error(erro);
+		});
+	};
+
+	controller.obtemUsuario = function(req, res){
+		var _id = req.params.id;
+		
+		Usuarios.find().exec().then(function(usuario){
+			res.json(usuario);
+		},
+		function(erro){
+			console.error(erro);
+			res.status(500).json(erro);
 		});
 	};
 

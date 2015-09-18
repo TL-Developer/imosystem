@@ -34,16 +34,12 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/admin/principal.html',
 		controller: 'AdminController'
 	})
-	.when('/admin/perfil', {
-		templateUrl: 'partials/admin/perfil.html',
-		controller: 'PerfilController'
-	})
 	.when('/admin/usuarios', {
 		templateUrl: 'partials/admin/usuarios.html',
 		controller: 'UsuariosController'
 	})
 	.when('/admin/usuarios/:usuarioId', {
-		templateUrl: 'partials/admin/usuario.html',
+		templateUrl: 'partials/admin/perfil.html',
 		controller: 'UsuarioController'
 	})
 

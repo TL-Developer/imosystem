@@ -10,7 +10,11 @@ module.exports = function(){
 		lastName: String,
 		telefone: String,
 		cidade: String,
-		imagem: String
+		imagem: String,
+		inclusao: {
+			type: Date,
+			default: Date.now
+		}
 	});
 
 	return mongoose.model('Users', UserSchema);

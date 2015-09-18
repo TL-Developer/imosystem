@@ -31,7 +31,6 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 
 	$scope.remove = function(usuario){
 
-		
 		var Imovel = $resource('/imoveis');
 		Imovel.query(function(imoveis){
 			var imovelRemove = $filter('filter')(imoveis, {username: usuario.username});
@@ -46,26 +45,33 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 					texto: 'Não foi possível remover o imóvel'
 				};
 				console.log(erro);
-			});
-
-			// Deleta Usuario
-			$resource('/users/:id').delete({id: usuario._id}, function(){
-				$scope.mensagem = {
-					texto: 'Usuário removido com sucesso'
-				};			
-				$timeout(function(){ 
-					$scope.mensagem = {
-						texto: ''
-					};
-					window.location.href = '#/admin/usuarios';
-				}, 3000);
-			}, function(erro){
-				$scope.mensagem = {
-					texto: 'Não foi possível remover o usuario'
-				};
-				console.log(erro);
-			});
+			});			
 		});
 
+		// Deleta Usuario
+		$resource('/users/:id').delete({id: usuario._id}, function(){
+			$scope.mensagem = {
+				texto: 'Usuário removido com sucesso'
+			};			
+			$timeout(function(){ 
+				$scope.mensagem = {
+					texto: ''
+				};
+				window.location.href = '#/admin/usuarios';
+			}, 3000);
+		}, function(erro){
+			$scope.mensagem = {
+				texto: 'Não foi possível remover o usuario'
+			};
+			console.log(erro);
+		});
+
+		$timeout(function(){ 
+			$scope.mensagem = {
+				texto: ''
+			};
+			window.location.href = '#/admin/usuarios';
+		}, 3000);
+			
 	};
 });

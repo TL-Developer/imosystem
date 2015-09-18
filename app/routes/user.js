@@ -26,15 +26,7 @@ module.exports = function(app){
 
 	app.route('/users/:id')
 		.delete(controller.removeUsuario);
+
+	app.route('/admin/usuarios/:id')
+		.get(controller.obtemUsuario);
 };
-
-	
-// app.get('/admin', isAuthenticated, function(req, res){
-// 	res.json(req.user);
-// });
-
-
-// app.get('/signout', function(req, res) {
-// 	req.logout();
-// 	res.redirect('/');
-// });

@@ -18,26 +18,26 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		console.log(erro);
 	});
 
+	$scope.salva = function(){
+		// $scope.usuario.$save().then(function(){
+		// 	$scope.mensagem = {
+		// 		texto: 'Salvo com sucesso'
+		// 	};
 
+		// 	$timeout(function(){ 
+		// 		$scope.mensagem = {
+		// 			texto: ''
+		// 		};
+		// 		window.location.href = '/#/admin'
+		// 	}, 2000);
 
-	$scope.remove = function(usuario){
-		$resource('/users/:id').delete({id: usuario._id}, function(){
-			$scope.mensagem = {
-				texto: 'Usuário removido com sucesso'
-			};
-			//buscaImoveis();
-			
-			$timeout(function(){ 
-				$scope.mensagem = {
-					texto: ''
-				};
-				window.location.href = '#/'
-			}, 3000);
-		}, function(erro){
-			$scope.mensagem = {
-				texto: 'Não foi possível remover o usuario'
-			};
-			console.log(erro);
-		});
+		// 	$scope.usuario = new $resource('/imoveis/:id');
+		// }).catch(function(erro){
+		// 	$scope.mensagem = {
+		// 		texto: 'Não foi possível salvar'
+		// 	};
+		// 	console.log(erro);
+		// });
 	};
+
 });

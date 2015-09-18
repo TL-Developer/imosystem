@@ -9,7 +9,6 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 			if(data.user.firstName == undefined){
 				window.location.href = '/#/login';
 			}else{
-				// $scope.usuario = 'Olá '+data.user.firstName;
 				$scope.usuario = data.user;
 				$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
 			}
