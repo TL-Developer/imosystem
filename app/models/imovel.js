@@ -5,37 +5,37 @@ module.exports = function(){
 
 	var schema = new Schema({
 		username: {
-			type: String,
+			type: String
 		},
 		usernameImagem: {
-			type: String,
+			type: String
 		},
 		nome: { 
-	      type: String, 
+	      type: String 
 	    }, 
 	    tipo: {
-	      type: String, 
-	    }, 
-	    imagem: {
 	      type: String
 	    }, 
+	    imagem: [
+	      {type: String}
+	    ], 
 	    valor: {
-	      type: String, 
+	      type: String
 	    }, 
 	    endereco: {
-	      type: String, 
+	      type: String
 	    }, 
 	    status: {
 	      type: String
 	    }, 
 	    qtdDormitorio: {
-	      type: Number, 
+	      type: Number 
 	    }, 
 	    qtdBanheiro: {
-	      type: Number, 
+	      type: Number 
 	    }, 
 	    qtdGaragem: {
-	      type: Number, 
+	      type: Number 
 	    },
 	    descricao: {
 	    	type: String

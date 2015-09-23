@@ -57,36 +57,34 @@
               
               <br />
               <div class="col-sm-6 col-md-4 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
-                <a ng-href="#/infoImovel/{{imovel._id}}">
-                  <div class="thumbnail thumbImoveis">
-                    <div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
-                    <img ng-src="img/imoveis/{{imovel.imagem}}" class="img-responsive imagem" alt="">
-                    <div class="infoImovel">
-                      <ul>
-                        <li>
-                          <img src="img/dormitorio.png" class="dormitorio" alt="">
-                          <span>{{imovel.qtdDormitorio}}</span>
-                        </li>
-                        <li>
-                          <img src="img/banheiro.png" class="dormitorio" alt="">
-                          <span>{{imovel.qtdBanheiro}}</span>
-                        </li>
-                        <li>
-                          <img src="img/garagem.png" class="dormitorio" alt="">
-                          <span>{{imovel.qtdGaragem}}</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="caption descricao">
-                      <h5>{{imovel.tipo}}</h5>
-                      <h4>{{imovel.nome}}</h4>
-                      <h2>R${{imovel.valor}}.00</h2>
-                      <p>{{imovel.endereco}}</p>
-                    </div>
-                    <a ng-href="#/imovel/{{imovel._id}}" class="btn btn-info btn-block" role="button">Editar</a>
-                    <a href="" class="btn btn-warning btn-block" role="button" ng-click="remove(imovel)">Remover</a> 
+                <div class="thumbnail thumbImoveis">
+                  <div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
+                  <img ng-src="img/imoveis/{{imovel.imagem[0]}}" class="img-responsive imagem" alt="">
+                  <div class="infoImovel">
+                    <ul>
+                      <li>
+                        <img src="img/dormitorio.png" class="dormitorio" alt="">
+                        <span>{{imovel.qtdDormitorio}}</span>
+                      </li>
+                      <li>
+                        <img src="img/banheiro.png" class="dormitorio" alt="">
+                        <span>{{imovel.qtdBanheiro}}</span>
+                      </li>
+                      <li>
+                        <img src="img/garagem.png" class="dormitorio" alt="">
+                        <span>{{imovel.qtdGaragem}}</span>
+                      </li>
+                    </ul>
                   </div>
-                </a>
+                  <div class="caption descricao">
+                    <h5>{{imovel.tipo}}</h5>
+                    <h4>{{imovel.nome}}</h4>
+                    <h2>R${{imovel.valor}}.00</h2>
+                    <p>{{imovel.endereco}}</p>
+                  </div>
+                  <a ng-href="#/imovel/{{imovel._id}}" class="btn btn-info btn-block" role="button">Editar</a>
+                  <a href="" class="btn btn-warning btn-block" role="button" ng-click="remove(imovel)">Remover</a> 
+                </div>
               </div>
             </div>
 

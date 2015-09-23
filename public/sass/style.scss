@@ -409,13 +409,20 @@ form.cadastrarImovel{
 		.item{
 			
 			img{
-				width: 100%;
+				width: 940px;
+				height: 522px;
 			}
 		}
 	}
 }
 
 .infoText{
+	margin-top: 20px;
+	
+	.imagemUser{
+		width: 100%;
+		padding: 5%;
+	}
 
 	h1{
 		color: $azulEscuro;	

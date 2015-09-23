@@ -1,24 +1,28 @@
-angular.module('imobiliaria').controller('AdminController', function($scope, $http,$filter){
+angular.module('imobiliaria').controller('AdminController', function($scope, $http,$filter,$resource){
 
 	$scope.usuario = [];
 	$scope.imoveis = [];
 
-	$http.get('/admin')
-	.success(function(data){
-		if(typeof data == 'object'){
-			if(data.user.firstName == undefined){
-				window.location.href = '/#/login';
+	function buscaImoveis(){
+		$http.get('/admin')
+		.success(function(data){
+			if(typeof data == 'object'){
+				if(data.user.firstName == undefined){
+					window.location.href = '/#/login';
+				}else{
+					$scope.usuario = data.user;
+					$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
+				}
 			}else{
-				$scope.usuario = data.user;
-				$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
+				window.location.href = '/#/login';
 			}
-		}else{
-			window.location.href = '/#/login';
-		}
-	})
-	.error(function(erro){
-		console.log(erro);
-	});
+		})
+		.error(function(erro){
+			console.log(erro);
+		});	
+	}
+	buscaImoveis();
+	
 
 
 	// Pegando usuarios
@@ -30,4 +34,25 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 	.error(function(erro){
 		console.log(erro);
 	});
+
+	$scope.remove = function(imovel){
+
+		console.log(imovel);
+
+		// Deleta Imovel
+		$resource('/imoveis/:imovelId').delete({imovelId: imovel._id}, function(){
+			$scope.mensagem = {
+				texto: 'Imóvel removido com sucesso'
+			};
+			buscaImoveis();
+		}, function(erro){
+			$scope.mensagem = {
+				texto: 'Não foi possível remover o imóvel'
+			};
+			console.log(erro);
+		});			
+
+		
+			
+	};
 });
