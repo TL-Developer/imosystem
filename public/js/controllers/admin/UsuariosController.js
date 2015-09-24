@@ -40,6 +40,12 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 				$scope.mensagem = {
 					texto: 'Imóvel removido com sucesso'
 				};
+				$timeout(function(){ 
+					$scope.mensagem = {
+						texto: ''
+					};
+					window.location.href = '#/admin/usuarios';
+				}, 3000);
 			}, function(erro){
 				$scope.mensagem = {
 					texto: 'Não foi possível remover o imóvel'

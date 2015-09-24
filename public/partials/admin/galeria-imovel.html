@@ -1,0 +1,81 @@
+<div class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <div ng-include src="'partials/admin/header.html'"></div>
+      <div ng-include src="'partials/admin/left-panel.html'"></div>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          
+                          
+        </section>
+	
+	<section>
+	<div class="container">
+	<div class="row box box-default">
+	          <div class="col-md-12">
+
+	<h3 class="text-info">Inserir imagens na galeria deste imóvel</h3>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">{{imovel.nome}}</h3>
+				</div>
+				<div class="panel-body">
+					<img src="img/imoveis/{{imovel.imagem[0]}}" alt="" class="img-responsive imagem-imovel-previa center-block">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<form>
+		<div class="row">
+			
+			<div class="col-md-5">
+
+				<div class="file-input file-input-new">
+			        
+			        <div class="input-group">
+			          <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
+			           {{imagem}}
+			          </div>
+
+			          <div class="input-group-btn">
+			            <div tabindex="500" class="btn btn-primary btn-file">
+			             <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse …
+			             <input id="input-1a" type="file" name="images" class="file filestyle" fileread="imagem" data-show-preview="false">
+			            </div>
+			          </div>
+			       </div>
+
+			      <br />
+			       <div class="form-group">
+			          <button type="button" class="btn btn-primary" ng-click="salva(imagem)">Enviar Imagem</button>
+			        </div>
+		      </div>
+		    </div>
+		</div>
+	</form>
+
+	</div>
+
+	</div>
+
+</div>
+
+
+
+
+		</section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+      <!-- Main Footer -->
+      <div ng-include src="'partials/admin/footer.html'"></div>
+    </div><!-- ./wrapper -->
+</div>

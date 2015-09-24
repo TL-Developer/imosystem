@@ -51,8 +51,5 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 			};
 			console.log(erro);
 		});			
-
-		
-			
 	};
 });

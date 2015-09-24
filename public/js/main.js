@@ -16,6 +16,10 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/infoImovel.html',
 		controller: 'InfoImovelController'
 	})
+	.when('/galeriaImovel/:imovelId', {
+		templateUrl: 'partials/admin/galeria-imovel.html',
+		controller: 'GaleriaImovelController'
+	})
 	.when('/quem-somos', {
 		templateUrl: 'partials/quemSomos.html',
 		controller: 'QuemSomosController'

@@ -26,7 +26,9 @@ module.exports = function(app){
 		});
 	};
 
-	controller.obtemImovel = function(req, res){
+
+	// Pegando imovel pelo ID		
+	controller.obtemIdImovel = function(req, res){
 		var _id = req.params.id;
 
 		Imovel.findById(_id).exec().then(function(imovel){
@@ -39,6 +41,36 @@ module.exports = function(app){
 		}
 		);    
 	};
+
+
+	// Pegando imovel pelo Nome		
+	controller.obtemNomeImovel = function(req, res){
+		var _id = req.params.id;
+
+		Imovel.findOne({nome: _id}).exec().then(function(imovel){
+			if (!imovel) throw new Error("Imovel não encontrado");
+			res.json(imovel);
+		}, 
+		function(erro) {
+			console.log(erro);
+			res.status(404).json(erro)
+		}
+		);    
+	};
+
+	// controller.obtemImovel = function(req, res){
+	// 	var _id = req.params.id;
+
+	// 	Imovel.findById(_id).exec().then(function(imovel){
+	// 		if (!imovel) throw new Error("Imovel não encontrado");
+	// 		res.json(imovel);
+	// 	}, 
+	// 	function(erro) {
+	// 		console.log(erro);
+	// 		res.status(404).json(erro)
+	// 	}
+	// 	);    
+	// };
 
 	controller.removeImovel = function(req, res){
 		var _id = req.params.id;
@@ -95,7 +127,7 @@ module.exports = function(app){
 				//var path = './public/img/imoveis/'+img.originalFilename.replace(extensaoImg, '_'+contador+extensaoImg);
 				var path = './public/img/imoveis/'+img.originalFilename;
 				
-				console.log(path.substr(path.length - 4));
+				// console.log(path.substr(path.length - 4));
 
 				fs.writeFile(path, data, function(error){
 					if(error){ 
@@ -107,8 +139,6 @@ module.exports = function(app){
 
 			});
 		});
-
-
 	};
 
 	return controller;

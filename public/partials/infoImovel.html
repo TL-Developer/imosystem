@@ -34,18 +34,24 @@
 </div>
 
 		<div class="col-md-12 galeriaImovel">
-			
 			<div class="container">
 				<div data-ride="carousel" class="carousel slide" id="carousel-example-captions">
 					<ol class="carousel-indicators">
-						<li class="" data-slide-to="0" data-target="#carousel-example-captions" class="active"></li>
-						<li data-slide-to="1" data-target="#carousel-example-captions" class=""></li>
-						<li data-slide-to="2" data-target="#carousel-example-captions" class=""></li>
+						<li data-slide-to="0" data-target="#carousel-example-captions" class="active"></li>
+						<li data-slide-to="{{$index+1}}" data-target="#carousel-example-captions" class="" ng-repeat="imagem in imovel.imagem.slice(1) track by $index"></li>
 					</ol>
 
-					<div role="listbox" class="carousel-inner" ng-repeat="imagem in imovel.imagem">
+					<div role="listbox" class="carousel-inner">
 						<div class="item active">
-							<img ng-src="img/imoveis/{{imagem}}" alt="">
+							<img ng-src="img/imoveis/{{imovel.imagem[0]}}" alt="">
+							<div class="carousel-caption">
+								<h3>First slide label</h3>
+								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+							</div>
+						</div>
+
+						<div class="item" ng-repeat="img in imovel.imagem.slice(1) track by $index">
+							<img ng-src="img/imoveis/{{img}}" alt="">
 							<div class="carousel-caption">
 								<h3>First slide label</h3>
 								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

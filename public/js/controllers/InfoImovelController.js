@@ -1,6 +1,8 @@
-angular.module('imobiliaria').controller('InfoImovelController', function($scope, Imovel, $routeParams, $timeout){
+angular.module('imobiliaria').controller('InfoImovelController', function($scope, $routeParams, $timeout, $resource){
 
 	$scope.mensagem = {texto: ''};
+
+	var Imovel = $resource('/imoveisNome/:id');
 
 	if($routeParams.imovelId){
 		Imovel.get({id: $routeParams.imovelId}, 
@@ -16,31 +18,6 @@ angular.module('imobiliaria').controller('InfoImovelController', function($scope
 			console.log(erro);
 		});
 	}
-
-	$scope.remove = function(imovel){
-		Imovel.delete({id: imovel._id}, function(){
-			$scope.mensagem = {
-				texto: 'Imóvel removido com sucesso'
-			};
-			//buscaImoveis();
-			
-			$timeout(function(){ 
-				$scope.mensagem = {
-					texto: ''
-				};
-				window.location.href = '#/'
-			}, 3000);
-		}, function(erro){
-			$scope.mensagem = {
-				texto: 'Não foi possível remover o imóvel'
-			};
-			console.log(erro);
-		});
-	};
-
-	Imovel.query(function(imoveis){
-		$scope.imoveis = imoveis;
-	});
 
 	var renderMap = function(adress){
 		var map;
@@ -64,9 +41,6 @@ angular.module('imobiliaria').controller('InfoImovelController', function($scope
 	          }
 	        }
 	      });
-
 	    });
-	}
-	
-
+	};
 });

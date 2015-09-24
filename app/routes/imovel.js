@@ -6,8 +6,11 @@ module.exports = function(app){
 		.post(controller.salvaImovel);
 
 	app.route('/imoveis/:id')
-		.get(controller.obtemImovel)
+		.get(controller.obtemIdImovel)
 		.delete(controller.removeImovel);
+
+	app.route('/imoveisNome/:id')
+		.get(controller.obtemNomeImovel);
 
 	app.route('/images/upload')
 		// .get(controller.pegaImagem)
