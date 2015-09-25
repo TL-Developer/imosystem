@@ -15,53 +15,57 @@
 	<section>
 	<div class="container">
 	<div class="row box box-default">
-	          <div class="col-md-12">
+	    <div class="col-md-10">
 
-	<h3 class="text-info">Inserir imagens na galeria deste imóvel</h3>
+			<h3 class="text-info">Galeria de imagens <b>{{imovel.nome}}</b></h3>
 
-	<div class="row">
-		<div class="col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title text-center">{{imovel.nome}}</h3>
-				</div>
-				<div class="panel-body">
-					<img src="img/imoveis/{{imovel.imagem[0]}}" alt="" class="img-responsive imagem-imovel-previa center-block">
+			<div class="row">
+				<div class="col-md-3 painel-animado" ng-repeat="imagens in imovel.imagem.slice(1) track by $index">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title text-center">{{imovel.nome}}</h3>
+						</div>
+						<div class="panel-body">
+							<img src="img/imoveis/{{imagens}}" alt="" class="img-responsive center-block">
+						</div>
+						<form method="post" action="/images/remove" target="_blank">
+							<input type="text" name="img" value="{{imagens}}" class="hide">
+		                	<button type="submit" class="btn btn-warning btn-block" role="button" ng-click="removeFoto(imagens)">Remover</button> 
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<hr>
+			<hr>
 
-	<form>
-		<div class="row">
-			
-			<div class="col-md-5">
+			<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data">
+				<div class="row">
+					
+					<div class="col-md-5">
 
-				<div class="file-input file-input-new">
-			        
-			        <div class="input-group">
-			          <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
-			           {{imagem}}
-			          </div>
+						<div class="file-input file-input-new">
+					        
+					        <div class="input-group">
+					          <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
+					           {{imagem}}
+					          </div>
 
-			          <div class="input-group-btn">
-			            <div tabindex="500" class="btn btn-primary btn-file">
-			             <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse …
-			             <input id="input-1a" type="file" name="images" class="file filestyle" fileread="imagem" data-show-preview="false">
-			            </div>
-			          </div>
-			       </div>
+					          <div class="input-group-btn">
+					            <div tabindex="500" class="btn btn-primary btn-file">
+					             <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse …
+					             <input id="input-1a" type="file" name="images" class="file filestyle" fileread="imagem" data-show-preview="false">
+					            </div>
+					          </div>
+					       </div>
 
-			      <br />
-			       <div class="form-group">
-			          <button type="button" class="btn btn-primary" ng-click="salva(imagem)">Enviar Imagem</button>
-			        </div>
-		      </div>
-		    </div>
-		</div>
-	</form>
+					      <br />
+					       <div class="form-group">
+					          <button type="submit" class="btn btn-primary" ng-click="salva(imagem)">Enviar Imagem</button>
+					        </div>
+				      </div>
+				    </div>
+				</div>
+			</form>
 
 	</div>
 

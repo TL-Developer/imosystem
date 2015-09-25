@@ -141,5 +141,17 @@ module.exports = function(app){
 		});
 	};
 
+	controller.excluirImagem = function(req, res){
+			
+		var fs = require('fs');
+		var file = './public/img/imoveis/'+req.body.img;
+
+		fs.unlink(file, function(err){
+			if (err) throw err;
+			res.sendfile('./public/partials/remove-images-success.html');
+		});
+
+	};
+
 	return controller;
 };

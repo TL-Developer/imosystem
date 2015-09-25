@@ -13,6 +13,8 @@ module.exports = function(app){
 		.get(controller.obtemNomeImovel);
 
 	app.route('/images/upload')
-		// .get(controller.pegaImagem)
 		.post(controller.enviaImagem);
+
+	app.route('/images/remove')
+		.post(controller.excluirImagem);
 };

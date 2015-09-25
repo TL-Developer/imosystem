@@ -2,19 +2,22 @@ angular.module('imobiliaria').controller('GaleriaImovelController', function($sc
 
 	$scope.mensagem = {texto: ''};
 
-	if($routeParams.imovelId){
-		Imovel.get({id: $routeParams.imovelId}, 
-		function(imovel){
-			$scope.imovel = imovel;
-			console.log(imovel);
-		}, 
-		function(erro){
-			$scope.mensagem = {
-				texto: 'Não foi possível obter o imovel'
-			};
-			console.log(erro);
-		});
+	function buscaImoveis(){
+		if($routeParams.imovelId){
+			Imovel.get({id: $routeParams.imovelId}, 
+			function(imovel){
+				$scope.imovel = imovel;
+				console.log(imovel);
+			}, 
+			function(erro){
+				$scope.mensagem = {
+					texto: 'Não foi possível obter o imovel'
+				};
+				console.log(erro);
+			});
+		}
 	}
+	buscaImoveis();
 
 	$scope.usuario = [];
 
@@ -39,7 +42,7 @@ angular.module('imobiliaria').controller('GaleriaImovelController', function($sc
 			$scope.mensagem = {
 				texto: 'Imóvel removido com sucesso'
 			};
-			//buscaImoveis();
+			buscaImoveis();
 			
 			$timeout(function(){ 
 				$scope.mensagem = {
@@ -65,9 +68,29 @@ angular.module('imobiliaria').controller('GaleriaImovelController', function($sc
 		$scope.imovel.imagem.push(imagem);
 		$scope.imovel.$save().then(function(){
 			console.log('Imagem salva com sucesso');
+			
+			window.location.href = '/#/galeriaImovel/'+$routeParams.imovelId;
+			buscaImoveis();
+			
 		}).catch(function(erro){
 			console.log(erro);
 			console.log('Não foi possivel salvar');
 		});
 	};
+
+	$scope.removeFoto = function(foto){
+
+		var posFoto = $scope.imovel.imagem.indexOf(foto);
+
+		$scope.imovel.imagem.splice(posFoto, 1);
+
+		$scope.imovel.$save().then(function(){
+			console.log('Imagem excluida com sucesso!');
+		}).catch(function(){
+			console.log('Não foi possível excluir esta imagem :(');
+		});
+
+	};
+
+
 });

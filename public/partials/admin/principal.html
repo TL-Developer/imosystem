@@ -1,24 +1,3 @@
- <!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |
-  |               | sidebar-mini                            |
-  |---------------------------------------------------------|
-  -->
-
 <div class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
@@ -56,7 +35,7 @@
               </div>
               
               <br />
-              <div class="col-sm-6 col-md-4 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
+              <div class="col-sm-6 col-md-3 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
                 <div class="thumbnail thumbImoveis">
                   <div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
                   <img ng-src="img/imoveis/{{imovel.imagem[0]}}" class="img-responsive imagem" alt="">
@@ -82,9 +61,9 @@
                     <h2>R${{imovel.valor}}.00</h2>
                     <p>{{imovel.endereco}}</p>
                   </div>
-                  <a ng-href="#/galeriaImovel/{{imovel._id}}" class="btn btn-default btn-block" role="button">Galeria</a>
-                  <a ng-href="#/imovel/{{imovel._id}}" class="btn btn-info btn-block" role="button">Editar</a>
-                  <a href="" class="btn btn-warning btn-block" role="button" ng-click="remove(imovel)">Remover</a> 
+                  <a ng-href="#/imovel/{{imovel._id}}" class="btn btn-default btn-block" role="button">Editar imóvel</a><br />
+                  <a ng-href="#/galeriaImovel/{{imovel._id}}" class="btn btn-default btn-block" role="button">Gerenciar galeria</a>
+                  <a href="" class="btn btn-danger btn-block" role="button" ng-click="remove(imovel)">Excluir imóvel</a> 
                 </div>
               </div>
             </div>
@@ -96,3 +75,8 @@
       <div ng-include src="'partials/admin/footer.html'"></div>
     </div><!-- ./wrapper -->
 </div>
+
+
+<script>
+  console.log('teste')
+</script>
