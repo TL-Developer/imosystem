@@ -4,6 +4,7 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 
 	$http.get('/admin')
 	.success(function(data){
+		console.log(data);
 		if(typeof data == 'object'){
 			if(data.user.firstName == undefined){
 				window.location.href = '/#/login';

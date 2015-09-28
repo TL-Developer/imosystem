@@ -114,15 +114,14 @@
 				<h1>Contato</h1>
 				<hr />
 
-				<form action="" class="form-inline">
+				<form class="form-inline enviaMensagem" ng-submit="enviaMensagem()">
 					<div>
-						<input type="text" class="form-control" placeholder="Nome">
-						<input type="text" class="form-control" placeholder="Email">
-						<input type="text" class="form-control" placeholder="Telefone">
+						<input type="text" class="form-control nome" placeholder="Nome" name="nome">
+						<input type="text" class="form-control email" placeholder="Email" name="email">
+						<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone">
 						<button type="submit" class="btn btn-primary">Enviar Mensagem</button>
 					</div>
-					<textarea class="form-control" rows="7"></textarea>
-
+					<textarea class="form-control mensagem" rows="7" name="mensagem"></textarea>
 				</form>
 			</div>
 		</div>

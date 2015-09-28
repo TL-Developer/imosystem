@@ -42,7 +42,15 @@ module.exports = function(){
 	    },
 	    caracteristicas: {
 	    	type: String
-	    }
+	    },
+	    caixaentrada: [
+	    	{
+		    	nome: {type: String},
+		    	email: {type: String},
+		    	telefone: {type: String},
+		    	mensagem: {type: String}
+	    	}
+	    ]
 	});
 
 	return mongoose.model('Imoveis', schema);

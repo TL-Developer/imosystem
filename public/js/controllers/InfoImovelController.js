@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('InfoImovelController', function($scope, $routeParams, $timeout, $resource){
+angular.module('imobiliaria').controller('InfoImovelController', function($scope, $routeParams, $timeout, $resource, $http){
 
 	$scope.mensagem = {texto: ''};
 
@@ -8,7 +8,7 @@ angular.module('imobiliaria').controller('InfoImovelController', function($scope
 		Imovel.get({id: $routeParams.imovelId}, 
 		function(imovel){
 			$scope.imovel = imovel;
-			console.log(imovel);
+			console.log($scope.imovel);
 			renderMap(imovel.endereco);
 		}, 
 		function(erro){
@@ -43,4 +43,32 @@ angular.module('imobiliaria').controller('InfoImovelController', function($scope
 	      });
 	    });
 	};
+
+
+	$scope.enviaMensagem = function(){
+
+		console.log($scope.imovel.caixaentrada);
+
+		var _nome = $('form.enviaMensagem').find('.nome')[0].value,
+			_email = $('form.enviaMensagem').find('.email')[0].value,
+			_telefone = $('form.enviaMensagem').find('.telefone')[0].value,
+			_mensagem = $('form.enviaMensagem').find('.mensagem')[0].value;
+		
+		$scope.imovel.caixaentrada.push({
+			nome: _nome,
+			telefone: _email,
+			email: _telefone,
+			mensagem: _mensagem
+		});
+
+		$scope.imovel.$save().then(function(){
+			console.log('Mensagem enviada com sucesso!');
+		}).catch(function(erro){
+			console.log(erro);
+			console.log('Não foi possivel enviar mensagem');
+		});
+
+
+	}
+
 });
