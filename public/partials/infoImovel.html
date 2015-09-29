@@ -112,16 +112,18 @@
 		<div class="col-md-6">
 			<div class="row box box-default">
 				<h1>Contato</h1>
-				<hr />
+				<hr />	
 
-				<form class="form-inline enviaMensagem" ng-submit="enviaMensagem()">
+				<form action="/imoveisNome" target="_blank" method="POST" class="form-inline enviaMensagem">
 					<div>
-						<input type="text" class="form-control nome" placeholder="Nome" name="nome">
-						<input type="text" class="form-control email" placeholder="Email" name="email">
-						<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone">
+						<input type="text" class="form-control nome" placeholder="selfId" name="selfId" value="{{imovel._id}}" required style="opacity: 0; position: absolute; z-index: -1;">
+						<input type="text" class="form-control nome" placeholder="Nome" name="nome" required>
+						<input type="text" class="form-control email" placeholder="Email" name="email" required>
+						<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone" required>
+						<input type="text" class="form-control assunto" placeholder="Assunto" name="assunto" required>
 						<button type="submit" class="btn btn-primary">Enviar Mensagem</button>
 					</div>
-					<textarea class="form-control mensagem" rows="7" name="mensagem"></textarea>
+					<textarea class="form-control mensagem" rows="7" name="mensagem" required></textarea>
 				</form>
 			</div>
 		</div>

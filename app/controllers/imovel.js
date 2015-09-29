@@ -153,5 +153,44 @@ module.exports = function(app){
 
 	};
 
+	controller.enviaMensagem = function(req, res){
+
+		var _id = req.body.selfId,
+			_nome = req.body.nome,
+			_email = req.body.email,
+			_telefone = req.body.telefone,
+			_mensagem = req.body.mensagem,
+			_assunto = req.body.assunto;
+		
+		Imovel.findById(_id).exec().then(function(imovel){
+			if (!imovel) throw new Error("Imovel não encontrado");
+			
+			imovel.caixaentrada.push({
+				selfId: _id,
+				nome: _nome,
+				email: _email,
+				telefone: _telefone,
+				mensagem: _mensagem,
+				assunto: _assunto
+			});
+			
+			imovel.save(function (err) {
+		        if(err) {
+		            console.error('ERROR!');
+		        }else{
+		        	res.end('enviada com sucesso!');
+		        }
+		    });
+			
+		}, 
+		function(erro) {
+			console.log(erro);
+			res.status(404).json(erro)
+		}
+		);   
+		
+
+	};
+
 	return controller;
 };

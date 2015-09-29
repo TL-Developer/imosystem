@@ -45,10 +45,16 @@ module.exports = function(){
 	    },
 	    caixaentrada: [
 	    	{
+		    	selfId: {type: String},
 		    	nome: {type: String},
 		    	email: {type: String},
 		    	telefone: {type: String},
-		    	mensagem: {type: String}
+		    	mensagem: {type: String},
+		    	assunto: {type: String},
+		    	created: {
+					type: Date,
+					default: Date.now
+				}
 	    	}
 	    ]
 	});

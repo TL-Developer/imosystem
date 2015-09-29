@@ -36,9 +36,6 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 	});
 
 	$scope.remove = function(imovel){
-
-		console.log(imovel);
-
 		// Deleta Imovel
 		$resource('/imoveis/:imovelId').delete({imovelId: imovel._id}, function(){
 			$scope.mensagem = {

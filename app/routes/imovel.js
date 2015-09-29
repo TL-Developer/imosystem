@@ -12,6 +12,9 @@ module.exports = function(app){
 	app.route('/imoveisNome/:id')
 		.get(controller.obtemNomeImovel);
 
+	app.route('/imoveisNome')
+		.post(controller.enviaMensagem);
+
 	app.route('/images/upload')
 		.post(controller.enviaImagem);
 
