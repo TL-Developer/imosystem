@@ -55,6 +55,5 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		controller: 'UsuarioController'
 	})
 
-
 	.otherwise({redirectTo: '/imoveis'});
 });	
