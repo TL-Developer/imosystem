@@ -80,14 +80,14 @@
                 <hr />
             </div>
   
-            <div class="col-md-6 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
+            <div class="col-md-5 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
 
               <!-- Box Comment -->
-              <div class="box box-widget painel-animado">
+              <div class="box box-widget">
                 <div class="box-header with-border">
                   <div class="user-block">
-                    <img class="img-circle" src="img/usuarios/{{usuario.imagem}}" alt="Usuario">
-                    <span class="username">{{usuario.firstName}} {{usuario.lastName}}</span>
+                    <img class="img-circle" src="img/usuarios/{{imovel.usernameImagem}}" alt="Usuario">
+                    <span class="username">{{imovel.username}}</span>
                     <span class="description">publicado - {{imovel.created}}</span>
                   </div><!-- /.user-block -->
                   <div class="box-tools">

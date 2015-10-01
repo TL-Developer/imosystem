@@ -1,8 +1,6 @@
-angular.module('imobiliaria').controller('AdminController', function($scope, $http,$filter,$resource){
+angular.module('imobiliaria').controller('TodosImoveis', function($scope, $http,$filter,$resource){
 
-	$scope.usuario = [];
 	$scope.imoveis = [];
-	$scope.todosImoveis = [];
 
 	function buscaImoveis(){
 		$http.get('/admin')
@@ -11,9 +9,7 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 				if(data.user.firstName == undefined){
 					window.location.href = '/#/login';
 				}else{
-					$scope.usuario = data.user;
-					$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
-					$scope.todosImoveis = data.imoveis;
+					$scope.imoveis = data.imoveis;
 				}
 			}else{
 				window.location.href = '/#/login';
@@ -24,18 +20,6 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 		});	
 	}
 	buscaImoveis();
-	
-
-
-	// Pegando usuarios
-	$scope.usuarios = [];
-	$http.get('/users')
-	.success(function(data){
-		$scope.usuarios = data;
-	})
-	.error(function(erro){
-		console.log(erro);
-	});
 
 	$scope.remove = function(imovel){
 		// Deleta Imovel

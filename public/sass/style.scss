@@ -596,3 +596,13 @@ form.cadastrarImovel{
   border-right:16px solid transparent;
   border-bottom:16px solid #336699;
 }
+
+
+.carouselImagens{
+	text-align: center;
+	background: #ccc;
+	img{
+		height: 295px !important;
+		margin: 0 auto;
+	}
+}

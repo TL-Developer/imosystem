@@ -56,7 +56,11 @@ module.exports = function(){
 					default: Date.now
 				}
 	    	}
-	    ]
+	    ],
+	    created: {
+	    	type: Date,
+			default: Date.now
+	    }
 	});
 
 	return mongoose.model('Imoveis', schema);

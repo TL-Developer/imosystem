@@ -38,6 +38,10 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/admin/principal.html',
 		controller: 'AdminController'
 	})
+	.when('/admin/imoveis', {
+		templateUrl: 'partials/admin/todos-imoveis.html',
+		controller: 'TodosImoveis'
+	})
 	.when('/admin/usuarios', {
 		templateUrl: 'partials/admin/usuarios.html',
 		controller: 'UsuariosController'
