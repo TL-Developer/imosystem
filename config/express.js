@@ -8,6 +8,7 @@ var fs = require('fs');
 var expressSession = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
+var helmet = require('helmet');
 
 module.exports = function() {
   var app = express();
@@ -31,6 +32,11 @@ module.exports = function() {
   app.use(passport.session());
 
   app.use(flash());
+
+  app.use(helmet());
+  app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }));
+  app.disable('x-powered-by');
+  app.use(helmet.ieNoOpen());
 
 
  load('models', {cwd: 'app'})

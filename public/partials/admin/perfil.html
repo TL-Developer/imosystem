@@ -24,20 +24,44 @@
               </div>
             </div>
 
+
             <div class="row box box-default">
               <div class="col-md-12 paginaPerfil">
 
                 <div class="imagem">
-                  <img src="img/usuarios/{{usuario.imagem}}" alt="" class="img-responsive">
+                  <img src="img/usuarios/{{usuarios[0].imagem}}" alt="" class="img-responsive">
                 </div>
               </div>
+
+              <div class="box-footer">
+                  <div class="row">
+                    <div class="col-sm-4 border-right">
+                      <div class="description-block">
+                        <h5 class="description-header">{{imoveis.length}}</h5>
+                        <span class="description-text">IMÓVEIS CADASTRADOS</span>
+                      </div><!-- /.description-block -->
+                    </div><!-- /.col -->
+                    <div class="col-sm-4 border-right">
+                      <div class="description-block">
+                        <h5 class="description-header">13,000</h5>
+                        <span class="description-text">CURTIDAS</span>
+                      </div><!-- /.description-block -->
+                    </div><!-- /.col -->
+                    <div class="col-sm-4">
+                      <div class="description-block">
+                        <h5 class="description-header">10</h5>
+                        <span class="description-text">IMÓVEIS VENDIDOS</span>
+                      </div><!-- /.description-block -->
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->
+                </div>
             </div>
             
-          <br />
+            <br />
             <div class="row box box-default">
               <div class="col-md-12">
-                <h1>Olá, meu nome é {{usuario.firstName}} {{usuario.lastName}}</h1>
-                <h5>Sou de {{usuario.cidade}}, Brasil · Membro desde {{usuario.inclusao}}</h5>
+                <h1>Olá, meu nome é {{usuarios[0].firstName}} {{usuarios[0].lastName}}</h1>
+                <h5>Sou de {{usuarios[0].cidade}}, Brasil · Membro desde {{usuarios[0].inclusao}}</h5>
 
                 <hr />
 
@@ -48,22 +72,22 @@
       
                   <div class="form-group has-feedback col-md-5">
                     <label for="firstName">Primeiro nome:</label>
-                    <input type="text" name="firstName" ng-model="usuario.firstName" required="required" class="form-control"/>
+                    <input type="text" name="firstName" ng-model="usuarios[0].firstName" required="required" class="form-control"/>
                   </div>
 
                   <div class="form-group has-feedback col-md-5">
                     <label for="firstName">Segundo nome:</label>
-                    <input type="text" name="lastName" ng-model="usuario.lastName" required="required" class="form-control"/>
+                    <input type="text" name="lastName" ng-model="usuarios[0].lastName" required="required" class="form-control"/>
                   </div>
 
                   <div class="form-group has-feedback col-md-5">
                     <label for="firstName">Cidade:</label>
-                    <input type="text" name="email" ng-model="usuario.cidade" required="required" class="form-control"/>
+                    <input type="text" name="email" ng-model="usuarios[0].cidade" required="required" class="form-control"/>
                   </div>
 
                   <div class="form-group has-feedback col-md-5">
                     <label for="firstName">Telefone:</label>
-                    <input type="text" name="telefone" ng-model="usuario.telefone" required="required" class="form-control"/>
+                    <input type="text" name="telefone" ng-model="usuarios[0].telefone" required="required" class="form-control"/>
                   </div>
                   
                   <div class="form-group has-feedback col-md-10">

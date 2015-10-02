@@ -3,6 +3,7 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 	$scope.usuario = [];
 	$scope.imoveis = [];
 	$scope.todosImoveis = [];
+	$scope.mensagensLength;
 
 	function buscaImoveis(){
 		$http.get('/admin')
@@ -14,6 +15,12 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 					$scope.usuario = data.user;
 					$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
 					$scope.todosImoveis = data.imoveis;
+
+					var quantidadeMensagens = 0;
+					for(var i = 0; i < $scope.imoveis.length; i++){
+						quantidadeMensagens += $scope.imoveis[i].caixaentrada.length;
+						$scope.mensagensLength = quantidadeMensagens;
+					}
 				}
 			}else{
 				window.location.href = '/#/login';

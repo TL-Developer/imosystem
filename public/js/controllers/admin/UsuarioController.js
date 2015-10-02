@@ -2,6 +2,7 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 
 	$scope.usuario = [];
 	$scope.imoveis = [];
+	$scope.mensagensLength;
 
 	$http.get('/admin')
 	.success(function(data){
@@ -12,6 +13,12 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 			}else{
 				$scope.usuario = data.user;
 				$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
+								
+				var quantidadeMensagens = 0;
+				for(var i = 0; i < $scope.imoveis.length; i++){
+					quantidadeMensagens += $scope.imoveis[i].caixaentrada.length;
+					$scope.mensagensLength = quantidadeMensagens;
+				}
 			}
 		}else{
 			window.location.href = '/#/login';
@@ -72,4 +79,18 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 
 		});
 	}
+
+
+
+	// Pegando usuarios
+	$scope.usuarios = [];
+	$http.get('/users')
+	.success(function(usuarios){
+		$scope.usuarioClicado = $filter('filter')(usuarios, {_id: $routeParams.usuarioId});
+		$scope.usuarios = $scope.usuarioClicado;
+	})
+	.error(function(erro){
+		console.log(erro);
+	});
+
 });

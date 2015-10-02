@@ -26,30 +26,42 @@
 
             <div class="row box box-default">
               <div class="box-header with-border">
-               
-               <div class="col-md-10">
-                 <table class="table">
-                  <caption>Optional table caption.</caption>
-                  <thead>
-                    <tr>
-                      <th>Usuário</th>
-                      <th>Email</th>
-                      <th>Telefone</th>
-                      <th>Acão</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr ng-repeat="users in usuarios">
-                      <td>{{users.username}}</td>
-                      <td>{{users.email}}</td>
-                      <td>{{users.telefone}}</td>
-                      <td>
-                        <a href="" class="btn btn-warning" role="button" ng-click="remove(users)">Remover</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                
+
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <!-- USERS LIST -->
+                    <div class="box box-danger">
+                      <div class="box-header with-border">
+                        <h3 class="box-title">Usuários cadastrados</h3>
+                        <div class="box-tools pull-right">
+                          <span class="label label-danger">{{usuarios.length}} usuários</span>
+                          <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                          <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                      </div><!-- /.box-header -->
+                      <div class="box-body no-padding">
+                        <ul class="users-list clearfix">
+                          <li ng-repeat="users in usuarios">
+                            <img src="img/usuarios/{{users.imagem}}" alt="User Image" class="imgUsuarios">
+                            <a class="users-list-name" href="#/admin/usuarios/{{users._id}}">{{users.username}}</a>
+                            <span class="users-list-date">{{users.inclusao}}</span>
+                            <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                            <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                            <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a><br /><br />
+                            <button class="btn btn-default" role="button" ng-click="remove(users)">Remover este usuário</button>
+                          </li>
+                        </ul><!-- /.users-list -->
+                      </div><!-- /.box-body -->
+                      <div class="box-footer text-center">
+                        <a href="javascript::" class="uppercase">Ver todos usuários</a>
+                      </div><!-- /.box-footer -->
+                    </div><!--/.box -->
+                  </div><!-- /.col -->
+                </div>
+
+
               </div>
             </div>
             

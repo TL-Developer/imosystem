@@ -80,7 +80,7 @@
                 <hr />
             </div>
   
-            <div class="col-md-6 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
+            <div class="col-md-4 painel-animado" ng-repeat="imovel in imoveis | filter: filtro">
 
               <!-- Box Comment -->
               <div class="box box-widget painel-animado">
@@ -99,25 +99,21 @@
                   <h3 class="text-center text-info">{{imovel.nome}}</h3>
                   
                   <div data-ride="carousel" class="carousel slide" id="carousel-example-captions">
-                    <ol class="carousel-indicators">
-                      <li data-slide-to="0" data-target="#carousel-example-captions" class="active"></li>
-                      <li data-slide-to="{{$index+1}}" data-target="#carousel-example-captions" class="" ng-repeat="imagem in imovel.imagem.slice(1) track by $index"></li>
-                    </ol>
 
                     <div role="listbox" class="carousel-inner carouselImagens">
                       <div class="item active">
                         <img ng-src="img/imoveis/{{imovel.imagem[0]}}" alt="">
                         <div class="carousel-caption">
-                          <h3>First slide label</h3>
-                          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                          <h3>{{imovel.nome}}</h3>
+                          <p>{{imovel.descricao}}</p>
                         </div>
                       </div>
 
                       <div class="item carouselImagens" ng-repeat="img in imovel.imagem.slice(1) track by $index">
                         <img ng-src="img/imoveis/{{img}}" alt="">
                         <div class="carousel-caption">
-                          <h3>First slide label</h3>
-                          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                           <h3>{{imovel.nome}}</h3>
+                          <p>{{imovel.descricao}}</p>
                         </div>
                       </div>
                     </div>
@@ -137,7 +133,7 @@
                   
                   <div class="box box-primary collapsed-box">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Mensagens</h3>
+                      <h3 class="box-title">Mensagens <span class="badge bg-green"></span></h3>
                       <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>

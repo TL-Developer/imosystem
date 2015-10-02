@@ -533,7 +533,7 @@ form.cadastrarImovel{
 
 	.imagem{
 		position: absolute;
-		bottom: -5%;
+		bottom: 2%;
 		left: 5%;
 		width: 30%;
 		border: 4px solid #fff;
@@ -605,4 +605,9 @@ form.cadastrarImovel{
 		height: 295px !important;
 		margin: 0 auto;
 	}
+}
+
+.imgUsuarios{
+	width: 100px;
+	height: 100px !important;
 }
