@@ -40,7 +40,7 @@
 		
 		<div class="row">
 			<div class="col-md-5">
-			<input type="file" class="filestyle" name="images" fileread="imovel.imagem">
+			<input type="file" class="filestyle" name="images" fileread="imovel.imagem" required>
 			<br />
 			<input type="submit" class="btn btn-primary" value="Enviar Imagem">
 			</div>
@@ -69,7 +69,7 @@
 
 	<form class="cadastrarImovel form-inline" ng-submit="salva()">
 		
-		<div class="form-group">
+		<div class="form-group hide-inputs">
 			<div class="row">
             	<div class="col-xs-12">
 
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group hide-inputs">
 			<div class="row">
             	<div class="col-xs-12">
 
@@ -99,7 +99,7 @@
             	<div class="col-xs-12">
 
 					<label for="Nome">Nome Imóvel</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.nome" placeholder="Ex: JARDIM DAS OLIMPIAS">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.nome" placeholder="Ex: JARDIM DAS OLIMPIAS" required>
 			
 				</div>
 			</div>
@@ -110,18 +110,18 @@
             	<div class="col-xs-12">
 				
 					<label for="Nome">Descrição</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.descricao" placeholder="Ex: Este imovel é amplo...">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.descricao" placeholder="Ex: Este imovel é amplo..." required>
 				
 				</div>
 			</div>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group hide-inputs">
 			<div class="row">
             	<div class="col-xs-12">
 				
 					<label for="Nome">Nome da Imagem</label><br />
-					<input type="text" class="form-control" ng-model="imovel.imagem" value="{{imovel.imagem}}" disabled>
+					<input type="text" class="form-control hide-inputs" ng-model="imovel.imagem" value="{{imovel.imagem}}" disabled>
 				
 				</div>
 			</div>
@@ -132,7 +132,29 @@
             	<div class="col-xs-12">
 
 					<label for="Nome">Características</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama" required>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Proximidades do local</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.proximidades" placeholder="Ex: Banco do Brasil | Shopping | Supermercado Extra..." required>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+            	<div class="col-xs-12">
+
+					<label for="Nome">Área total</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.areatotal" placeholder="Ex: 64m2" required>
 
 				</div>
 			</div>
@@ -143,7 +165,7 @@
             	<div class="col-xs-12">
 				
 					<label for="Nome">Tipo do Imóvel</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical" required>
 				
 				</div>
 			</div>
@@ -154,7 +176,7 @@
             	<div class="col-xs-12">
 
 					<label for="Nome">Status</label><br />
-					<select class="form-control" ng-model="imovel.status">
+					<select class="form-control" ng-model="imovel.status" required>
 						<option ng-model="imovel.status"></option>
 						<option>PRONTO PARA MORAR</option>
 						<option>EM CONSTRUÇÃO</option>
@@ -173,10 +195,9 @@
 					<label for="Nome">Valor do Imóvel</label><br />
 					<label class="sr-only" for="exampleInputAmount"></label>
 				
-
 					<div class="input-group">
 						<div class="input-group-addon">$</div>
-							<input type="text" class="form-control" id="exampleInputAmount" ng-model="imovel.valor" placeholder="Ex: 489,000,000">
+							<input type="text" class="form-control" id="exampleInputAmount" ng-model="imovel.valor" placeholder="Ex: 489.000" required>
 						<div class="input-group-addon">.00</div>
 					</div>
 
@@ -190,7 +211,7 @@
             	<div class="col-xs-12">
 
 					<label for="Nome">Endereço</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.endereco" placeholder="Ex: av. berrini, 350 - vila olimpia São Paulo - SP">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.endereco" placeholder="Ex: av. berrini, 350 - vila olimpia São Paulo - SP" required>
 
 				</div>
 			</div>
@@ -201,7 +222,7 @@
             	<div class="col-xs-12">
 
 					<label for="Nome">Quant. Dormitórios</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdDormitorio" placeholder="Ex: 2">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdDormitorio" placeholder="Ex: 3" required>
 
 				</div>
 			</div>
@@ -212,7 +233,7 @@
             	<div class="col-xs-12">
 
 					<label for="Nome">Quant. Banheiros</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdBanheiro" placeholder="Ex: 1">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdBanheiro" placeholder="Ex: 2" required>
 
 				</div>
 			</div>
@@ -223,7 +244,7 @@
             	<div class="col-xs-12">
 					
 					<label for="Nome">Quant. garagens</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdGaragem" placeholder="Ex:1">
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdGaragem" placeholder="Ex: 2" required>
 				
 				</div>
 			</div>

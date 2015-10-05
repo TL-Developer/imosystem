@@ -17,6 +17,25 @@
     <link rel="stylesheet" href="lib/bootstrap-fileinput/css/fileinput.min.css">
 </head>
 <body>
+	
+	<!-- Modal Simples -->
+	<div class="modal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close fechar" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title"></h4>
+	      </div>
+	      <div class="modal-body">
+	        <p></p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default fechar" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 	<div ng-view></div>
 
 	<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
@@ -52,6 +71,8 @@
 	<script type="text/javascript" src="js/directives/minhas-diretivas.js"></script>
 	
 	<script type="text/javascript" src="js/services/ImovelService.js"></script>
+
+	<script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 </html>

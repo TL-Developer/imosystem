@@ -54,8 +54,8 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/admin/caixa-entrada.html',
 		controller: 'UsuarioController'
 	})
-	.when('/admin/calendario/:usuarioId', {
-		templateUrl: 'partials/admin/calendario.html'
+	.when('/admin/chatonline/:usuarioId', {
+		templateUrl: 'partials/admin/chat-online.html'
 	})
 
 	.otherwise({redirectTo: '/imoveis'});

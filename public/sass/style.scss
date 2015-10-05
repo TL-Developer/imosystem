@@ -611,3 +611,27 @@ form.cadastrarImovel{
 	width: 100px;
 	height: 100px !important;
 }
+
+.hide-inputs{
+	opacity: 0; 
+	position: absolute; 
+	z-index: -1;
+}
+
+.modal{
+	
+	.modal-dialog{
+		margin: 250px auto !important;
+	}
+}
+
+.main-footer{
+	position: relative;
+
+	.box-chat-online{
+		position: fixed;
+		bottom: -25px;
+		right: 0;
+		z-index: 10;
+	}
+}

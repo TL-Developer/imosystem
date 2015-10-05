@@ -93,4 +93,9 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		console.log(erro);
 	});
 
+
+	$scope.abrirMensagem = function(mensagem){
+		modalSimpleStart('Mensagem', mensagem);
+	};
+
 });

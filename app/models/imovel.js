@@ -5,43 +5,66 @@ module.exports = function(){
 
 	var schema = new Schema({
 		username: {
-			type: String
+			type: String,
+			required: true
 		},
 		usernameImagem: {
-			type: String
+			type: String,
+			required: true
 		},
 		nome: { 
-	      type: String 
+	      type: String,
+	      required: true
 	    }, 
 	    tipo: {
-	      type: String
+	      type: String,
+	      required: true
 	    }, 
 	    imagem: [
-	      {type: String}
+	      {
+	      	type: String,
+	      	required: true
+	      }
 	    ], 
 	    valor: {
-	      type: String
+	      type: String,
+	      required: true
 	    }, 
 	    endereco: {
-	      type: String
+	      type: String,
+	      required: true
 	    }, 
 	    status: {
-	      type: String
+	      type: String,
+	      required: true
 	    }, 
 	    qtdDormitorio: {
-	      type: Number 
+	      type: Number,
+	      required: true
 	    }, 
 	    qtdBanheiro: {
-	      type: Number 
+	      type: Number,
+	      required: true
 	    }, 
 	    qtdGaragem: {
-	      type: Number 
+	      type: Number,
+	      required: true
 	    },
 	    descricao: {
-	    	type: String
+	    	type: String,
+	    	required: true
+	    },
+	    proximidades: {
+	    	type: String,
+	    	required: true
+	    },
+	    areatotal: {
+	    	type: String,
+	    	required: true
 	    },
 	    caracteristicas: {
-	    	type: String
+	    	type: String,
+	    	required: true
 	    },
 	    caixaentrada: [
 	    	{

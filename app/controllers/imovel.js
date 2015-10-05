@@ -146,10 +146,12 @@ module.exports = function(app){
 		var fs = require('fs');
 		var file = './public/img/imoveis/'+req.body.img;
 
-		fs.unlink(file, function(err){
-			if (err) throw err;
-			res.sendfile('./public/partials/remove-images-success.html');
-		});
+		if(file){
+			fs.unlink(file, function(err){
+				if (err) throw err;
+				res.sendfile('./public/partials/remove-images-success.html');
+			});
+		}
 
 	};
 
