@@ -74,7 +74,7 @@
 		<h1>Características</h1>
 		<hr />
 		<ul class="caracteristicas">
-			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{imovel.caracteristicas}}</li>
+			<li ng-repeat="caract in imovel.caracteristicas"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{caract}}</li>
 		</ul>
 	</div>
 
@@ -82,7 +82,7 @@
 		<h1>Proximidades do local</h1>
 		<hr />
 		<ul class="caracteristicas">
-			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{imovel.proximidades}}</li>
+			<li ng-repeat="proximidades in imovel.proximidades"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{proximidades}}</li>
 		</ul>
 	</div>
 

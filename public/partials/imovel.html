@@ -67,11 +67,11 @@
 	<div class="row box box-default" ng-show="imovel.imagem">
               <div class="col-md-11">
 
-	<form class="cadastrarImovel form-inline" ng-submit="salva()">
+	<form class="cadastrarImovel" ng-submit="salva()">
 		
 		<div class="form-group hide-inputs">
 			<div class="row">
-            	<div class="col-xs-12">
+            	<div class="col-xs-6">
 
 					<label for="Nome">Username</label><br />
 					<input type="text" class="form-control" ng-model="imovel.username" value="{{username}}" disabled>
@@ -84,7 +84,7 @@
 
 		<div class="form-group hide-inputs">
 			<div class="row">
-            	<div class="col-xs-12">
+            	<div class="col-xs-6">
 
 
 					<label for="Nome">Imagem</label><br />
@@ -96,18 +96,14 @@
 
 		<div class="form-group">
 			<div class="row">
-            	<div class="col-xs-12">
+            	<div class="col-xs-6">
 
 					<label for="Nome">Nome Imóvel</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.nome" placeholder="Ex: JARDIM DAS OLIMPIAS" required>
 			
 				</div>
-			</div>
-		</div>
 
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
+				<div class="col-xs-6">
 				
 					<label for="Nome">Descrição</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.descricao" placeholder="Ex: Este imovel é amplo..." required>
@@ -128,52 +124,115 @@
 		</div>
 
 		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
 
-					<label for="Nome">Características</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.caracteristicas" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama" required>
+				<div class="row">
+					
+					<div class="col-xs-6">
+							
+						<div class="box box-info">
+			                <div class="box-header with-border">
+			                  <h3 class="box-title">Características</h3>
+			                  <div class="box-tools pull-right">
+			                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+			                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+			                  </div>
+			                </div>
+
+							<div class="box-footer clearfix">
+			                  <div class="col-xs-6">
+			                  	<input type="text" class="form-control listaCaracteristicas" id="nomeImovel" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama">
+			                  </div>
+
+			                  <div class="col-xs-6">
+			                  	<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left btn-block" ng-click="inserirCaracteristicas()">Inserir nova característica</a>
+			                   </div>
+			                </div><!-- /.box-footer -->
+
+			                <!-- /.box-header -->
+			                <div class="box-body" ng-show="imovel.caracteristicas.length">
+			                  <div class="table-responsive">
+			                    <table class="table no-margin">
+			                      <thead>
+			                        <tr>
+			                          <th>Nome</th>
+			                        </tr>
+			                      </thead>
+			                      <tbody>
+			                        <tr ng-repeat="caracteristica in imovel.caracteristicas">
+			                          <td><i class="fa fa-fw fa-check-circle check-green"></i></td>
+			                          <td>{{caracteristica}}</td>
+			                          <td><button type="button" class="btn btn-danger" ng-click="excluirCaracteristicas(caracteristica)">Excluir</button></td>
+			                          <td><div class="sparkbar" data-color="#00a65a" data-height="20"><canvas width="34" height="20" style="display: inline-block; width: 34px; height: 20px; vertical-align: top;"></canvas></div></td>
+			                        </tr>
+			                      </tbody>
+			                    </table>
+			                  </div><!-- /.table-responsive -->
+			                </div><!-- /.box-body -->
+			                
+			              </div>
+
+					</div>
+
+					<div class="col-xs-6">
+							
+					<div class="box box-info">
+		                <div class="box-header with-border">
+		                  <h3 class="box-title">Proximidades do local</h3>
+		                  <div class="box-tools pull-right">
+		                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+		                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+		                  </div>
+		                </div>
+
+						<div class="box-footer clearfix">
+		                  <div class="col-xs-6">
+		                  	<input type="text" class="form-control listaProximidadesLocal" id="nomeImovel" placeholder="Ex: Banco do Brasil | Shopping | Supermercado Extra...">
+		                  </div>
+
+		                  <div class="col-xs-6">
+		                  	<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left btn-block" ng-click="inserirProximidades()">Inserir nova característica</a>
+		                   </div>
+		                </div><!-- /.box-footer -->
+
+		                <!-- /.box-header -->
+		                <div class="box-body" ng-show="imovel.proximidades.length">
+		                  <div class="table-responsive">
+		                    <table class="table no-margin">
+		                      <thead>
+		                        <tr>
+		                          <th>Nome</th>
+		                        </tr>
+		                      </thead>
+		                      <tbody>
+		                        <tr ng-repeat="proximidades in imovel.proximidades">
+		                          <td><i class="fa fa-fw fa-check-circle check-green"></i></td>
+		                          <td>{{proximidades}}</td>
+		                          <td><button type="button" class="btn btn-danger" ng-click="excluirProximidades(proximidades)">Excluir</button></td>
+		                          <td><div class="sparkbar" data-color="#00a65a" data-height="20"><canvas width="34" height="20" style="display: inline-block; width: 34px; height: 20px; vertical-align: top;"></canvas></div></td>
+		                        </tr>
+		                      </tbody>
+		                    </table>
+		                  </div><!-- /.table-responsive -->
+		                </div><!-- /.box-body -->
+		                
+		              </div>
 
 				</div>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
-
-					<label for="Nome">Proximidades do local</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.proximidades" placeholder="Ex: Banco do Brasil | Shopping | Supermercado Extra..." required>
-
+					
 				</div>
-			</div>
-		</div>
 
+		</div>
+		
 		<div class="form-group">
 			<div class="row">
-            	<div class="col-xs-12">
-
-					<label for="Nome">Área total</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.areatotal" placeholder="Ex: 64m2" required>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
+            	<div class="col-xs-6">
 				
 					<label for="Nome">Tipo do Imóvel</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical" required>
 				
 				</div>
-			</div>
-		</div>
 
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
+				<div class="col-xs-6">
 
 					<label for="Nome">Status</label><br />
 					<select class="form-control" ng-model="imovel.status" required>
@@ -190,7 +249,15 @@
 
 		<div class="form-group">
 			<div class="row">
-            	<div class="col-xs-12">
+
+				<div class="col-xs-6">
+
+					<label for="Nome">Endereço</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.endereco" placeholder="Ex: av. berrini, 350 - vila olimpia São Paulo - SP" required>
+
+				</div>
+
+            	<div class="col-xs-6">
 			
 					<label for="Nome">Valor do Imóvel</label><br />
 					<label class="sr-only" for="exampleInputAmount"></label>
@@ -205,50 +272,37 @@
 			</div>
 		</div>
 
-
 		<div class="form-group">
 			<div class="row">
-            	<div class="col-xs-12">
+				<div class="col-xs-3">
 
-					<label for="Nome">Endereço</label><br />
-					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.endereco" placeholder="Ex: av. berrini, 350 - vila olimpia São Paulo - SP" required>
+					<label for="Nome">Área total</label><br />
+					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.areatotal" placeholder="Ex: 64m2" required>
 
 				</div>
-			</div>
-		</div>
 
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
+            	<div class="col-xs-3">
 
 					<label for="Nome">Quant. Dormitórios</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdDormitorio" placeholder="Ex: 3" required>
 
 				</div>
-			</div>
-		</div>
 
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
+				<div class="col-xs-3">
 
 					<label for="Nome">Quant. Banheiros</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdBanheiro" placeholder="Ex: 2" required>
 
 				</div>
-			</div>
-		</div>
 
-		<div class="form-group">
-			<div class="row">
-            	<div class="col-xs-12">
+				<div class="col-xs-3">
 					
 					<label for="Nome">Quant. garagens</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdGaragem" placeholder="Ex: 2" required>
 				
 				</div>
 			</div>
-		</div>	
+		</div>
 		
 		<br /><br />
 		<div class="row">

@@ -16,6 +16,8 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 		});
 	}else{
 		$scope.imovel = new Imovel();
+		$scope.imovel.caracteristicas = [];
+		$scope.imovel.proximidades = [];
 	}
 
 	$scope.salva = function(){
@@ -61,5 +63,47 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 	}).error(function(erro){
 		console.log(erro);
 	});
+
+	
+	
+	// AÇÕES CARACTERÍSTICAS
+	$scope.inserirCaracteristicas = function(){
+
+		var caracteristicas = $('.listaCaracteristicas'),
+			valorCaracteristicas = $('.listaCaracteristicas').val();
+
+		$scope.imovel.caracteristicas.push(valorCaracteristicas);
+
+		caracteristicas.val('');
+	};
+
+	$scope.excluirCaracteristicas = function(caracteristica){
+
+		var posCaract = $scope.imovel.caracteristicas.indexOf(caracteristica);
+
+		$scope.imovel.caracteristicas.splice(posCaract, 1);
+	};
+
+	// AÇÕES PROXIMIDADES
+	$scope.inserirProximidades = function(){
+
+		var proximidades = $('.listaProximidadesLocal'),
+			valorProximidades = $('.listaProximidadesLocal').val();
+
+		$scope.imovel.proximidades.push(valorProximidades);
+
+		proximidades.val('');
+
+		console.log($scope.imovel);
+	};
+
+	$scope.excluirProximidades = function(proximidades){
+
+		var posProximidades = $scope.imovel.proximidades.indexOf(proximidades);
+
+		$scope.imovel.proximidades.splice(posProximidades, 1);
+
+		console.log($scope.imovel);
+	};
 
 });

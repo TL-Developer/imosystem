@@ -11,23 +11,30 @@
 					<div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
 					<img ng-src="img/imoveis/{{imovel.imagem[0]}}" class="img-responsive imagem" alt="">
 					<div class="infoImovel">
-						<ul>
-							<li>
-								<img src="img/dormitorio.png" class="dormitorio" alt="">
-								<span>{{imovel.qtdDormitorio}}</span>
-							</li>
-							<li>
-								<img src="img/banheiro.png" class="dormitorio" alt="">
-								<span>{{imovel.qtdBanheiro}}</span>
-							</li>
-							<li>
-								<img src="img/garagem.png" class="dormitorio" alt="">
-								<span>{{imovel.qtdGaragem}}</span>
-							</li>
-						</ul>
+							<ul>
+								<li>
+									<img src="img/dormitorio.png" class="dormitorio" alt="">
+									<span>{{imovel.qtdDormitorio}}</span>
+								</li>
+								<li>
+									<img src="img/banheiro.png" class="dormitorio" alt="">
+									<span>{{imovel.qtdBanheiro}}</span>
+								</li>
+								<li>
+									<img src="img/garagem.png" class="dormitorio" alt="">
+									<span>{{imovel.qtdGaragem}}</span>
+								</li>
+							</ul>
 
-						<div class=""><img ng-src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive imagemPerfilClientSide img-circle"></div>
+							<div class="imagemPerfilClientSide">
+								<img ng-src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive img-circle">
+							</div>
+						</a>
+						<div class="curtirPerfilClientSide">
+							<img ng-src="img/btnCurtir.png" alt="" class="img-responsive img-circle" ng-click="curtir(imovel._id)" onclick="curtiu(this)">
+						</div>
 					</div>
+				<a ng-href="#/infoImovel/{{imovel.nome}}">
 					<div class="caption descricao">
 						<h5>{{imovel.tipo}}</h5>
 						<h4>{{imovel.nome}}</h4>

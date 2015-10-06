@@ -4,6 +4,9 @@ var mongoose = require('mongoose'),
 module.exports = function(){
 
 	var schema = new Schema({
+		curtidas: {
+			type: Number
+		},
 		username: {
 			type: String,
 			required: true
@@ -54,18 +57,20 @@ module.exports = function(){
 	    	type: String,
 	    	required: true
 	    },
-	    proximidades: {
-	    	type: String,
-	    	required: true
-	    },
+	    proximidades: [
+	    	{
+    			type: String
+	    	}
+	    ],
 	    areatotal: {
 	    	type: String,
 	    	required: true
 	    },
-	    caracteristicas: {
-	    	type: String,
-	    	required: true
-	    },
+	    caracteristicas: [
+	    	{
+    			type: String
+	    	}
+	    ],
 	    caixaentrada: [
 	    	{
 		    	selfId: {type: String},

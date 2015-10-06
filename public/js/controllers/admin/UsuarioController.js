@@ -95,7 +95,7 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 
 
 	$scope.abrirMensagem = function(mensagem){
-		modalSimpleStart('Mensagem', mensagem);
+		modalReadEmail(mensagem);
 	};
 
 });

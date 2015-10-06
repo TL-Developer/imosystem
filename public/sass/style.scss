@@ -57,6 +57,7 @@ body{
 
 	.imagem{
 		width: 100%;
+		height: 212px;
 	}
 	
 	.situacaoImovel{
@@ -82,14 +83,43 @@ body{
 		margin-bottom: 5%;
 		position: relative;
 
+		.curtirPerfilClientSide{
+
+			img{
+				position: absolute;
+				width: 15%;
+				left: 2%;
+				top: -120%;
+				border: 2px solid #fff;
+				height: 100%;
+				opacity: 0.5;
+				cursor: pointer;
+
+				transition: all 0.5s ease;
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				-o-transition: all 0.5s ease;
+			}
+
+			img:hover{
+				opacity: 1;
+				width: 18%;
+				height: 120%;
+			}
+		}
+
 
 		.imagemPerfilClientSide{
-			position: absolute;
-		    width: 20%;
-		    right: 2%;
-		    top: -100%;
-		    border: 2px solid #fff;
-		    height: 135%;
+
+			img{
+				position: absolute;
+			    width: 20%;
+			    right: 2%;
+			    top: -100%;
+			    border: 2px solid #fff;
+			    height: 135%;
+			}
 		}
 
 		ul{
@@ -633,5 +663,32 @@ form.cadastrarImovel{
 		bottom: -25px;
 		right: 0;
 		z-index: 10;
+	}
+}
+
+.check-green{
+	color: green;
+}
+
+.modalReadEmail{
+	background: rgba(0,0,0,0.8);
+	z-index: 1170;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: none;
+
+	.mailbox-read-message{
+		height: 400px;
+		overflow-y: scroll;
+	}
+	
+	.box-primary{
+		left: auto;
+	    margin-right: auto;
+	    margin-left: auto;
+	    margin: 100px auto;
 	}
 }

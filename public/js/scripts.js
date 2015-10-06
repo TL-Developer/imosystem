@@ -1,11 +1,17 @@
-var modalSimpleStart = function(title, mensagem){
-	var modal = $('.modal'),
-		bodyTitle = modal.children('.modal-dialog').children('.modal-content').children('.modal-header').children('h4.modal-title'),
-		bodyMensagem = modal.children('.modal-dialog').children('.modal-content').children('.modal-body').children('p'),
-		btnsClose = modal.children('.modal-dialog').children('.modal-content').find('.fechar');
+var modalReadEmail = function(mensagem){
+	var modal = $('.modalReadEmail'),
+		textNome = modal.find('.box-title'),
+		textAssunto = modal.find('.assunto-mensagem'),
+		textEmail = modal.find('.email-mensagem'),
+		textTelefone = modal.find('.telefone-mensagem'),
+		textMensagem = modal.find('.mensagem-mensagem'),
+		btnsClose = modal.find('.fechar');
 
-	bodyTitle.html(title);
-	bodyMensagem.html(mensagem);
+	textNome.html('Mensagem de: '+mensagem.nome);
+	textAssunto.html('Assunto: '+mensagem.assunto);
+	textEmail.html('Email: '+mensagem.email+'<span class="mailbox-read-time pull-right">'+mensagem.created+'</span>');
+	textTelefone.html('Telefone: '+mensagem.telefone);
+	textMensagem.html('Mensagem: <br />'+mensagem.mensagem);
 
 	modal.hide().css({
 		'opacity':'1'
@@ -18,4 +24,18 @@ var modalSimpleStart = function(title, mensagem){
 			});
 		});
 	});
+};
+
+var curtiu = function(self){
+	
+	$(self).css({
+		'opacity':'1',
+		'width': '18%',
+		'height': '120%'
+	});
+
+	setTimeout(function(){
+		$(self).off('click');
+	}, 1000);
+
 };
