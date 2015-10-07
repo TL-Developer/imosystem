@@ -1,149 +1,264 @@
 <div ng-include src="'partials/header.html'"></div>
 
-<div class="container">
+<div class="conteudo-info-imovel">
+	<div class="row">
+		<div class="galeriaImovel">
+		<div data-ride="carousel" class="carousel slide" id="carousel-example-captions">
+			<ol class="carousel-indicators">
+				<li data-slide-to="0" data-target="#carousel-example-captions" class="active"></li>
+				<li data-slide-to="{{$index+1}}" data-target="#carousel-example-captions" class="" ng-repeat="imagem in imovel.imagem.slice(1) track by $index"></li>
+			</ol>
 
-	<div class="col-md-12 infoImovel">
-		<div class="col-md-8">
-			<h1 class="nome">{{imovel.nome}}</h1>
-			<p class="endereco">{{imovel.endereco}}</p>
-		</div>
+			<div role="listbox" class="carousel-inner">
+				<div class="item active">
+					<img ng-src="img/imoveis/{{imovel.imagem[0]}}" alt="">
+				</div>
 
-		<div class="col-md-4">
-			<h1 class="valor">R${{imovel.valor}}.00</h1>
-		</div>
-
-		<div class="col-md-12">
-			<ul class="infoQtdeComodos">
-				<li>
-					<img src="img/dormitorio.png" class="dormitorio" alt="">
-					<span>{{imovel.qtdDormitorio}}</span>
-				</li>
-				<li>
-					<img src="img/banheiro.png" class="dormitorio" alt="">
-					<span>{{imovel.qtdBanheiro}}</span>
-				</li>
-				<li>
-					<img src="img/garagem.png" class="dormitorio" alt="">
-					<span>{{imovel.qtdGaragem}}</span>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-</div>
-
-		<div class="col-md-12 galeriaImovel">
+				<div class="item" ng-repeat="img in imovel.imagem.slice(1) track by $index">
+					<img ng-src="img/imoveis/{{img}}" alt="">
+				</div>
+			</div>
 			<div class="container">
-				<div data-ride="carousel" class="carousel slide" id="carousel-example-captions">
-					<ol class="carousel-indicators">
-						<li data-slide-to="0" data-target="#carousel-example-captions" class="active"></li>
-						<li data-slide-to="{{$index+1}}" data-target="#carousel-example-captions" class="" ng-repeat="imagem in imovel.imagem.slice(1) track by $index"></li>
-					</ol>
-
-					<div role="listbox" class="carousel-inner">
-						<div class="item active">
-							<img ng-src="img/imoveis/{{imovel.imagem[0]}}" alt="">
-							<div class="carousel-caption">
-								<h3>{{imovel.nome}}</h3>
-								<!-- <p>{{imovel.descricao}}</p> -->
-							</div>
-						</div>
-
-						<div class="item" ng-repeat="img in imovel.imagem.slice(1) track by $index">
-							<img ng-src="img/imoveis/{{img}}" alt="">
-							<div class="carousel-caption">
-								<h3>{{imovel.nome}}</h3>
-								<!-- <p>{{imovel.descricao}}</p> -->
-							</div>
-						</div>
-					</div>
+				<div class="col-md-4">
+					<h2 class="valor text-center">R${{imovel.valor}}.00</h2>
 				</div>
 			</div>
 		</div>
-
-<div class="col-md-8 infoText">
-
-	<div class="col-md-12">
-		<h1>Descrição</h1>
-		<hr />
-		<p>{{imovel.descricao}}</p>
-	</div>
-
-	<div class="col-md-12">
-		<h1>Características</h1>
-		<hr />
-		<ul class="caracteristicas">
-			<li ng-repeat="caract in imovel.caracteristicas"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{caract}}</li>
-		</ul>
-	</div>
-
-	<div class="col-md-12">
-		<h1>Proximidades do local</h1>
-		<hr />
-		<ul class="caracteristicas">
-			<li ng-repeat="proximidades in imovel.proximidades"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{proximidades}}</li>
-		</ul>
-	</div>
-
-	<div class="col-md-12">
-		<h1>Área total</h1>
-		<hr />
-		<ul class="caracteristicas">
-			<li><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{imovel.areatotal}}</li>
-		</ul>
-	</div>
-	
-</div>
-	
-	<div class="col-md-4 infoText">
-		<div class="col-md-12">
-			<h3>Contatar anunciante</h3>
-			<hr />
-		</div>
-				
-
-		<div class="col-md-12">
-			
-			<div class="row box box-default" style="padding: 10px;">
-				
-				<div class="col-md-12">
-		          	<div class="col-md-6">
-						<img src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive imagemUser">
-					</div>
-					<div class="col-md-6">
-		            	<h3>Olá, meu nome é <b>{{imovel.username}}</b></h1>
-		            </div>
-                </div>
-				
-				<div class="col-md-12">
-
-					<form action="/imoveisNome" target="_blank" method="POST" class="form-inline enviaMensagem">
-						<div>
-							<input type="text" class="form-control nome hide-inputs" placeholder="selfId" name="selfId" value="{{imovel._id}}" required>
-							<input type="text" class="form-control nome" placeholder="Nome" name="nome" required>
-							<input type="text" class="form-control email" placeholder="Email" name="email" required>
-							<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone" required>
-							<input type="text" class="form-control assunto" placeholder="Assunto" name="assunto" required>
-							<button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-						</div>
-						<textarea class="form-control mensagem" rows="7" name="mensagem" required></textarea>
-					</form>
-				</div>
-			</div>
 		</div>
 	</div>
 
-<div class="col-md-12 infoText localizacao">
-	<div class="col-md-12">
-		<h1>Localização</h1>
-		<hr />
-	</div>
-	
-	<div id="map"></div>
-
-</div>
+	<div class="infoImovel">
 		
-	
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-8" style="margin-top: 2%;">
+					<div class="col-md-3">
+			          	<div class="col-md-12">
+							<img src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive img-circle">
+						</div>
+						<div class="col-md-12">
+			            	<h3 class="text-info text-center text-uppercase">{{imovel.username}}</h1>
+			            </div>
+			        </div>
+
+					<div class="col-md-9">
+						<h1 class="nome">{{imovel.nome}}</h1>
+						<h5>{{imovel.tipo}} - {{imovel.cidade}} / {{imovel.estado}}</h5>
+						<p class="endereco">{{imovel.endereco}} - {{imovel.bairro}}</p>
+						
+						<div class="row">
+							<div class="col-md-11">
+								<ul class="infoQtdeComodos">
+									<div class="col-md-2">
+										<li>
+											<img src="img/dormitorio.png" class="dormitorio" alt="">
+											<div class="row text-center">
+												<span>{{imovel.qtdDormitorio}}</span>
+											</div>
+										</li>
+									</div>
+									<div class="col-md-2">
+										<li>
+											<img src="img/banheiro.png" class="dormitorio" alt="">
+											<div class="row text-center">
+												<span>{{imovel.qtdBanheiro}}</span>
+											</div>
+										</li>
+									</div>
+									<div class="col-md-2">
+										<li>
+											<img src="img/garagem.png" class="dormitorio" alt="">
+											<div class="row text-center">
+												<span>{{imovel.qtdGaragem}}</span>
+											</div>
+										</li>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 formMensagem">
+					
+					<div class="row">
+					    <div class="col-md-12">
+							<form action="/imoveisNome" target="_blank" method="POST" class="enviaMensagem">
+									
+								<div class="form-group hide-inputs">
+									<div class="row">
+						            	<div class="col-xs-6">
+											
+											<input type="text" class="form-control nome" placeholder="selfId" name="selfId" value="{{imovel._id}}" required>
+											
+										</div>
+
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+						            	<div class="col-xs-6">
+											
+											<input type="text" class="form-control nome" placeholder="Nome" name="nome" required>
+											
+										</div>
+
+										<div class="col-xs-6">
+											
+											<input type="text" class="form-control email" placeholder="Email" name="email" required>
+											
+										</div>
+
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+
+										<div class="col-xs-6">
+											
+											<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone" required>
+											
+										</div>
+
+										<div class="col-xs-6">
+											
+											<input type="text" class="form-control assunto" placeholder="Assunto" name="assunto" required>
+											
+										</div>
+
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+						            	<div class="col-xs-12">
+											
+											<textarea class="form-control mensagem" rows="3" name="mensagem" required></textarea>
+											
+										</div>
+
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-xs-12">
+										<button type="submit" class="btn btn-default btn-block">Enviar Mensagem</button>
+									</div>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="row infoText">
+
+		<div class="col-md-12">
+
+			<div class="col-md-12">
+				<h3>Descrição</h3>
+				<p>{{imovel.descricao}}</p>
+				<div class="col-md-12">
+					<hr />
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<h3>Características</h3>
+				<ul class="caracteristicas">
+					<li ng-repeat="caract in imovel.caracteristicas"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{caract}}</li>
+				</ul>
+				<div class="col-md-12">
+					<hr />
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<h3>Proximidades do local</h3>
+				<ul class="caracteristicas">
+					<li ng-repeat="proximidades in imovel.proximidades"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{proximidades}}</li>
+				</ul>
+				<div class="col-md-12">
+					<hr />
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<h3>Área total</h3>
+				<ul class="caracteristicas">
+					<li>{{imovel.areatotal}}</li>
+				</ul>
+				<div class="col-md-12">
+					<hr />
+				</div>
+			</div>
+
+			<div class="col-md-8">
+				<h3>Mapa</h3>
+				
+				<div id="map" class="nopadding"></div>
+
+			</div>
+
+			<div class="col-md-4">
+				<h3>Traçar rota</h3>
+				
+				<div class="col-md-12 nopadding">
+	              <div class="box">
+					<div class="box-body">
+
+						<form action="" class="col-md-12">
+						    
+							<div class="row">
+								<div class="col-xs-12">
+								    <div class="form-group">
+								        <input type="text" class="form-control" placeholder="Ex: Metro Armênia">
+								    </div>
+								</div>
+							</div>
+						    
+							<div class="col-md-12">
+							    <div class="form-group">
+							        <label>Qual o meio de locomoção?</label>
+							        <div class="radio">
+							            <label>
+							                <input type="radio" name="travelMode" value="DRIVING" checked /> Carro
+							            </label><br>
+							            <label>
+							                <input type="radio" name="travelMode" value="BICYCLING" /> Bicicleta
+							            </label><br>
+							            <label>
+							                <input type="radio" name="travelMode" value="TRANSIT" /> Ônibus
+							            </label><br>
+							            <label>
+							                <input type="radio" name="travelMode" value="WALKING" /> A pé
+							            </label>
+							        </div>
+							    </div>
+							</div>
+
+						    <div class="form-group">
+						        <input type="submit" class="btn btn-primary" value="Traçar rota">
+						    </div>
+						</form>
+					</div>
+				</div>
+			</div>			
+
+			</div>
+			
+		</div>	
+
+	</div>
+		
+</div> 
 
 <div ng-include src="'partials/rodape.html'"></div>
 

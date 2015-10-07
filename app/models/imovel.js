@@ -4,6 +4,18 @@ var mongoose = require('mongoose'),
 module.exports = function(){
 
 	var schema = new Schema({
+		cidade: {
+			type: String,
+			required: true
+		},
+		estado: {
+			type: String,
+			required: true
+		},
+		bairro: {
+			type: String,
+			required: true
+		},
 		curtidas: {
 			type: Number
 		},
