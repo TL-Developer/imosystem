@@ -10,7 +10,6 @@
 
 		<div class="col-md-4">
 			<h1 class="valor">R${{imovel.valor}}.00</h1>
-			<button class="btn btn-primary btnAdquirirHoje" type="button">ADQUIRIR HOJE</button>
 		</div>
 
 		<div class="col-md-12">
@@ -46,7 +45,7 @@
 							<img ng-src="img/imoveis/{{imovel.imagem[0]}}" alt="">
 							<div class="carousel-caption">
 								<h3>{{imovel.nome}}</h3>
-								<p>{{imovel.descricao}}</p>
+								<!-- <p>{{imovel.descricao}}</p> -->
 							</div>
 						</div>
 
@@ -54,7 +53,7 @@
 							<img ng-src="img/imoveis/{{img}}" alt="">
 							<div class="carousel-caption">
 								<h3>{{imovel.nome}}</h3>
-								<p>{{imovel.descricao}}</p>
+								<!-- <p>{{imovel.descricao}}</p> -->
 							</div>
 						</div>
 					</div>
@@ -62,7 +61,7 @@
 			</div>
 		</div>
 
-<div class="col-md-12 infoText">
+<div class="col-md-8 infoText">
 
 	<div class="col-md-12">
 		<h1>Descrição</h1>
@@ -95,55 +94,54 @@
 	</div>
 	
 </div>
-
-	<div class="col-md-12 infoText localizacao">
-		<div class="col-md-12">
-			<h1>Localização</h1>
-			<hr />
-		</div>
-		
-		<div id="map"></div>
-
-	</div>
 	
-	<div class="col-md-12 infoText">
+	<div class="col-md-4 infoText">
 		<div class="col-md-12">
-			<h1>Fale agora com o proprietário</h1>
+			<h3>Contatar anunciante</h3>
 			<hr />
 		</div>
-		<div class="col-md-6">
-	        <div class="row box box-default">
-	          <div class="col-md-12">
-	          	<div class="col-md-6">
-					<img src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive imagemUser">
-				</div>
-				<div class="col-md-6">
-	            	<h3>Olá, meu nome é <b>{{imovel.username}}</b></h1>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
-		
+				
 
-		<div class="col-md-6">
-			<div class="row box box-default">
-				<h1>Contato</h1>
-				<hr />	
-
-				<form action="/imoveisNome" target="_blank" method="POST" class="form-inline enviaMensagem">
-					<div>
-						<input type="text" class="form-control nome hide-inputs" placeholder="selfId" name="selfId" value="{{imovel._id}}" required>
-						<input type="text" class="form-control nome" placeholder="Nome" name="nome" required>
-						<input type="text" class="form-control email" placeholder="Email" name="email" required>
-						<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone" required>
-						<input type="text" class="form-control assunto" placeholder="Assunto" name="assunto" required>
-						<button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+		<div class="col-md-12">
+			
+			<div class="row box box-default" style="padding: 10px;">
+				
+				<div class="col-md-12">
+		          	<div class="col-md-6">
+						<img src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive imagemUser">
 					</div>
-					<textarea class="form-control mensagem" rows="7" name="mensagem" required></textarea>
-				</form>
+					<div class="col-md-6">
+		            	<h3>Olá, meu nome é <b>{{imovel.username}}</b></h1>
+		            </div>
+                </div>
+				
+				<div class="col-md-12">
+
+					<form action="/imoveisNome" target="_blank" method="POST" class="form-inline enviaMensagem">
+						<div>
+							<input type="text" class="form-control nome hide-inputs" placeholder="selfId" name="selfId" value="{{imovel._id}}" required>
+							<input type="text" class="form-control nome" placeholder="Nome" name="nome" required>
+							<input type="text" class="form-control email" placeholder="Email" name="email" required>
+							<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone" required>
+							<input type="text" class="form-control assunto" placeholder="Assunto" name="assunto" required>
+							<button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+						</div>
+						<textarea class="form-control mensagem" rows="7" name="mensagem" required></textarea>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
+
+<div class="col-md-12 infoText localizacao">
+	<div class="col-md-12">
+		<h1>Localização</h1>
+		<hr />
+	</div>
+	
+	<div id="map"></div>
+
+</div>
 		
 	
 

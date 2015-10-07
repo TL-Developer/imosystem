@@ -103,18 +103,10 @@
                     <div role="listbox" class="carousel-inner carouselImagens">
                       <div class="item active">
                         <img ng-src="img/imoveis/{{imovel.imagem[0]}}" alt="">
-                        <div class="carousel-caption">
-                          <h3>{{imovel.nome}}</h3>
-                          <p>{{imovel.descricao}}</p>
-                        </div>
                       </div>
 
                       <div class="item carouselImagens" ng-repeat="img in imovel.imagem.slice(1) track by $index">
                         <img ng-src="img/imoveis/{{img}}" alt="">
-                        <div class="carousel-caption">
-                           <h3>{{imovel.nome}}</h3>
-                          <p>{{imovel.descricao}}</p>
-                        </div>
                       </div>
                     </div>
                   </div>
