@@ -689,3 +689,37 @@ form.cadastrarImovel{
    padding: 0 !important;
    margin: 0 !important;
 }
+
+.contentChat{
+	
+	#chat{
+		height: 400px;
+		overflow-y: scroll;
+	}
+
+	.containerChat{
+		border: 2px solid $cinza;
+		border-radius: 5px;
+		padding: 15px;
+	}
+	.enviarMensagem{
+		margin-top: 25px;
+	}
+
+	#send-message{
+
+		textarea#message{
+			border-radius: 5px;
+			height: 45px;
+			border-color: $cinza;
+			resize: none;
+		}
+
+		input.enviarMenssage{
+			border-radius: 5px;
+			height: 45px;
+			width: 100%;
+		}
+	}
+
+}

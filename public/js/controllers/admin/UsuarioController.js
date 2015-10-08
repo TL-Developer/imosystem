@@ -98,4 +98,25 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		modalReadEmail(mensagem);
 	};
 
+
+	var cores = ['alert alert-info', 'alert alert-success', 'alert alert-warning', 'alert alert-danger'],
+		coresIncrement = 0;
+		socket = io.connect(),
+		$messageBox = $('#message'),
+		$chat = $('#chat');
+
+	$scope.sendMessage = function(){
+		coresIncrement++;
+		if(coresIncrement == 3){
+			coresIncrement = 0;
+		}
+		socket.emit('send message', '<div class="row"><div class="col-md-12"><img style="width: 35px; height: 35px; float: left; margin: 1% 2% 0 0;" class="img-responsive img-circle" src="img/usuarios/'+$scope.usuario.imagem+'" alt="'+$scope.usuario.firstName+'" title="'+$scope.usuario.firstName+' '+new Date()+'"> <div class="'+cores[coresIncrement]+'" style="float: left;"><h5 class="text-info nopadding">'+$messageBox.val()+'</h5></div></div>  </div');
+		$messageBox.val('');
+	};
+
+
+	socket.on('new message', function(data){
+		$chat.append(data);
+	});
+
 });

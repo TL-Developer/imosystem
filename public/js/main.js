@@ -55,7 +55,8 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		controller: 'UsuarioController'
 	})
 	.when('/admin/chatonline/:usuarioId', {
-		templateUrl: 'partials/admin/chat-online.html'
+		templateUrl: 'partials/admin/chat-online.html',
+		controller: 'UsuarioController'
 	})
 
 	.otherwise({redirectTo: '/imoveis'});
