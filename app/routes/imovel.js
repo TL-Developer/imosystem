@@ -5,6 +5,9 @@ module.exports = function(app){
 		.get(controller.listaImoveis)
 		.post(controller.salvaImovel);
 
+	app.route('/search')
+		.post(controller.buscaImovel);
+
 	app.route('/imoveis/:id')
 		.get(controller.obtemIdImovel)
 		.delete(controller.removeImovel);
@@ -20,4 +23,5 @@ module.exports = function(app){
 
 	app.route('/images/remove')
 		.post(controller.excluirImagem);
+
 };

@@ -2,6 +2,9 @@
 	<img src="img/banner.jpg" alt="" class="img-responsive imagemFull">
 
 	<div class="container busca">
-		<input type="search" placeholder="Buscar empreendimento" ng-model="filtro">
+		<form action="/search" method="POST">
+			<input type="search" placeholder="Buscar empreendimento" name="query">
+		</form>
+			<!-- <input type="search" placeholder="Buscar empreendimento" ng-model="filtro"> -->
 	</div>
 </div>

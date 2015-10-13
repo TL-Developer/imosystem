@@ -190,7 +190,21 @@ module.exports = function(app){
 			res.status(404).json(erro)
 		}
 		);   
-		
+	};
+
+
+	// Busca Imóvel
+	controller.buscaImovel = function(req, res){
+
+		var query = req.body.query;
+
+		Imovel.find({ "nome": new RegExp(query, "i") } , function(errs, imoveis){
+			if(errs){
+				console.log('Não localizamos seu imóvel')
+			}else{
+				res.json(imoveis);
+			}
+		});
 
 	};
 

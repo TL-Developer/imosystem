@@ -4,6 +4,10 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/imoveis.html',
 		controller: 'ImoveisController'
 	})
+	.when('/search', {
+		templateUrl: 'partials/imoveis.html',
+		controller: 'BuscaImovelController'
+	})
 	.when('/imovel/:imovelId', {
 		templateUrl: 'partials/imovel.html',
 		controller: 'ImovelController'
