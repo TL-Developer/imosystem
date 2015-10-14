@@ -24,6 +24,15 @@ module.exports = function(app){
 			console.error(erro);
 			res.status(500).json(erro);
 		});
+
+		Imovel.search({
+		  query_string: {
+		    query: "Residencia Centro SP"
+		  }
+		}, function(err, results) {
+		    console.log(err);
+		    console.log(results);
+		});
 	};
 
 

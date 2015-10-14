@@ -1,5 +1,8 @@
 var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+	mongoosastic = require('mongoosastic'),
+	elasticsearch = require('elasticsearch'),
+	Schema = mongoose.Schema,
+	esClient = new elasticsearch.Client({host: 'localhost:3000', curlDebug: true});
 
 module.exports = function(){
 
@@ -21,7 +24,7 @@ module.exports = function(){
 		},
 		username: {
 			type: String,
-			required: true
+			required: true,
 		},
 		usernameImagem: {
 			type: String,
@@ -29,7 +32,9 @@ module.exports = function(){
 		},
 		nome: { 
 	      type: String,
-	      required: true
+	      required: true,
+		  es_indexed: true,
+		  es_type: 'string'
 	    }, 
 	    tipo: {
 	      type: String,
@@ -103,5 +108,27 @@ module.exports = function(){
 	    }
 	});
 
-	return mongoose.model('Imoveis', schema);
+	schema.plugin(mongoosastic, {
+	  esClient: esClient
+	})
+
+	var mySchema = mongoose.model('Imoveis', schema),
+		stream = mySchema.synchronize(),
+  		count = 0;
+
+  	stream.on('data', function(err, doc){
+	  count++;
+	});
+	stream.on('close', function(){
+	  console.log('indexed ' + count + ' documents!');
+	});
+	stream.on('error', function(err){
+	  console.log(err);
+	});
+
+	// mySchema.search({},function(err, results) {
+	//   console.log(results);
+	// });
+
+	return mySchema;
 };
