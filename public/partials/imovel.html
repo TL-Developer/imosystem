@@ -9,13 +9,13 @@
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
-  
-                  
+
+
 </section>
 
 <!-- Main content -->
 <section class="content container">
-	
+
 	<div class="row box box-default">
       <div class="box-header with-border">
         <i class="fa fa-bank"></i>
@@ -30,14 +30,14 @@
 		{{mensagem.texto}}
 	</p>
 
-	
-	<div class="row box box-default">
+
+	<div class="row box box-default" ng-hide="imagemHide">
               <div class="col-md-12">
 
 	<h3 class="text-info">Imagem principal do imóvel</h3>
-	
-	<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data">
-		
+
+	<form method="post" action="/images/upload" target="_blank" enctype="multipart/form-data" ng-submit="unlockImovel(imovel.imagem)">
+
 		<div class="row">
 			<div class="col-md-5">
 			<input type="file" class="filestyle" name="images" fileread="imovel.imagem" required>
@@ -45,7 +45,7 @@
 			<input type="submit" class="btn btn-primary" value="Enviar Imagem">
 			</div>
 			<br />
-			
+
 			<div class="col-md-5">
 
 				<div class="panel panel-default">
@@ -64,11 +64,11 @@
 
 	</div>
 
-	<div class="row box box-default" ng-show="imovel.imagem">
+	<div class="row box box-default" ng-show="imagemShow">
               <div class="col-md-11">
 
 	<form class="cadastrarImovel" ng-submit="salva()">
-		
+
 		<div class="form-group hide-inputs">
 			<div class="row">
             	<div class="col-xs-6">
@@ -76,7 +76,7 @@
 					<label for="Nome">Username</label><br />
 					<input type="text" class="form-control" ng-model="imovel.username" value="{{username}}" disabled>
 
-			
+
 				</div>
 
 			</div>
@@ -89,7 +89,7 @@
 
 					<label for="Nome">Imagem</label><br />
 					<input type="text" class="form-control" ng-model="imovel.usernameImagem" value="{{usernameImagem}}" disabled>
-			
+
 				</div>
 			</div>
 		</div>
@@ -100,14 +100,14 @@
 
 					<label for="Nome">Nome Imóvel</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.nome" placeholder="Ex: JARDIM DAS OLIMPIAS" required>
-			
+
 				</div>
 
 				<div class="col-xs-6">
-				
+
 					<label for="Nome">Descrição</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.descricao" placeholder="Ex: Este imovel é amplo..." required>
-				
+
 				</div>
 			</div>
 		</div>
@@ -118,21 +118,21 @@
 
 					<label for="Nome">Cidade</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.cidade" placeholder="Ex: São Paulo" required>
-			
+
 				</div>
 
 				<div class="col-xs-2">
-				
+
 					<label for="Nome">Estado</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.estado" placeholder="Ex: SP" required>
-				
+
 				</div>
 
 				<div class="col-xs-5">
-				
+
 					<label for="Nome">Bairro</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.bairro" placeholder="Ex: Cambucí" required>
-				
+
 				</div>
 			</div>
 		</div>
@@ -140,10 +140,10 @@
 		<div class="form-group hide-inputs">
 			<div class="row">
             	<div class="col-xs-12">
-				
+
 					<label for="Nome">Nome da Imagem</label><br />
 					<input type="text" class="form-control hide-inputs" ng-model="imovel.imagem" value="{{imovel.imagem}}" disabled>
-				
+
 				</div>
 			</div>
 		</div>
@@ -151,9 +151,9 @@
 		<div class="form-group">
 
 				<div class="row">
-					
+
 					<div class="col-xs-6">
-							
+
 						<div class="box box-info">
 			                <div class="box-header with-border">
 			                  <h3 class="box-title">Características</h3>
@@ -193,13 +193,13 @@
 			                    </table>
 			                  </div><!-- /.table-responsive -->
 			                </div><!-- /.box-body -->
-			                
+
 			              </div>
 
 					</div>
 
 					<div class="col-xs-6">
-							
+
 					<div class="box box-info">
 		                <div class="box-header with-border">
 		                  <h3 class="box-title">Proximidades do local</h3>
@@ -239,22 +239,22 @@
 		                    </table>
 		                  </div><!-- /.table-responsive -->
 		                </div><!-- /.box-body -->
-		                
+
 		              </div>
 
 				</div>
-					
+
 				</div>
 
 		</div>
-		
+
 		<div class="form-group">
 			<div class="row">
             	<div class="col-xs-6">
-				
+
 					<label for="Nome">Tipo do Imóvel</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.tipo" placeholder="Ex: Residencial Vertical" required>
-				
+
 				</div>
 
 				<div class="col-xs-6">
@@ -283,10 +283,10 @@
 				</div>
 
             	<div class="col-xs-6">
-			
+
 					<label for="Nome">Valor do Imóvel</label><br />
 					<label class="sr-only" for="exampleInputAmount"></label>
-				
+
 					<div class="input-group">
 						<div class="input-group-addon">$</div>
 							<input type="text" class="form-control" id="exampleInputAmount" ng-model="imovel.valor" placeholder="Ex: 489.000" required>
@@ -321,14 +321,14 @@
 				</div>
 
 				<div class="col-xs-3">
-					
+
 					<label for="Nome">Quant. garagens</label><br />
 					<input type="text" class="form-control" id="nomeImovel" ng-model="imovel.qtdGaragem" placeholder="Ex: 2" required>
-				
+
 				</div>
 			</div>
 		</div>
-		
+
 		<br /><br />
 		<div class="row">
 			<div class="col-xs-12 btn-group btn-group-justified">
@@ -344,9 +344,9 @@
 					<a href="#/admin" class="btn btn-danger">Voltar</a>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</form>
-	
+
 	</div>
 	</div>
 

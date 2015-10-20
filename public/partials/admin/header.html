@@ -22,32 +22,8 @@
           <!-- Menu toggle button -->
           <a href="#/admin/caixaentrada/{{usuario._id}}" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope-o"></i>
-            <span class="label label-success">4</span>
+            <span class="label label-warning">{{mensagensLength}}</span>
           </a>
-          <ul class="dropdown-menu">
-            <li class="header">You have 4 messages</li>
-            <li>
-              <!-- inner menu: contains the messages -->
-              <ul class="menu">
-                <li><!-- start message -->
-                  <a href="#">
-                    <div class="pull-left">
-                      <!-- User Image -->
-                      <img src="img/usuarios/{{imagem}}" class="img-circle" alt="User Image">
-                    </div>
-                    <!-- Message title and timestamp -->
-                    <h4>
-                      Support Team
-                      <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                    </h4>
-                    <!-- The message -->
-                    <p>Why not buy a new awesome theme?</p>
-                  </a>
-                </li><!-- end message -->
-              </ul><!-- /.menu -->
-            </li>
-            <li class="footer"><a href="#">See All Messages</a></li>
-          </ul>
         </li><!-- /.messages-menu -->
 
         <!-- Notifications Menu -->
@@ -55,7 +31,7 @@
           <!-- Menu toggle button -->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-bell-o"></i>
-            <span class="label label-warning">10</span>
+            <span class="label label-success">10</span>
           </a>
           <ul class="dropdown-menu">
             <li class="header">You have 10 notifications</li>
@@ -116,30 +92,11 @@
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
             <span class="hidden-xs">{{usuario.firstName}}</span>
           </a>
-          <ul class="dropdown-menu">
-            <!-- The user image in the menu -->
-            <li class="user-header">
-              <img src="img/usuarios/{{usuario.imagem}}" class="img-circle" alt="User Image">
-              <p>
-                {{usuario.firstName}}
-                <small>Mebro desde {{usuario.inclusao}}</small>
-              </p>
-            </li>
-            
-            <li class="user-footer">
-              <div class="pull-left">
-                <a href="#/admin/usuarios/{{usuario._id}}" class="btn btn-default btn-flat">Profile</a>
-              </div>
-              <div class="pull-right">
-                <a href="/signout" class="btn btn-default btn-flat">Sign out</a>
-              </div>
-            </li>
-          </ul>
         </li>
         <!-- Control Sidebar Toggle Button -->
         <li>
           <a href="/signout"><i class="glyphicon glyphicon-share">Sair</i></a>
-          
+
         </li>
       </ul>
     </div>

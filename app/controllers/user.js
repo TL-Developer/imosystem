@@ -11,7 +11,7 @@ var isAuthenticated = function (req, res, next) {
 }
 
 module.exports = function(app){
-	
+
 	var Imovel = app.models.imovel;
 	var Usuarios = app.models.user;
 
@@ -25,21 +25,25 @@ module.exports = function(app){
 	controller.postLogin = passport.authenticate('login', {
 		successRedirect: '/#/admin',
 		failureRedirect: '/#/login',
-		failureFlash : true  
+		failureFlash : true
 	});
 
 	controller.getSignup = function(req, res){
-		res.sendfile('./public/partials/signup.html');
+		if(req.user.username === 'tiago'){
+			res.redirect('/#/signup');
+		}else{
+			res.redirect('/#/admin');
+		}
 	};
 
 	controller.postSignup = passport.authenticate('signup', {
 		successRedirect: '/#/admin',
 		failureRedirect: '/signup',
-		failureFlash : true  
+		failureFlash : true
 	});
 
 	controller.getAdmin = function(req, res){
-		
+
 		if(req.isAuthenticated()){
 			Imovel.find().exec().then(function(imoveis){
 				res.json({
@@ -75,11 +79,11 @@ module.exports = function(app){
 			fs.readFile(img.path, function(err, data){
 
 				var path = './public/img/usuarios/'+img.originalFilename;
-				
+
 				console.log(path.substr(path.length - 4));
 
 				fs.writeFile(path, data, function(error){
-					if(error){ 
+					if(error){
 						console.log(error);
 					}else{
 						res.sendfile('./public/partials/upload-images-success.html');
@@ -102,7 +106,7 @@ module.exports = function(app){
 
 	controller.removeUsuario = function(req, res){
 		var _id = req.params.id;
-		
+
 		Usuarios.remove({"_id": _id}).exec().then(function(){
 			res.end();
 		},
@@ -113,7 +117,7 @@ module.exports = function(app){
 
 	controller.obtemUsuario = function(req, res){
 		var _id = req.params.id;
-		
+
 		Usuarios.find().exec().then(function(usuario){
 			res.json(usuario);
 		},

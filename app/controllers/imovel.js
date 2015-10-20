@@ -11,7 +11,7 @@
 }*/
 
 module.exports = function(app){
-	
+
 	var Imovel = app.models.imovel;
 
 	var controller = {};
@@ -36,35 +36,35 @@ module.exports = function(app){
 	};
 
 
-	// Pegando imovel pelo ID		
+	// Pegando imovel pelo ID
 	controller.obtemIdImovel = function(req, res){
 		var _id = req.params.id;
 
 		Imovel.findById(_id).exec().then(function(imovel){
 			if (!imovel) throw new Error("Imovel não encontrado");
 			res.json(imovel);
-		}, 
+		},
 		function(erro) {
 			console.log(erro);
 			res.status(404).json(erro)
 		}
-		);    
+		);
 	};
 
 
-	// Pegando imovel pelo Nome		
+	// Pegando imovel pelo Nome
 	controller.obtemNomeImovel = function(req, res){
 		var _id = req.params.id;
 
 		Imovel.findOne({nome: _id}).exec().then(function(imovel){
 			if (!imovel) throw new Error("Imovel não encontrado");
 			res.json(imovel);
-		}, 
+		},
 		function(erro) {
 			console.log(erro);
 			res.status(404).json(erro)
 		}
-		);    
+		);
 	};
 
 	// controller.obtemImovel = function(req, res){
@@ -73,12 +73,12 @@ module.exports = function(app){
 	// 	Imovel.findById(_id).exec().then(function(imovel){
 	// 		if (!imovel) throw new Error("Imovel não encontrado");
 	// 		res.json(imovel);
-	// 	}, 
+	// 	},
 	// 	function(erro) {
 	// 		console.log(erro);
 	// 		res.status(404).json(erro)
 	// 	}
-	// 	);    
+	// 	);
 	// };
 
 	controller.removeImovel = function(req, res){
@@ -135,11 +135,11 @@ module.exports = function(app){
 				//var extensaoImg = img.originalFilename.substr(img.originalFilename.length - 4);
 				//var path = './public/img/imoveis/'+img.originalFilename.replace(extensaoImg, '_'+contador+extensaoImg);
 				var path = './public/img/imoveis/'+img.originalFilename;
-				
+
 				// console.log(path.substr(path.length - 4));
 
 				fs.writeFile(path, data, function(error){
-					if(error){ 
+					if(error){
 						console.log(error);
 					}else{
 						res.sendfile('./public/partials/upload-images-success.html');
@@ -151,7 +151,7 @@ module.exports = function(app){
 	};
 
 	controller.excluirImagem = function(req, res){
-			
+
 		var fs = require('fs');
 		var file = './public/img/imoveis/'+req.body.img;
 
@@ -172,10 +172,10 @@ module.exports = function(app){
 			_telefone = req.body.telefone,
 			_mensagem = req.body.mensagem,
 			_assunto = req.body.assunto;
-		
+
 		Imovel.findById(_id).exec().then(function(imovel){
 			if (!imovel) throw new Error("Imovel não encontrado");
-			
+
 			imovel.caixaentrada.push({
 				selfId: _id,
 				nome: _nome,
@@ -184,7 +184,7 @@ module.exports = function(app){
 				mensagem: _mensagem,
 				assunto: _assunto
 			});
-			
+
 			imovel.save(function (err) {
 		        if(err) {
 		            console.error('ERROR!');
@@ -192,13 +192,13 @@ module.exports = function(app){
 		        	res.end('enviada com sucesso!');
 		        }
 		    });
-			
-		}, 
+
+		},
 		function(erro) {
 			console.log(erro);
 			res.status(404).json(erro)
 		}
-		);   
+		);
 	};
 
 

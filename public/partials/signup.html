@@ -5,27 +5,27 @@
 
   <div class="register-box-body">
     <p class="login-box-msg">Registre sua nova conta</p>
-    
+
 
     <hr />
     <h3 class="text-info">Imagem do Perfil</h3>
-    
+
     <div class="row">
       <div class="col-md-12">
-        <img src=""  class="img-responsive" alt="" id="imagemProfile">  
+        <img src=""  class="img-responsive" alt="" id="imagemProfile">
       </div>
     </div>
-    
-    <form method="post" action="/images/upload-usuario" target="_blank" enctype="multipart/form-data">
-      
+
+    <form method="post" action="/images/upload-usuario" target="_blank" enctype="multipart/form-data" ng-submit="unlockImovel(user.imagem)">
+
       <div class="file-input file-input-new">
-        
+
         <div class="input-group">
           <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
            {{user.imagem}}
           </div>
 
-          <div class="input-group-btn">
+          <div class="input-group-btn" ng-hide="imagemHide">
             <div tabindex="500" class="btn btn-primary btn-file">
              <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse …
              <input id="input-1a" type="file" name="images" class="file filestyle" fileread="user.imagem" data-show-preview="false" multiple onchange="if(this.files && this.files[0]){var reader = new FileReader();reader.onload = function (e) {document.querySelector('#imagemProfile').src = e.target.result;};reader.readAsDataURL(this.files[0]);}">
@@ -34,7 +34,7 @@
        </div>
 
       <br />
-       <div class="form-group">
+       <div class="form-group" ng-hide="imagemHide">
           <input type="submit" class="btn btn-primary" value="Enviar Imagem">
         </div>
       </div>
@@ -43,8 +43,8 @@
 
     <hr />
 
-    <form action="/signup" method="post"  ng-show="user.imagem">
-      
+    <form action="/signup" method="post"  ng-show="imagemShow">
+
       <div class="form-group has-feedback" style="position: absolute; opacity: 0;">
         <input type="text" name="imagem" required="required" class="form-control nomargin" value="{{user.imagem}}"/>
       </div>
@@ -57,7 +57,7 @@
         <input type="password" name="password" placeholder="Password" required="required" class="form-control nomargin"/>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      
+
       <hr />
 
       <div class="form-group has-feedback">
@@ -69,15 +69,15 @@
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" name="telefone" placeholder="Telefone" required="required" class="form-control"/>        
+        <input type="text" name="telefone" placeholder="Telefone" required="required" class="form-control"/>
         <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="email" name="email" placeholder="Email" required="required" class="form-control"/>        
+        <input type="email" name="email" placeholder="Email" required="required" class="form-control"/>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
        <div class="form-group has-feedback">
-        <input type="text" name="cidade" placeholder="Cidade" required="required" class="form-control"/>        
+        <input type="text" name="cidade" placeholder="Cidade" required="required" class="form-control"/>
         <span class="glyphicon glyphicon-home form-control-feedback"></span>
       </div>
       <div class="row">

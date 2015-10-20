@@ -36,7 +36,8 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/login.html'
 	})
 	.when('/signup', {
-		templateUrl: 'partials/signup.html'
+		templateUrl: 'partials/signup.html',
+		controller: 'ImovelController'
 	})
 	.when('/admin', {
 		templateUrl: 'partials/admin/principal.html',
@@ -64,4 +65,4 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 	})
 
 	.otherwise({redirectTo: '/imoveis'});
-});	
+});

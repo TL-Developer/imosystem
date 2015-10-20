@@ -3,11 +3,11 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 	$scope.mensagem = {texto: ''};
 
 	if($routeParams.imovelId){
-		Imovel.get({id: $routeParams.imovelId}, 
+		Imovel.get({id: $routeParams.imovelId},
 		function(imovel){
 			$scope.imovel = imovel;
 			console.log(imovel);
-		}, 
+		},
 		function(erro){
 			$scope.mensagem = {
 				texto: 'Não foi possível obter o imovel'
@@ -26,7 +26,7 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 				texto: 'Salvo com sucesso'
 			};
 
-			$timeout(function(){ 
+			$timeout(function(){
 				$scope.mensagem = {
 					texto: ''
 				};
@@ -64,8 +64,8 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 		console.log(erro);
 	});
 
-	
-	
+
+
 	// AÇÕES CARACTERÍSTICAS
 	$scope.inserirCaracteristicas = function(){
 
@@ -104,6 +104,13 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 		$scope.imovel.proximidades.splice(posProximidades, 1);
 
 		console.log($scope.imovel);
+	};
+
+	$scope.unlockImovel = function(valor){
+		if(valor){
+			$scope.imagemShow = 'ligado';
+			$scope.imagemHide = 'ligado';
+		}
 	};
 
 });
