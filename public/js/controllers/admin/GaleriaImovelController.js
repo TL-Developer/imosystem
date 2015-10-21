@@ -4,11 +4,11 @@ angular.module('imobiliaria').controller('GaleriaImovelController', function($sc
 
 	function buscaImoveis(){
 		if($routeParams.imovelId){
-			Imovel.get({id: $routeParams.imovelId}, 
+			Imovel.get({id: $routeParams.imovelId},
 			function(imovel){
 				$scope.imovel = imovel;
 				console.log(imovel);
-			}, 
+			},
 			function(erro){
 				$scope.mensagem = {
 					texto: 'Não foi possível obter o imovel'
@@ -43,8 +43,8 @@ angular.module('imobiliaria').controller('GaleriaImovelController', function($sc
 				texto: 'Imóvel removido com sucesso'
 			};
 			buscaImoveis();
-			
-			$timeout(function(){ 
+
+			$timeout(function(){
 				$scope.mensagem = {
 					texto: ''
 				};
@@ -65,13 +65,14 @@ angular.module('imobiliaria').controller('GaleriaImovelController', function($sc
 
 	// Salvando imagens para galeria.
 	$scope.salva = function(imagem){
+
 		$scope.imovel.imagem.push(imagem);
 		$scope.imovel.$save().then(function(){
 			console.log('Imagem salva com sucesso');
-			
+
 			window.location.href = '/#/galeriaImovel/'+$routeParams.imovelId;
 			buscaImoveis();
-			
+
 		}).catch(function(erro){
 			console.log(erro);
 			console.log('Não foi possivel salvar');

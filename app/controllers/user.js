@@ -29,11 +29,12 @@ module.exports = function(app){
 	});
 
 	controller.getSignup = function(req, res){
-		if(req.user.username === 'tiago'){
-			res.redirect('/#/signup');
-		}else{
-			res.redirect('/#/admin');
-		}
+		//if(req.user.username === 'tiago'){
+		//	res.redirect('/#/signup');
+		//}else{
+		//	res.redirect('/#/admin');
+		//}
+		res.sendfile('./public/partials/signup.html');
 	};
 
 	controller.postSignup = passport.authenticate('signup', {

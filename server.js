@@ -10,11 +10,11 @@ server.listen(app.get('port'), function(){
 
 io.sockets.on('connection', function(socket){
 	console.log('Usuário Conectado no chat online');
-	
+
 	socket.on('send message', function(data){
 		io.sockets.emit('new message', data);
 	});
-	
+
 	socket.on('disconnect', function(){
 	   console.log('Usuário Desconectado no chat online');
 	});
