@@ -13,7 +13,7 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 			}else{
 				$scope.usuario = data.user;
 				$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
-								
+
 				var quantidadeMensagens = 0;
 				for(var i = 0; i < $scope.imoveis.length; i++){
 					quantidadeMensagens += $scope.imoveis[i].caixaentrada.length;
@@ -34,7 +34,7 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		// 		texto: 'Salvo com sucesso'
 		// 	};
 
-		// 	$timeout(function(){ 
+		// 	$timeout(function(){
 		// 		$scope.mensagem = {
 		// 			texto: ''
 		// 		};
@@ -56,26 +56,27 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		var Imovel = $resource('/imoveis');
 		Imovel.query(function(imoveis){
 
-			console.log(imoveis);
+			var id = mensagem._id;
 
-			var imovelRemove = $filter('filter')(imoveis, {_id: mensagem.selfId});
-			var mensagemRemove = $filter('filter')(imovelRemove[0].caixaentrada, {selfId: mensagem.selfId});
+			var imovel = $filter('filter')(imoveis, {_id: mensagem.selfId});
+			var mensagens = imovel[0].caixaentrada;
+			var mensageRemove = $filter('filter')(mensagens, {_id: id});
 
-			// console.log($filter('filter')(imoveis[3].caixaentrada, {selfId: mensagem.selfId}));
+			function findWithAttr(array, attr, value) {
+			    for(var i = 0; i < array.length; i += 1) {
+			        if(array[i][attr] === value) {
+			            return i;
+			        }
+			    }
+			}
+			var pos = findWithAttr(mensagens, '_id', id);
+			mensagens.splice(pos, 1);
 
-			// console.log($filter('filter')(mensagem, {_id: mensagem.selfId}));
-
-			// Deleta Mensagem
-			// $resource('/imoveis/:id').delete({id: imovelRemove[0]._id}, function(){
-			// 	$scope.mensagem = {
-			// 		texto: 'Imóvel removido com sucesso'
-			// 	};
-			// }, function(erro){
-			// 	$scope.mensagem = {
-			// 		texto: 'Não foi possível remover o imóvel'
-			// 	};
-			// 	console.log(erro);
-			// });
+			$resource('/imoveis/:id', { _id: id }, {
+		    update: {
+		      method: 'POST'
+		    }
+		  });
 
 		});
 	}
@@ -107,7 +108,7 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		$messageBox = $('#message'),
 		$chat = $('#chat');
 
-	
+
 	var sendMensagem = function(valor, posicao){
 
 		return '<div class="row"><div class="col-md-11">'+
@@ -132,9 +133,9 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 	};
 
 	socket.on('new message', function(data){
-		
+
 		$chat.append(data);
-		
+
 	});
 });
 
