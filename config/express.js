@@ -18,11 +18,18 @@ module.exports = function() {
 
   app.set('port', 3000);
 
+  app.use(function(req, res, next){
+    if(req.url === '/favicon.ico'){
+      res.writeHead(200, {'Content-type': 'image/x-icon'});
+    }else{
+      next();
+    }
+  });
 
-  app.all('*', function(req, res, next) {
+  app.use(function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
 

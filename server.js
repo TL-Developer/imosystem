@@ -1,7 +1,6 @@
 var http = require('http');
 var app = require('./config/express')();
-require('./config/database.js')('mongodb://<tiago.jlima.developer>:<corintiano1533>@ds041154.mongolab.com:41154/imoapp');
-// require('./config/database.js')('mongodb://localhost/imobiliaria');
+require('./config/database.js')('mongodb://localhost/imobiliaria');
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 var debug = require('debug')('imosystem');
