@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
   },
   "author": "Tiago Lima",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "body-parser": "^1.6.7",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.0.1",
+    "debug": "^2.2.0",
     "ejs": "^0.8.8",
     "elasticsearch": "^8.2.0",
     "express": "^4.8.4",

@@ -10,10 +10,22 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var helmet = require('helmet');
 
+
 module.exports = function() {
+
+
   var app = express();
 
   app.set('port', 3000);
+
+
+  app.all('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
+
 
   app.use(express.static('./public'));
   app.set('view engine', 'ejs');

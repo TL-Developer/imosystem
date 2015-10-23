@@ -72,9 +72,9 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 			var pos = findWithAttr(mensagens, '_id', id);
 			mensagens.splice(pos, 1);
 
-			$resource('/imoveis/:id', { _id: id }, {
+			$resource('/imoveis/:id', { id: id }, {
 		    update: {
-		      method: 'POST'
+		      method: 'PUT'
 		    }
 		  });
 
