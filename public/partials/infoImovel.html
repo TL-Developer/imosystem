@@ -28,10 +28,10 @@
 	</div>
 
 	<div class="infoImovel">
-		
+
 		<div class="container">
 			<div class="row">
-				
+
 				<div class="col-md-8" style="margin-top: 2%;">
 					<div class="col-md-3">
 			          	<div class="col-md-12">
@@ -46,7 +46,7 @@
 						<h1 class="nome">{{imovel.nome}}</h1>
 						<h5>{{imovel.tipo}} - {{imovel.cidade}} / {{imovel.estado}}</h5>
 						<p class="endereco">{{imovel.endereco}} - {{imovel.bairro}}</p>
-						
+
 						<div class="row">
 							<div class="col-md-11">
 								<ul class="infoQtdeComodos">
@@ -81,17 +81,17 @@
 				</div>
 
 				<div class="col-md-4 formMensagem">
-					
+
 					<div class="row">
 					    <div class="col-md-12">
 							<form action="/imoveisNome" target="_blank" method="POST" class="enviaMensagem">
-									
+
 								<div class="form-group hide-inputs">
 									<div class="row">
 						            	<div class="col-xs-6">
-											
+
 											<input type="text" class="form-control nome" placeholder="selfId" name="selfId" value="{{imovel._id}}" required>
-											
+
 										</div>
 
 									</div>
@@ -100,15 +100,15 @@
 								<div class="form-group">
 									<div class="row">
 						            	<div class="col-xs-6">
-											
+
 											<input type="text" class="form-control nome" placeholder="Nome" name="nome" required>
-											
+
 										</div>
 
 										<div class="col-xs-6">
-											
+
 											<input type="text" class="form-control email" placeholder="Email" name="email" required>
-											
+
 										</div>
 
 									</div>
@@ -118,15 +118,15 @@
 									<div class="row">
 
 										<div class="col-xs-6">
-											
+
 											<input type="text" class="form-control telefone" placeholder="Telefone" name="telefone" required>
-											
+
 										</div>
 
 										<div class="col-xs-6">
-											
+
 											<input type="text" class="form-control assunto" placeholder="Assunto" name="assunto" required>
-											
+
 										</div>
 
 									</div>
@@ -135,9 +135,9 @@
 								<div class="form-group">
 									<div class="row">
 						            	<div class="col-xs-12">
-											
+
 											<textarea class="form-control mensagem" rows="3" name="mensagem" required></textarea>
-											
+
 										</div>
 
 									</div>
@@ -170,7 +170,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-12">
 				<h3>Características</h3>
 				<ul class="caracteristicas">
 					<li ng-repeat="caract in imovel.caracteristicas"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{caract}}</li>
@@ -180,7 +180,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-12">
 				<h3>Proximidades do local</h3>
 				<ul class="caracteristicas">
 					<li ng-repeat="proximidades in imovel.proximidades"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span>{{proximidades}}</li>
@@ -190,7 +190,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-12">
 				<h3>Área total</h3>
 				<ul class="caracteristicas">
 					<li>{{imovel.areatotal}}</li>
@@ -202,20 +202,20 @@
 
 			<div class="col-md-8">
 				<h3>Mapa</h3>
-				
+
 				<div id="map" class="nopadding"></div>
 
 			</div>
 
 			<div class="col-md-4">
 				<h3>Traçar rota</h3>
-				
+
 				<div class="col-md-12 nopadding">
 	              <div class="box">
 					<div class="box-body">
 
 						<form action="" class="col-md-12">
-						    
+
 							<div class="row">
 								<div class="col-xs-12">
 								    <div class="form-group">
@@ -223,7 +223,7 @@
 								    </div>
 								</div>
 							</div>
-						    
+
 							<div class="col-md-12">
 							    <div class="form-group">
 							        <label>Qual o meio de locomoção?</label>
@@ -250,15 +250,73 @@
 						</form>
 					</div>
 				</div>
-			</div>			
+			</div>
 
 			</div>
-			
-		</div>	
+
+			<div class="col-md-12">
+					<hr />
+				</div>
+
+			<br />
+			<div class="col-md-12">
+				<h2 class="text-center text-info">+ Imóveis de {{imovel.username}}</h2>
+
+					<div class="col-sm-6 col-md-4">
+						<a ng-href="#/infoImovel/{{imovel.nome}}">
+
+							<div class="thumbnail thumbImoveis">
+								<div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
+								<img ng-src="img/imoveis/{{imovel.imagem[0]}}" class="img-responsive imagem" alt="">
+								<div class="infoImovel">
+										<ul>
+											<li>
+												<img src="img/dormitorio.png" class="dormitorio" alt="">
+												<span>{{imovel.qtdDormitorio}}</span>
+											</li>
+											<li>
+												<img src="img/banheiro.png" class="dormitorio" alt="">
+												<span>{{imovel.qtdBanheiro}}</span>
+											</li>
+											<li>
+												<img src="img/garagem.png" class="dormitorio" alt="">
+												<span>{{imovel.qtdGaragem}}</span>
+											</li>
+										</ul>
+
+										<div class="imagemPerfilClientSide">
+											<img ng-src="img/usuarios/{{imovel.usernameImagem}}" alt="" class="img-responsive img-circle">
+										</div>
+									</a>
+									<div class="curtirPerfilClientSide">
+										<img ng-src="img/btnCurtir.png" alt="" class="img-responsive img-circle" ng-click="curtir(imovel._id)" onclick="curtiu(this)">
+									</div>
+								</div>
+							<a ng-href="#/infoImovel/{{imovel.nome}}">
+								<div class="caption descricao">
+									<h5>{{imovel.cidade}} / {{imovel.estado}}</h5>
+									<h4>{{imovel.nome}}</h4>
+									<h3 class="text-bold">R${{imovel.valor}}.00</h3>
+
+									<hr>
+
+									<h5><b>{{imovel.tipo}}</b> {{imovel.bairro}}</h5>
+								</div>
+							</div>
+						</a>
+					</div>
+
+
+				<div class="col-md-12">
+					<hr />
+				</div>
+			</div>
+
+		</div>
 
 	</div>
-		
-</div> 
+
+</div>
 
 <div ng-include src="'partials/rodape.html'"></div>
 
