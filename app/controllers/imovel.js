@@ -1,15 +1,3 @@
-/*{
-	imagem: 'residencial.png',
-	tipo: 'Residencial Vertical',
-	nome: 'JARDIM DAS OLIMPIAS',
-	valor: '489,000,000',
-	endereco: 'av. berrini, 350 - vila olimpia São Paulo - SP',
-	status: 'PRONTO PARA MORAR',
-	qtdDormitorio: 2,
-	qtdBanheiro: 3,
-	qtdGaragem: 1
-}*/
-
 module.exports = function(app){
 
 	var Imovel = app.models.imovel;
@@ -24,17 +12,7 @@ module.exports = function(app){
 			console.error(erro);
 			res.status(500).json(erro);
 		});
-
-		Imovel.search({
-		  query_string: {
-		    query: "Residencia Centro SP"
-		  }
-		}, function(err, results) {
-		    console.log(err);
-		    console.log(results);
-		});
 	};
-
 
 	// Pegando imovel pelo ID
 	controller.obtemIdImovel = function(req, res){
@@ -50,7 +28,6 @@ module.exports = function(app){
 		}
 		);
 	};
-
 
 	// Pegando imovel pelo Nome
 	controller.obtemNomeImovel = function(req, res){

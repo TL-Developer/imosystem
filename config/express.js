@@ -18,13 +18,13 @@ module.exports = function() {
 
   app.set('port', 3000);
 
-  app.use(function(req, res, next){
-    if(req.url === '/favicon.ico'){
-      res.writeHead(200, {'Content-type': 'image/x-icon'});
-    }else{
-      next();
-    }
-  });
+  // app.use(function(req, res, next){
+  //   if(req.url === '/favicon.ico'){
+  //     res.writeHead(200, {'Content-type': 'image/x-icon'});
+  //   }else{
+  //     next();
+  //   }
+  // });
 
   app.use(function(req, res, next){
     res.header('Access-Control-Allow-Origin', '*');
@@ -62,6 +62,20 @@ module.exports = function() {
   .then('controllers')
   .then('routes')
   .into(app);
+
+  // var err = new Error('Not Found');
+  // err.status = 404;
+
+  // app.use(function(req, res, next){
+  //   var err = new Error('Not found');
+  //   err.status = 404;
+  //   next(err);
+  // });
+
+  // app.use(function(err, req, res, next){
+  //   console.log(err.stack);
+  //   res.status(err.status || 500).json({ err: err.message });
+  // });
 
   return app;
 };
