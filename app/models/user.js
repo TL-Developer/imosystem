@@ -14,7 +14,8 @@ module.exports = function(){
 		inclusao: {
 			type: Date,
 			default: Date.now
-		}
+		},
+		displayName: String
 	});
 
 	return mongoose.model('Users', UserSchema);

@@ -5,7 +5,7 @@ var bCrypt = require('bcrypt-nodejs');
 module.exports = function(app){
 
     var User = app.models.user;
-	
+
 	passport.use('signup', new LocalStrategy({
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
@@ -21,8 +21,8 @@ module.exports = function(app){
                     }
                     // already exists
                     if (user) {
-                        console.log('User already exists with username: '+username);
-                        return done(null, false, req.flash('message','User Already Exists'));
+                        console.log('Usuário já existe: '+username);
+                        return done(null, false, req.flash('message','Usuário já existe'));
                     } else {
                         // if there is no user with that email
                         // create the user
@@ -37,14 +37,15 @@ module.exports = function(app){
                         newUser.cidade = req.param('cidade');
                         newUser.telefone = req.param('telefone');
                         newUser.imagem = req.param('imagem');
+                        newUser.displayName = req.param('displayName');
 
                         // save the user
                         newUser.save(function(err) {
                             if (err){
-                                console.log('Error in Saving user: '+err);  
-                                throw err;  
+                                console.log('Error in Saving user: '+err);
+                                throw err;
                             }
-                            console.log('User Registration succesful');    
+                            console.log('User Registration succesful');
                             return done(null, newUser);
                         });
                     }
@@ -60,5 +61,5 @@ module.exports = function(app){
     var createHash = function(password){
         return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
     }
-	
+
 };
