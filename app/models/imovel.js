@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+var Promise = require("bluebird");
 // var debug    = require('debug')('imosystem:app/models');
 
 module.exports = function(){
