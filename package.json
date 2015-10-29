@@ -4,6 +4,7 @@
   "description": "Sistema para imobiliaria",
   "main": "server.js",
   "scripts": {
+    "pretest": "jshint *",
     "test": "node_modules/mocha/bin/mocha --ui tdd tests/util_test.js",
     "start": "node app.js",
     "nodemon": "nodemon app.js"

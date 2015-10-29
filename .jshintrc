@@ -1,0 +1,10 @@
+{
+  "maxdepth": 2,
+  "expr"    : true,
+  "node"    : true,
+  "esnext"  : true,
+  "multistr": true,
+  "globals" : {
+
+  }
+}
