@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "pretest": "jshint *",
-    "test": "node_modules/mocha/bin/mocha --ui tdd tests/util_test.js",
+    "test": "set DEBUG=imosystem:* && node_modules/mocha/bin/mocha tests/unit/*",
     "start": "node app.js",
     "nodemon": "nodemon app.js"
   },
