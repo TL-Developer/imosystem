@@ -6,8 +6,8 @@
   "scripts": {
     "pretest": "jshint *",
     "test": "set DEBUG=imosystem:* && node_modules/mocha/bin/mocha tests/unit/*",
-    "start": "node app.js",
-    "nodemon": "nodemon app.js"
+    "start": "nodemon server.js",
+    "nodemon": "nodemon server.js"
   },
   "author": "Tiago Lima",
   "license": "ISC",

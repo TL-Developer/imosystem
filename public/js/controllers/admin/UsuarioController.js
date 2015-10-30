@@ -28,61 +28,6 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		console.log(erro);
 	});
 
-	$scope.salva = function(){
-		// $scope.usuario.$save().then(function(){
-		// 	$scope.mensagem = {
-		// 		texto: 'Salvo com sucesso'
-		// 	};
-
-		// 	$timeout(function(){
-		// 		$scope.mensagem = {
-		// 			texto: ''
-		// 		};
-		// 		window.location.href = '/#/admin'
-		// 	}, 2000);
-
-		// 	$scope.usuario = new $resource('/imoveis/:id');
-		// }).catch(function(erro){
-		// 	$scope.mensagem = {
-		// 		texto: 'Não foi possível salvar'
-		// 	};
-		// 	console.log(erro);
-		// });
-	};
-
-
-	$scope.removerMensagem = function(mensagem){
-
-		var Imovel = $resource('/imoveis');
-		Imovel.query(function(imoveis){
-
-			var id = mensagem._id;
-
-			var imovel = $filter('filter')(imoveis, {_id: mensagem.selfId});
-			var mensagens = imovel[0].caixaentrada;
-			var mensageRemove = $filter('filter')(mensagens, {_id: id});
-
-			function findWithAttr(array, attr, value) {
-			    for(var i = 0; i < array.length; i += 1) {
-			        if(array[i][attr] === value) {
-			            return i;
-			        }
-			    }
-			}
-			var pos = findWithAttr(mensagens, '_id', id);
-			mensagens.splice(pos, 1);
-
-			$resource('/imoveis/:id', { id: id }, {
-		    update: {
-		      method: 'PUT'
-		    }
-		  });
-
-		});
-	}
-
-
-
 	// Pegando usuarios
 	$scope.usuarios = [];
 	$http.get('/users')

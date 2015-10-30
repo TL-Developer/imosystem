@@ -128,5 +128,11 @@ module.exports = function(app){
 		});
 	};
 
+	controller.editPerfil = function(req, res){
+		var _id = req.params.id;
+
+		console.log('teste');
+	};
+
 	return controller;
 };

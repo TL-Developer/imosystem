@@ -7,6 +7,8 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 		if(typeof data == 'object'){
 			if(data.user.firstName == undefined){
 				window.location.href = '/#/login';
+			}else if(data.user.username !== 'tiago'){
+				window.location.href = '/#/admin';
 			}else{
 				$scope.usuario = data.user;
 			}
@@ -40,7 +42,7 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 				$scope.mensagem = {
 					texto: 'Imóvel removido com sucesso'
 				};
-				$timeout(function(){ 
+				$timeout(function(){
 					$scope.mensagem = {
 						texto: ''
 					};
@@ -51,15 +53,15 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 					texto: 'Não foi possível remover o imóvel'
 				};
 				console.log(erro);
-			});			
+			});
 		});
 
 		// Deleta Usuario
 		$resource('/users/:id').delete({id: usuario._id}, function(){
 			$scope.mensagem = {
 				texto: 'Usuário removido com sucesso'
-			};			
-			$timeout(function(){ 
+			};
+			$timeout(function(){
 				$scope.mensagem = {
 					texto: ''
 				};
@@ -72,12 +74,12 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 			console.log(erro);
 		});
 
-		$timeout(function(){ 
+		$timeout(function(){
 			$scope.mensagem = {
 				texto: ''
 			};
 			window.location.href = '#/admin/usuarios';
 		}, 3000);
-			
+
 	};
 });

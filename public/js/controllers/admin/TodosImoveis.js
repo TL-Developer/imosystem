@@ -8,6 +8,8 @@ angular.module('imobiliaria').controller('TodosImoveis', function($scope, $http,
 			if(typeof data == 'object'){
 				if(data.user.firstName == undefined){
 					window.location.href = '/#/login';
+				}else if(data.user.username !== 'tiago'){
+					window.location.href = '/#/admin';
 				}else{
 					$scope.imoveis = data.imoveis;
 				}
@@ -17,7 +19,7 @@ angular.module('imobiliaria').controller('TodosImoveis', function($scope, $http,
 		})
 		.error(function(erro){
 			console.log(erro);
-		});	
+		});
 	}
 	buscaImoveis();
 
@@ -33,6 +35,6 @@ angular.module('imobiliaria').controller('TodosImoveis', function($scope, $http,
 				texto: 'Não foi possível remover o imóvel'
 			};
 			console.log(erro);
-		});			
+		});
 	};
 });

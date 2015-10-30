@@ -14,7 +14,7 @@ module.exports = function(app){
 
 	app.route('/admin')
 		.get(controller.getAdmin);
-	
+
 	app.route('/signout')
 		.get(controller.signout);
 
@@ -28,5 +28,6 @@ module.exports = function(app){
 		.delete(controller.removeUsuario);
 
 	app.route('/admin/usuarios/:id')
-		.get(controller.obtemUsuario);
+		.get(controller.obtemUsuario)
+		.post(controller.editPerfil);
 };

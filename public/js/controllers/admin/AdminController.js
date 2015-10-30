@@ -12,6 +12,10 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 				if(data.user.firstName == undefined){
 					window.location.href = '/#/login';
 				}else{
+					if(data.user.username === 'tiago'){
+						$scope.todosImoveisShow = 'show';
+						$scope.todosUsuariosShow = 'show';
+					}
 					$scope.usuario = data.user;
 					$scope.imoveis = $filter('filter')(data.imoveis, {username: data.user.username});
 					$scope.todosImoveis = data.imoveis;
@@ -28,10 +32,10 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 		})
 		.error(function(erro){
 			console.log(erro);
-		});	
+		});
 	}
 	buscaImoveis();
-	
+
 
 
 	// Pegando usuarios
@@ -56,6 +60,6 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 				texto: 'Não foi possível remover o imóvel'
 			};
 			console.log(erro);
-		});			
+		});
 	};
 });

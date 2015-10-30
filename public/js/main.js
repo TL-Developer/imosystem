@@ -36,8 +36,8 @@ angular.module('imobiliaria', ['ngRoute','ngResource','minhasDiretivas', 'ngAnim
 		templateUrl: 'partials/login.html'
 	})
 	.when('/signup', {
-		templateUrl: 'partials/signup.html'
-		//,controller: 'ImovelController'
+		templateUrl: 'partials/signup.html',
+		controller: 'SignupController'
 	})
 	.when('/admin', {
 		templateUrl: 'partials/admin/principal.html',
