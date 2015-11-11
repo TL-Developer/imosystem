@@ -2,12 +2,13 @@
 <div ng-include src="'partials/banner.html'"></div>
 
 <div class="container">
-	
+
 	<div class="row">
-		
-		<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro">
+
+		<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro track by imovel._id">
+			{{imovel.$$hashKey}}
 			<a ng-href="#/infoImovel/{{imovel.nome}}">
-				
+
 				<div class="thumbnail thumbImoveis">
 					<div class="situacaoImovel"><h5>{{imovel.status}}</h5></div>
 					<img ng-src="img/imoveis/{{imovel.imagem[0]}}" class="img-responsive imagem" alt="">
@@ -40,7 +41,7 @@
 						<h5>{{imovel.cidade}} / {{imovel.estado}}</h5>
 						<h4>{{imovel.nome}}</h4>
 						<h3 class="text-bold">R${{imovel.valor}}.00</h3>
-						
+
 						<hr>
 
 						<h5><b>{{imovel.tipo}}</b> {{imovel.bairro}}</h5>
