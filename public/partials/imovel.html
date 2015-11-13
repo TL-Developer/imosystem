@@ -150,53 +150,56 @@
 
 		<div class="form-group">
 
+
 				<div class="row">
 
-					<div class="col-xs-6">
+					<ng-form="caracteristicas">
+						<div class="col-xs-6">
 
-						<div class="box box-info">
-			                <div class="box-header with-border">
-			                  <h3 class="box-title">Características</h3>
-			                  <div class="box-tools pull-right">
-			                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-			                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-			                  </div>
-			                </div>
+							<div class="box box-info">
+	                <div class="box-header with-border">
+	                  <h3 class="box-title">Características</h3>
+	                  <div class="box-tools pull-right">
+	                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	                  </div>
+	                </div>
 
-							<div class="box-footer clearfix">
-			                  <div class="col-xs-6">
-			                  	<input type="text" class="form-control listaCaracteristicas" id="nomeImovel" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama">
-			                  </div>
+									<div class="box-footer clearfix">
+	                  <div class="col-xs-6">
+	                  	<input type="text" class="form-control listaCaracteristicas" id="nomeImovel" placeholder="Ex: Academia | Playground | Ar condicionado | Fliperama">
+	                  </div>
 
-			                  <div class="col-xs-6">
-			                  	<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left btn-block" ng-click="inserirCaracteristicas()">Inserir nova característica</a>
-			                   </div>
-			                </div><!-- /.box-footer -->
+	                  <div class="col-xs-6">
+	                  	<a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left btn-block" ng-click="inserirCaracteristicas()">Inserir nova característica</a>
+	                   </div>
+	                </div><!-- /.box-footer -->
 
-			                <!-- /.box-header -->
-			                <div class="box-body" ng-show="imovel.caracteristicas.length">
-			                  <div class="table-responsive">
-			                    <table class="table no-margin">
-			                      <thead>
-			                        <tr>
-			                          <th>Nome</th>
-			                        </tr>
-			                      </thead>
-			                      <tbody>
-			                        <tr ng-repeat="caracteristica in imovel.caracteristicas">
-			                          <td><i class="fa fa-fw fa-check-circle check-green"></i></td>
-			                          <td>{{caracteristica}}</td>
-			                          <td><button type="button" class="btn btn-danger" ng-click="excluirCaracteristicas(caracteristica)">Excluir</button></td>
-			                          <td><div class="sparkbar" data-color="#00a65a" data-height="20"><canvas width="34" height="20" style="display: inline-block; width: 34px; height: 20px; vertical-align: top;"></canvas></div></td>
-			                        </tr>
-			                      </tbody>
-			                    </table>
-			                  </div><!-- /.table-responsive -->
-			                </div><!-- /.box-body -->
+	                <!-- /.box-header -->
+	                <div class="box-body" ng-show="imovel.caracteristicas.length">
+	                  <div class="table-responsive">
+	                    <table class="table no-margin">
+	                      <thead>
+	                        <tr>
+	                          <th>Nome</th>
+	                        </tr>
+	                      </thead>
+	                      <tbody>
+	                        <tr ng-repeat="caracteristica in imovel.caracteristicas">
+	                          <td><i class="fa fa-fw fa-check-circle check-green"></i></td>
+	                          <td>{{caracteristica}}</td>
+	                          <td><button type="button" class="btn btn-danger" ng-click="excluirCaracteristicas(caracteristica)">Excluir</button></td>
+	                          <td><div class="sparkbar" data-color="#00a65a" data-height="20"><canvas width="34" height="20" style="display: inline-block; width: 34px; height: 20px; vertical-align: top;"></canvas></div></td>
+	                        </tr>
+	                      </tbody>
+	                    </table>
+	                  </div><!-- /.table-responsive -->
+	                </div><!-- /.box-body -->
 
-			              </div>
+	            </div>
 
-					</div>
+						</div>
+					</ng-form>
 
 					<div class="col-xs-6">
 
