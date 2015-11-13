@@ -13,10 +13,10 @@
                 <h3 class="panel-title">Começar sua Sessão</h3>
             </div>
             <div class="panel-body">
-                <form role="form" action="/login" method="POST" class="form-signin">
+                <form role="myForm" action="/login" method="POST" class="form-signin" name="myForm">
                     <fieldset>
                         <div class="form-group has-feedback">
-                            <input type="text" name="username" placeholder="Username" required="required" autofocus="autofocus" class="form-control"/>
+                            <input type="text" name="username" placeholder="Username" required="required" autofocus="autofocus" class="form-control">
                             <span class="glyphicon glyphicon-user form-control-feedback" style="font-size: 10px; color: #777;"></span>
                         </div>
                         <div class="form-group has-feedback">
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group">
-                          <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button><span class="clearfix"></span>
+                          <button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="myForm.$invalid">Entrar</button><span class="clearfix"></span>
                         </div>
                         <!-- Change this to a button or input when using this as a form -->
                         <div id="message"></div>

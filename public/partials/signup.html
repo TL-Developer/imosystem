@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <form method="post" action="/images/upload-usuario" target="_blank" enctype="multipart/form-data" ng-submit="unlockImovel(user.imagem)">
+    <form method="post" action="/images/upload-usuario" target="_blank" enctype="multipart/form-data" ng-submit="unlockImovel(user.imagem)" name="myForm">
 
       <div class="file-input file-input-new">
 
@@ -35,7 +35,7 @@
 
       <br />
        <div class="form-group" ng-hide="imagemHide">
-          <input type="submit" class="btn btn-primary" value="Enviar Imagem">
+          <input type="submit" class="btn btn-primary" value="Enviar Imagem" ng-disabled="myForm.$invalid">
         </div>
       </div>
 
