@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('UsuariosController', function($scope, $http, $resource, $timeout, $filter){
+angular.module('imobiliaria').controller('UsuariosController', ['$scope','$http','$resource','$timeout','$filter' ,function($scope, $http, $resource, $timeout, $filter){
 
 	$scope.usuario = [];
 
@@ -82,4 +82,4 @@ angular.module('imobiliaria').controller('UsuariosController', function($scope, 
 		}, 3000);
 
 	};
-});
+}]);

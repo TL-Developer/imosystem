@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('ImovelController', function($scope, Imovel, $routeParams, $timeout, $http){
+angular.module('imobiliaria').controller('ImovelController', ['$scope', 'Imovel', '$routeParams', '$timeout', '$http', function($scope, Imovel, $routeParams, $timeout, $http){
 
 	$scope.mensagem = {texto: ''};
 
@@ -113,4 +113,4 @@ angular.module('imobiliaria').controller('ImovelController', function($scope, Im
 		}
 	};
 
-});
+}]);

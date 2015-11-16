@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('QuemSomosController', function($scope){
+angular.module('imobiliaria').controller('QuemSomosController', ['$scope', function($scope){
 
-	 
-});
+
+}]);

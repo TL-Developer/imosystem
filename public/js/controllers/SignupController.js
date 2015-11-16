@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('SignupController', function($scope){
+angular.module('imobiliaria').controller('SignupController', ['$scope', function($scope){
 
 
 	$scope.unlockImovel = function(valor){
@@ -8,4 +8,4 @@ angular.module('imobiliaria').controller('SignupController', function($scope){
 		}
 	};
 
-});
+}]);

@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('UploadImages', function($scope, $http){
+angular.module('imobiliaria').controller('UploadImages', ['$scope','$http', function($scope, $http){
 
-	
-});
+
+}]);

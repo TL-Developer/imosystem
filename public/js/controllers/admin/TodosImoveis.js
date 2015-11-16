@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('TodosImoveis', function($scope, $http,$filter,$resource){
+angular.module('imobiliaria').controller('TodosImoveis', ['$scope','$http','$filter','$resource', function($scope, $http,$filter,$resource){
 
 	$scope.imoveis = [];
 
@@ -37,4 +37,4 @@ angular.module('imobiliaria').controller('TodosImoveis', function($scope, $http,
 			console.log(erro);
 		});
 	};
-});
+}]);

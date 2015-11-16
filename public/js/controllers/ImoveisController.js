@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('ImoveisController', function($scope, Imovel, $timeout, $filter){
+angular.module('imobiliaria').controller('ImoveisController', ['$scope','Imovel','$timeout','$filter', function($scope, Imovel, $timeout, $filter){
 
 	$scope.imoveis = [];
 
@@ -22,7 +22,7 @@ angular.module('imobiliaria').controller('ImoveisController', function($scope, I
 
 
 	$scope.curtir = function(id){
-		
+
 		var selfImovel = $filter('filter')($scope.imoveis, {_id: id});
 
 		if( selfImovel[0].curtidas == undefined){
@@ -40,4 +40,4 @@ angular.module('imobiliaria').controller('ImoveisController', function($scope, I
 
 	}
 
-});
+}]);

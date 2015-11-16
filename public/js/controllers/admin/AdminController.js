@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('AdminController', function($scope, $http,$filter,$resource){
+angular.module('imobiliaria').controller('AdminController', ['$scope','$http','$filter','$resource', function($scope, $http,$filter,$resource){
 
 	$scope.usuario = [];
 	$scope.imoveis = [];
@@ -62,4 +62,4 @@ angular.module('imobiliaria').controller('AdminController', function($scope, $ht
 			console.log(erro);
 		});
 	};
-});
+}]);

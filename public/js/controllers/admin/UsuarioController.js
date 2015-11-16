@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('UsuarioController', function($scope, $http, $routeParams, $filter, $resource){
+angular.module('imobiliaria').controller('UsuarioController', ['$scope','$http','$routeParams','$filter','$resource' ,function($scope, $http, $routeParams, $filter, $resource){
 
 	$scope.usuario = [];
 	$scope.imoveis = [];
@@ -82,6 +82,6 @@ angular.module('imobiliaria').controller('UsuarioController', function($scope, $
 		$chat.append(data);
 
 	});
-});
+}]);
 
 // <div class="row"><div class="col-md-12"><img style="width: 35px; height: 35px; float: left; margin: 1% 2% 0 0;" class="img-responsive img-circle" src="img/usuarios/'+$scope.usuario.imagem+'" alt="'+$scope.usuario.firstName+'" title="'+$scope.usuario.firstName+' '+new Date()+'"> <div class="'+cores[coresIncrement]+'" style="float: left;"><h5 class="text-info nopadding"></h5></div></div>  </div>
