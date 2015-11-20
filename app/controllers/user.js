@@ -119,6 +119,8 @@ module.exports = function(app){
 	controller.obtemUsuario = function(req, res){
 		var _id = req.params.id;
 
+		console.log('ola');
+
 		Usuarios.find().exec().then(function(usuario){
 			res.json(usuario);
 		},
