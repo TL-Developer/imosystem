@@ -59,7 +59,7 @@ body{
 		width: 100%;
 		height: 212px;
 	}
-	
+
 	.situacaoImovel{
 		background: $prontoMorar;
 		position: absolute;
@@ -67,7 +67,7 @@ body{
 		transform: skewX(-25deg) rotate(-38deg);
 		left: -32px;
 		width: 250px;
-		
+
 		h5{
 			text-align: center;
 			color: #fff;
@@ -82,8 +82,8 @@ body{
 		float: left;
 		margin-bottom: 5%;
 		position: relative;
-		
-		
+
+
 		.curtirPerfilClientSide{
 
 			img{
@@ -166,7 +166,7 @@ body{
 }
 
 form.cadastrarImovel{
-	
+
 	.form-group{
 		label{
 			margin-top: 2%;
@@ -196,7 +196,7 @@ form.cadastrarImovel{
 				li{
 					float: left;
 					padding: 5px 10px;
-					
+
 					a{
 						color: $cinzaEscuro;
 						font-size: 16px;
@@ -216,7 +216,7 @@ form.cadastrarImovel{
 
 	.imagemFull{
 		width: 100%;
-		max-height: 480px; 
+		max-height: 480px;
 	}
 
 	.busca{
@@ -285,9 +285,9 @@ form.cadastrarImovel{
 			margin-top: 30px;
 			line-height: 30px;
 		}
-		
+
 		.titulo{
-			
+
 			.contentImagem{
 				padding: 0;
 
@@ -381,7 +381,7 @@ form.cadastrarImovel{
 	border: 1px solid #dce0e0;
 
 	.row{
-	
+
 		.formMensagem{
 			border: 1px solid #dce0e0;
 			padding-top: 1%;
@@ -404,7 +404,7 @@ form.cadastrarImovel{
 		font-size: 14px;
 	}
 
-	
+
 
 	button.btnAdquirirHoje{
 		float: right;
@@ -427,7 +427,7 @@ form.cadastrarImovel{
 			font-size: 14px;
 			padding: 0;
 			margin: 0;
-			
+
 			img{
 				width: 100%;
 			}
@@ -440,19 +440,19 @@ form.cadastrarImovel{
 
 	.galeriaImovel{
 		background: $azulBebe;
-		
+
 			.carousel{
-				
+
 
 				.container{
 					position: relative;
-					
+
 					.col-md-4{
 						background: rgba(60,63,64,0.9);
 						position: absolute;
 						bottom: 0;
 						right: 0;
-						
+
 						.valor{
 							font-weight: bold;
 							color: #fff;
@@ -466,7 +466,7 @@ form.cadastrarImovel{
 			height: 480px;
 
 			.item{
-				
+
 				img{
 					width: 100%;
 					max-height: 522px;
@@ -480,7 +480,7 @@ form.cadastrarImovel{
 	margin-top: 20px;
 
 	h1{
-		color: $azulEscuro;	
+		color: $azulEscuro;
 	}
 
 	p{
@@ -512,7 +512,7 @@ form.cadastrarImovel{
 			}
 		}
 	}
-	
+
 }
 .localizacao{
 	padding: 0 !important;
@@ -635,13 +635,13 @@ form.cadastrarImovel{
 }
 
 .hide-inputs{
-	opacity: 0; 
-	position: absolute; 
+	opacity: 0;
+	position: absolute;
 	z-index: -1;
 }
 
 .modal{
-	
+
 	.modal-dialog{
 		margin: 250px auto !important;
 	}
@@ -676,7 +676,7 @@ form.cadastrarImovel{
 		height: 400px;
 		overflow-y: scroll;
 	}
-	
+
 	.box-primary{
 		left: auto;
 	    margin-right: auto;
@@ -691,7 +691,7 @@ form.cadastrarImovel{
 }
 
 .contentChat{
-	
+
 	#chat{
 		height: 400px;
 		overflow-y: scroll;
@@ -721,5 +721,18 @@ form.cadastrarImovel{
 			width: 100%;
 		}
 	}
+}
 
+
+.imagem-fundo.loginPage{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.login-page{
+	.login-box{
+		position: relative;
+		z-index: 5;
+	}
 }
