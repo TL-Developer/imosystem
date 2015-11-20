@@ -182,15 +182,18 @@ module.exports = function(app){
 	// Busca Imóvel
 	controller.buscaImovel = function(req, res){
 
-		var query = req.body.query;
+		var transacao = new RegExp(["^", req.body.transacao, "$"].join(""), "i")
+			,	tipo	    = new RegExp(["^", req.body.tipo, "$"].join(""), "i")
+			,	onde	 	  = new RegExp(["^", req.body.onde, "$"].join(""), "i");
 
-		Imovel.find({ "nome": new RegExp(query, "i") } , function(errs, imoveis){
-			if(errs){
-				console.log('Não localizamos seu imóvel')
-			}else{
-				res.json(imoveis);
+		Imovel.findOne({status: 'LANÇAMENTO'}).exec().then(function(imovel){
+			if (!imovel) throw new Error("Imovel não encontrado");
+			res.json(imovel);
+		},function(erro) {
+				console.log(erro);
+				res.status(404).json(erro)
 			}
-		});
+		);
 
 	};
 

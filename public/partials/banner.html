@@ -2,9 +2,41 @@
 	<img src="img/banner.jpg" alt="" class="img-responsive imagemFull">
 
 	<div class="container busca">
+
+    <!--
 		<form action="/search" method="POST">
 			<input type="search" placeholder="Buscar empreendimento" name="query">
-		</form>
-			<!-- <input type="search" placeholder="Buscar empreendimento" ng-model="filtro"> -->
+		</form>-->
+
+    <form action="/search" method="POST">
+
+      <div class="form-group">
+        <select class="form-control" name="transacao">
+          <option>Transação?</option>
+          <option>Lançamento</option>
+          <option>Pronto para morar</option>
+          <option>Alugar</option>
+          <option>Em construção</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" name="tipo">
+          <option>Tipo?</option>
+          <option>Apartamento</option>
+          <option>Residencial</option>
+          <option>Residencial Sobrado</option>
+          <option>Castelo</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Onde?" name="onde">
+      </div>
+
+      <input type="submit" class="btn btn-default" value="Buscar">
+
+    </form>
+
 	</div>
 </div>
