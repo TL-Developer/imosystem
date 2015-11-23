@@ -5,6 +5,7 @@ module.exports = function(app){
 	var controller = {};
 
 	controller.listaImoveis = function(req, res){
+
 		Imovel.find().exec().then(function(imoveis){
 			res.json(imoveis);
 		},
@@ -12,6 +13,9 @@ module.exports = function(app){
 			console.error(erro);
 			res.status(500).json(erro);
 		});
+
+
+
 	};
 
 	// Pegando imovel pelo ID
@@ -186,15 +190,11 @@ module.exports = function(app){
 			,	tipo	    = new RegExp(["^", req.body.tipo, "$"].join(""), "i")
 			,	onde	 	  = new RegExp(["^", req.body.onde, "$"].join(""), "i");
 
-		Imovel.findOne({status: 'LANÇAMENTO'}).exec().then(function(imovel){
-			if (!imovel) throw new Error("Imovel não encontrado");
-			res.json(imovel);
-		},function(erro) {
-				console.log(erro);
-				res.status(404).json(erro)
-			}
-		);
 
+		Imovel.search({query_string: {query: req.body.q}}, function(err, results) {
+        if (err) return next(err);
+        res.send(results);
+    });
 	};
 
 	return controller;
