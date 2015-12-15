@@ -6,7 +6,8 @@ module.exports = function(app){
 		.post(controller.salvaImovel);
 
 	app.route('/search')
-		.post(controller.buscaImovel);
+		.post(controller.buscaImovel)
+		.get(controller.findListImoveis);
 
 	app.route('/imoveis/:id')
 		.get(controller.obtemIdImovel)

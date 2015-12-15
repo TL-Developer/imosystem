@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 // var Promise = require("bluebird");
 // var debug    = require('debug')('imosystem:app/models');
-var elasticsearch = require('elasticsearch');
-var mongoosastic = mongoosastic = require('mongoosastic');
+// var elasticsearch = require('elasticsearch');
+// var mongoosastic = mongoosastic = require('mongoosastic');
 
 
 
@@ -110,27 +110,5 @@ module.exports = function(){
     }
 	});
 
-  var esClient = new elasticsearch.Client({host: 'http://localhost:3000/?pretty0'});
-
-
-  schema.plugin(mongoosastic,{
-    esClient: esClient,
-    hosts: [
-      'localhost:3000'
-    ]
-  });
-
-	var ImovelSchema = mongoose.model('Imoveis', schema);
-
-  ImovelSchema.createMapping(function(err, mapping){
-    if(err){
-      console.log('error creating mapping (you can safely ignore this)');
-      console.log(err);
-    }else{
-      console.log('mapping created!');
-      console.log(mapping);
-    }
-  });
-
-  return ImovelSchema;
+  return mongoose.model('Imoveis', schema);
 };

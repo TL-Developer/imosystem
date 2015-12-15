@@ -15,7 +15,7 @@
           <option>Transação?</option>
           <option>Lançamento</option>
           <option>Pronto para morar</option>
-          <option>Alugar</option>
+          <option>Para alugar</option>
           <option>Em construção</option>
         </select>
       </div>
@@ -31,7 +31,11 @@
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Onde?" name="onde">
+        <!-- <input type="text" class="form-control" placeholder="Bairro?" name="bairro"> -->
+         <select class="form-control" name="bairro">
+          <option>Bairro?</option>
+          <option ng-repeat="imovel in imoveis" value="{{imovel.bairro}}">{{imovel.bairro}}</option>
+        </select>
       </div>
 
       <input type="submit" class="btn btn-default" value="Buscar">

@@ -186,15 +186,27 @@ module.exports = function(app){
 	// Busca Imóvel
 	controller.buscaImovel = function(req, res){
 
-		var transacao = new RegExp(["^", req.body.transacao, "$"].join(""), "i")
-			,	tipo	    = new RegExp(["^", req.body.tipo, "$"].join(""), "i")
-			,	onde	 	  = new RegExp(["^", req.body.onde, "$"].join(""), "i");
+		var _transacao = req.body.transacao
+			,	_tipo	    = req.body.tipo
+			,	_bairro	 	  = req.body.bairro;
 
+		Imovel.find(
+			{$or:
+				[
+					{status: { $regex : new RegExp(_transacao, "i") } },
+					{tipo: { $regex : new RegExp(_tipo, "i") } },
+					{bairro: { $regex : new RegExp(_bairro, "i") }}
+				]
+			}
+		).exec().then(function(imovel){
+			console.log(imovel.length);
+			res.json(imovel);
+		});
 
-		Imovel.search({query_string: {query: req.body.q}}, function(err, results) {
-        if (err) return next(err);
-        res.send(results);
-    });
+	};
+
+	controller.findListImoveis = function(req, res){
+
 	};
 
 	return controller;

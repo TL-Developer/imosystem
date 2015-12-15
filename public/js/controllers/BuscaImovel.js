@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('BuscaImovelController', function($scope, Imovel, $timeout, $filter, $resource){
+angular.module('imobiliaria').controller('BuscaImovelController', function($scope, $filter, $resource){
 
 	$scope.imoveis = [];
 
@@ -20,7 +20,7 @@ angular.module('imobiliaria').controller('BuscaImovelController', function($scop
 
 
 	$scope.curtir = function(id){
-		
+
 		var selfImovel = $filter('filter')($scope.imoveis, {_id: id});
 
 		if( selfImovel[0].curtidas == undefined){
@@ -36,6 +36,6 @@ angular.module('imobiliaria').controller('BuscaImovelController', function($scop
 			console.log('Não foi possível salvar');
 		});
 
-	}
+	};
 
 });
