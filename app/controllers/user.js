@@ -105,6 +105,29 @@ module.exports = function(app){
 		});
 	};
 
+	controller.salvaUsuario = function(req, res){
+		var idUser = req.body.idUser
+			, firstName = req.body.firstName
+			,	lastName = req.body.lastName
+			, cidade = req.body.cidade
+			,	telefone = req.body.telefone;
+
+
+		Usuarios.findById(idUser).exec().then(function(usuario){
+			usuario.firstName = firstName;
+			usuario.lastName = lastName;
+			usuario.cidade = cidade;
+			usuario.telefone = telefone;
+
+			usuario.save().exec().then(function(err){
+				res.redirect('#/admin/usuarios/'+idUser);
+			});
+		}, function(erro){
+			console.log(erro);
+			res.status(404);
+		});
+	};
+
 	controller.removeUsuario = function(req, res){
 		var _id = req.params.id;
 

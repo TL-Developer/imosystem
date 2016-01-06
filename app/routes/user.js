@@ -22,7 +22,8 @@ module.exports = function(app){
 		.post(controller.enviaImagem);
 
 	app.route('/users')
-		.get(controller.listaUsuarios);
+		.get(controller.listaUsuarios)
+		.post(controller.salvaUsuario);
 
 	app.route('/users/:id')
 		.delete(controller.removeUsuario);

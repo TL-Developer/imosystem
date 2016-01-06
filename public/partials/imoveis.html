@@ -6,7 +6,7 @@
 	<div class="row">
 
 		<div class="col-sm-6 col-md-4" ng-repeat="imovel in imoveis | filter: filtro track by imovel._id">
-			{{imovel.$$hashKey}}
+			<!-- {{imovel.$$hashKey}} -->
 			<a ng-href="#/infoImovel/{{imovel.nome}}">
 
 				<div class="thumbnail thumbImoveis">

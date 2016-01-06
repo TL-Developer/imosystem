@@ -14,8 +14,6 @@ module.exports = function(app){
 			res.status(500).json(erro);
 		});
 
-
-
 	};
 
 	// Pegando imovel pelo ID
@@ -167,12 +165,12 @@ module.exports = function(app){
 			});
 
 			imovel.save(function (err) {
-		        if(err) {
-		            console.error('ERROR!');
-		        }else{
-		        	res.end('enviada com sucesso!');
-		        }
-		    });
+        if(err) {
+            console.error('ERROR!');
+        }else{
+        	res.end('enviada com sucesso!');
+        }
+	    });
 
 		},
 		function(erro) {

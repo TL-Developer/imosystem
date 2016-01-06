@@ -1,7 +1,7 @@
 module.exports = function(app){
 	var controller = app.controllers.imovel;
 
-	app.route('/imoveis')
+	app.route('/api/imoveis')
 		.get(controller.listaImoveis)
 		.post(controller.salvaImovel);
 
@@ -9,7 +9,7 @@ module.exports = function(app){
 		.post(controller.buscaImovel)
 		.get(controller.findListImoveis);
 
-	app.route('/imoveis/:id')
+	app.route('/api/imoveis/:id')
 		.get(controller.obtemIdImovel)
 		.delete(controller.removeImovel);
 

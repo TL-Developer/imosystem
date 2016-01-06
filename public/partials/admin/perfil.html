@@ -68,7 +68,12 @@
                 <h1>Editar Perfil</h1>
                 <br />
 
-                <form method="post">
+                <form method="post" action="/users" ng-submit="editaPerfil()">
+
+                  <div class="form-group has-feedback col-md-5">
+                    <label for="firstName">ID User:</label>
+                    <input type="text" name="idUser" ng-model="usuarios[0]._id" required="required" class="form-control"/>
+                  </div>
 
                   <div class="form-group has-feedback col-md-5">
                     <label for="firstName">Primeiro nome:</label>
@@ -76,17 +81,17 @@
                   </div>
 
                   <div class="form-group has-feedback col-md-5">
-                    <label for="firstName">Segundo nome:</label>
+                    <label for="lastName">Segundo nome:</label>
                     <input type="text" name="lastName" ng-model="usuarios[0].lastName" required="required" class="form-control"/>
                   </div>
 
                   <div class="form-group has-feedback col-md-5">
-                    <label for="firstName">Cidade:</label>
-                    <input type="text" name="email" ng-model="usuarios[0].cidade" required="required" class="form-control"/>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" name="cidade" ng-model="usuarios[0].cidade" required="required" class="form-control"/>
                   </div>
 
                   <div class="form-group has-feedback col-md-5">
-                    <label for="firstName">Telefone:</label>
+                    <label for="telefone">Telefone:</label>
                     <input type="text" name="telefone" ng-model="usuarios[0].telefone" required="required" class="form-control"/>
                   </div>
 

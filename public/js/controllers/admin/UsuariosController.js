@@ -1,4 +1,4 @@
-angular.module('imobiliaria').controller('UsuariosController', ['$scope','$http','$resource','$timeout','$filter' ,function($scope, $http, $resource, $timeout, $filter){
+angular.module('imobiliaria').controller('UsuariosController', ['$scope','$http','$resource','$timeout','$filter', 'Users' ,function($scope, $http, $resource, $timeout, $filter, Users){
 
 	$scope.usuario = [];
 
@@ -23,11 +23,11 @@ angular.module('imobiliaria').controller('UsuariosController', ['$scope','$http'
 
 	// Pegando usuarios
 	$scope.usuarios = [];
-	$http.get('/users')
-	.success(function(usuarios){
-		$scope.usuarios = usuarios;
-	})
-	.error(function(erro){
+
+	Users.query(function(users){
+		$scope.usuarios = users;
+	}, function(erro){
+		console.log('Não foi possível obter os usuários');
 		console.log(erro);
 	});
 

@@ -39,6 +39,12 @@ angular.module('imobiliaria').controller('UsuarioController', ['$scope','$http',
 		console.log(erro);
 	});
 
+	$scope.editaPerfil = function(){
+		setTimeout(function(){
+			location.reload();
+		},1000);
+	};
+
 
 	$scope.abrirMensagem = function(mensagem){
 		modalReadEmail(mensagem);
@@ -85,3 +91,4 @@ angular.module('imobiliaria').controller('UsuarioController', ['$scope','$http',
 }]);
 
 // <div class="row"><div class="col-md-12"><img style="width: 35px; height: 35px; float: left; margin: 1% 2% 0 0;" class="img-responsive img-circle" src="img/usuarios/'+$scope.usuario.imagem+'" alt="'+$scope.usuario.firstName+'" title="'+$scope.usuario.firstName+' '+new Date()+'"> <div class="'+cores[coresIncrement]+'" style="float: left;"><h5 class="text-info nopadding"></h5></div></div>  </div>
+
