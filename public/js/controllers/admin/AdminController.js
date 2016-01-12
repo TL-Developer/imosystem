@@ -50,7 +50,7 @@ angular.module('imobiliaria').controller('AdminController', ['$scope','$http','$
 
 	$scope.remove = function(imovel){
 		// Deleta Imovel
-		$resource('/imoveis/:imovelId').delete({imovelId: imovel._id}, function(){
+		$resource('api/imoveis/:imovelId').delete({imovelId: imovel._id}, function(){
 			$scope.mensagem = {
 				texto: 'Imóvel removido com sucesso'
 			};

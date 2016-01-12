@@ -50,6 +50,15 @@ angular.module('imobiliaria').controller('UsuarioController', ['$scope','$http',
 		modalReadEmail(mensagem);
 	};
 
+	$scope.exluirMensagem = function(mensagem){
+
+		// $resource('api/imoveis').query(function(imoveis){
+		// 	var teste = $filter('filter')(imoveis, {caixaentrada: mensagem});
+		// 	console.log(teste);
+		// });
+
+	};
+
 
 
 	// var cores = ['alert alert-info', 'alert alert-success', 'alert alert-warning', 'alert alert-danger'],
