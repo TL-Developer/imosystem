@@ -7,7 +7,7 @@ module.exports = function(app){
 	controller.listaImoveis = function(req, res){
 
 		Imovel.find().exec().then(function(imoveis){
-			res.json(imoveis);
+			res.status(200).json(imoveis);
 		},
 		function(erro){
 			console.error(erro);
