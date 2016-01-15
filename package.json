@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Sistema para imobiliaria",
   "main": "server.js",
+  "engines": {
+    "node":"0.12.2"
+  },
   "scripts": {
     "pretest": "jshint *",
     "test": "./node_modules/mocha/bin/mocha",
