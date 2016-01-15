@@ -1,6 +1,10 @@
 var http = require('http');
 var app = require('./config/express')();
-require('./config/database.js')('mongodb://localhost/imobiliaria');
+if(process.env.NODE_ENV == 'production'){
+  require('./config/database.js')('mongodb://localhost/imobiliaria');
+}else{
+  require('./config/database.js')('mongodb://localhost/imobiliaria');
+}
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 // var debug = require('debug')('imosystem');
