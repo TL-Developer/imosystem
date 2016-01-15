@@ -1,7 +1,7 @@
 var http = require('http');
 var app = require('./config/express')();
 if(process.env.NODE_ENV == 'production'){
-  require('./config/database.js')('mongodb://localhost/imobiliaria');
+  require('./config/database.js')('mongodb://tiago:admin@ds041154.mongolab.com:41154/imoapp');
 }else{
   require('./config/database.js')('mongodb://localhost/imobiliaria');
 }
