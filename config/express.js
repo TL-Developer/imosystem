@@ -63,19 +63,18 @@ module.exports = function() {
   .then('routes')
   .into(app);
 
-  // var err = new Error('Not Found');
-  // err.status = 404;
+  app.use(function(req, res, next){
+    res.status(404).sendfile('./public/partials/404.html');
+    next();
+  });
 
-  // app.use(function(req, res, next){
-  //   var err = new Error('Not found');
-  //   err.status = 404;
-  //   next(err);
-  // });
-
-  // app.use(function(err, req, res, next){
-  //   console.log(err.stack);
-  //   res.status(err.status || 500).json({ err: err.message });
-  // });
+  app.use(function(err, req, res, next){
+    if(process.env.NODE_ENV == 'production'){
+      res.status(500).sendfile('./public/partials/500.html');
+      return ;
+    }
+    next(err);
+  });
 
   return app;
 };
