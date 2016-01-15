@@ -5,6 +5,8 @@ var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 // var debug = require('debug')('imosystem');
 
+app.set('io', io);
+
 server.listen(app.get('port'), function(){
 	console.log('Express Server escutando na porta ' + app.get('port'));
 });

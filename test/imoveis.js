@@ -1,22 +1,18 @@
+var express = require('../config/express')();
+var request = require('supertest')(express);
+
 var http = require('http');
-var assert = require('assert');
+
 describe('#ImoveisController', function(){
-  it('#listagem json', function(done){
+  // it('#listagem json', function(done){
 
-    var configuracoes = {
-      hostname: 'localhost',
-      port: 3000,
-      path: '/#/imoveis',
-      headers: {
-        'Accept':'application/json'
-      }
-    };
+  //   request.get('/#/imoveis')
+  //   .expect(200, done);
+  // });
 
-    http.get(configuracoes, function(res){
-      assert.equal(res.statusCode, 200);
-      assert.equal(res.headers['content-type'],'text/html; charset=UTF-8');
-      done();
-    });
-
+  it('#cadastro de novo imóvel com dados invalidos', function(done){
+    request.post('/api/imoveis')
+    .send({'cidade':'são paulo'})
+    .expect(200, done);
   });
 });
