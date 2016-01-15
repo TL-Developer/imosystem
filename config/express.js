@@ -12,11 +12,10 @@ var helmet = require('helmet');
 
 
 module.exports = function() {
+  var app = express()
+    , porta = process.env.PORT || 3000;
 
-
-  var app = express();
-
-  app.set('port', 3000);
+  app.set('port', porta);
 
   // app.use(function(req, res, next){
   //   if(req.url === '/favicon.ico'){

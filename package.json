@@ -9,7 +9,7 @@
   "scripts": {
     "pretest": "jshint *",
     "test": "./node_modules/mocha/bin/mocha",
-    "start": "nodemon server.js",
+    "start": "node server",
     "nodemon": "nodemon server.js"
   },
   "author": "Tiago Lima",
