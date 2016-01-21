@@ -119,8 +119,9 @@ module.exports = function(app){
 
 				fs.writeFile(path, data, function(error){
 					if(error){
-						console.log(error);
+						console.log('Não foi possível enviar a imagem', error);
 					}else{
+						console.log('imagem enviada com sucesso!');
 						res.sendfile('./public/partials/upload-images-success.html');
 					}
 				});
